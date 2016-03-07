@@ -82,3 +82,8 @@ C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tr
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\obj\Debug\Bug Tracker.pdb
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\obj\Debug\Bug_Tracker.Migrations.InitialCreate.resources
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\obj\Debug\Bug Tracker.csproj.GenerateResource.Cache
+C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\SendGrid.dll
+C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\SendGrid.SmtpApi.dll
+C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\SendGridMail.dll
+C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\System.Net.Http.Formatting.dll
+C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\System.Net.Http.Formatting.xml

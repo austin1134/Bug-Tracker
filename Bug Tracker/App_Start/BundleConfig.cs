@@ -27,6 +27,7 @@ namespace Bug_Tracker
                     "~/vendor/pacejs/pace.min.js",
                     "~/vendor/jquery/dist/jquery.min.js",
                     "~/vendor/bootstrap/js/bootstrap.min.js",
+                    "~/vendor/datatables/datatables.min.js",
                     "~/vendor/toastr/toastr.min.js"));
 
             bundles.Add(new ScriptBundle("~/luna/js").Include(
@@ -40,6 +41,7 @@ namespace Bug_Tracker
                         "~/vendor/fontawesome/css/font-awesome.css",
                         "~/vendor/animate.css/animate.css",
                         "~/vendor/bootstrap/css/bootstrap.css",
+                        "~/vendor/datatables/datatables.min.css",
                         "~/vendor/toastr/toastr.min.css"));
 
             bundles.Add(new StyleBundle("~/styles/css").Include(

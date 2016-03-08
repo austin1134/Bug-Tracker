@@ -15,8 +15,9 @@ namespace Bug_Tracker.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime CreationDate { get; set; }
-        public int ManagerId { get; set; }
+        public string ProjectManagerId { get; set; }
 
+        public virtual ApplicationUser ProjectManager { get; set; }
         public virtual ICollection<ApplicationUser> Developers { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
 

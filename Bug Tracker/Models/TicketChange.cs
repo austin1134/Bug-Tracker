@@ -11,7 +11,6 @@ namespace Bug_Tracker.Models
         public int Id { get; set; }
         public int TicketId { get; set; }
         public DateTime ChangeDate { get; set; }
-        public int EditorId { get; set; }
         public int NewDeveloperId { get; set; }
         public int OldDeveloperId { get; set; }
 
@@ -21,5 +20,6 @@ namespace Bug_Tracker.Models
         public virtual TicketStatus NewStatus { get; set; }
         public virtual TicketType NewType { get; set; }
         public virtual TicketPriority NewPriority { get; set; }
+        public virtual ApplicationUser EditorId { get; set; }
     }
 }

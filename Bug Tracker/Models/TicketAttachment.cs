@@ -13,5 +13,7 @@ namespace Bug_Tracker.Models
         public string Description { get; set; }
         public string Url { get; set; }
         public DateTime CreationDate { get; set; }
+
+        public virtual Ticket Ticket { get; set; }
     }
 }

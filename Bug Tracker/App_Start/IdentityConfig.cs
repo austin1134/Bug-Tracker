@@ -20,23 +20,25 @@ namespace Bug_Tracker
 {
     public class EmailService : IIdentityMessageService
     {
+        ApplicationDbContext db = new ApplicationDbContext();
         public async Task SendAsync(IdentityMessage message)
         {
-            await configSendGridasync(message);
+            await ConfigSendGridasync(message);
         }
 
-        private async Task configSendGridasync(IdentityMessage message)
+        private async Task ConfigSendGridasync(IdentityMessage message)
         {
             var myMessage = new SendGridMessage();
             myMessage.AddTo(message.Destination);
-            myMessage.From = new System.Net.Mail.MailAddress("Joe@contoso.com", "Joe S.");
+            myMessage.From = new System.Net.Mail.MailAddress("austin.torres@colorado.edu", "Austin Torres");
             myMessage.Subject = message.Subject;
             myMessage.Text = message.Body;
             myMessage.Html = message.Body;
 
+            string username = db.SendGridCredentials.First().Username;
+            string password = db.SendGridCredentials.First().Password;
             var credentials = new NetworkCredential(
-                ConfigurationManager.AppSettings["mailAccount"],
-                ConfigurationManager.AppSettings["mailPassword"]);
+                username, password);
 
             //Create a Web transport for sending email.
             var transportWeb = new Web(credentials);

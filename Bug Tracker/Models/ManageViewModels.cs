@@ -58,6 +58,24 @@ namespace Bug_Tracker.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class ChangeNameViewModel
+    {
+        [Required]
+        [DataType(DataType.Custom)]
+        [Display(Name = "Current Name")]
+        public string OldName { get; set; }
+
+        [Required]
+        [DataType(DataType.Custom)]
+        [Display(Name = "New Name")]
+        public string NewName { get; set; }
+
+        [DataType(DataType.Custom)]
+        [Display(Name = "Confirm new password")]
+        [Compare("NewName", ErrorMessage = "The new name and confirmation name do not match.")]
+        public string ConfirmName { get; set; }
+    }
+
     public class AddPhoneNumberViewModel
     {
         [Required]

@@ -35,26 +35,26 @@ namespace Bug_Tracker.Migrations
                 roleManager.Create(new IdentityRole { Name = "Submitter" });
             }
 
-            //var uStore = new UserStore<ApplicationUser>(context);
-            //var userManager = new UserManager<ApplicationUser>(uStore);
+            var uStore = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(uStore);
 
-            //if (userManager.FindByEmail("austin.torres@colorado.edu") != null)
-            //{
-            //    userManager.Create(new ApplicationUser
-            //    {
-            //        UserName = "austin.torres@colorado.edu",
-            //        Email = "austin.torres@colorado.edu",
-            //        FirstName = "Austin",
-            //        LastName = "Torres",
+            if (userManager.FindByEmail("austin.torres@colorado.edu") != null)
+            {
+                userManager.Create(new ApplicationUser
+                {
+                    UserName = "austin.torres@colorado.edu",
+                    Email = "austin.torres@colorado.edu",
+                    FirstName = "Austin",
+                    LastName = "Torres",
 
-            //    }, "TA1234ta!!");
-            //}
+                }, "TA1234ta!!");
+            }
 
-            //var userId = userManager.FindByEmail("austin.torres@colorado.edu").Id;
-            //userManager.AddToRole(userId, "Admin");
-            //{
-            //    userManager.AddToRole(userId, "Admin");
-            //}
+            var userId = userManager.FindByEmail("austin.torres@colorado.edu").Id;
+            userManager.AddToRole(userId, "Admin");
+            {
+                userManager.AddToRole(userId, "Admin");
+            }
 
             //add Bobby to the database
             //if (userManager.FindByEmail("bdavis@coderfoundry.com") == null)

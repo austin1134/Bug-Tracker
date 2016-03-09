@@ -44,11 +44,11 @@ namespace Bug_Tracker
                         "~/vendor/datatables/datatables.min.css",
                         "~/vendor/toastr/toastr.min.css"));
 
-            bundles.Add(new StyleBundle("~/styles/css").Include(
-                        "~/styles/pe-icons/pe-icon-7-stroke.css",
-                        "~/styles/pe-icons/helper.css",
-                        "~/styles/stroke-icons/style.css",
-                        "~/styles/style.css"));
+            //bundles.Add(new StyleBundle("~/styles/css").Include(
+            //            "~/styles/pe-icons/pe-icon-7-stroke.css",
+            //            "~/styles/pe-icons/helper.css",
+            //            "~/styles/stroke-icons/style.css",
+            //            "~/styles/style.css"));
         }
     }
 }

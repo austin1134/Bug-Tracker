@@ -283,6 +283,7 @@
     <Content Include="styles\stroke-icons\stroke.svg" />
     <Content Include="styles\stroke-icons\style.css" />
     <Content Include="styles\style.css" />
+    <Content Include="styles\style1.css" />
     <Content Include="vendor\animate.css\animate.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-theme.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-theme.min.css" />
@@ -1282,17 +1283,22 @@
     <Content Include="vendor\moment\scripts\npm_prepublish.sh" />
     <Content Include="vendor\sparkline\.bower.json" />
     <Content Include="Views\Shared\Info.cshtml" />
-    <Content Include="Views\Projects\Create.cshtml" />
-    <Content Include="Views\Projects\Delete.cshtml" />
-    <Content Include="Views\Projects\Details.cshtml" />
-    <Content Include="Views\Projects\Edit.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects1\Create.cshtml" />
+    <Content Include="Views\Projects1\Delete.cshtml" />
+    <Content Include="Views\Projects1\Details.cshtml" />
+    <Content Include="Views\Projects1\Edit.cshtml" />
+    <Content Include="Views\Projects1\Index.cshtml" />
     <Content Include="Views\Tickets\Create.cshtml" />
     <Content Include="Views\Tickets\Delete.cshtml" />
     <Content Include="Views\Tickets\Details.cshtml" />
     <Content Include="Views\Tickets\Edit.cshtml" />
     <Content Include="Views\Tickets\Index.cshtml" />
     <Content Include="Views\Manage\ChangeName.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

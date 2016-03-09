@@ -1,4 +1,4 @@
-﻿@model Bug_Tracker.Models.ProjectUsersViewModel
+﻿@model Bug_Tracker.Models.Project
 
 @{
     ViewBag.Title = "Details";
@@ -12,24 +12,32 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ProjectName)
+            @Html.DisplayNameFor(model => model.ProjectManager.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ProjectName)
+            @Html.DisplayFor(model => model.ProjectManager.FirstName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SelectedProjectManagerId)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SelectedProjectManagerId)
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

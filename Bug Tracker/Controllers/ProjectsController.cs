@@ -17,7 +17,8 @@ namespace Bug_Tracker.Controllers
         // GET: Projects
         public ActionResult Index()
         {
-            return View(db.Projects.ToList());
+            var projects = db.Projects.Include(p => p.ProjectManager);
+            return View(projects.ToList());
         }
 
         // GET: Projects/Details/5
@@ -38,6 +39,7 @@ namespace Bug_Tracker.Controllers
         // GET: Projects/Create
         public ActionResult Create()
         {
+            ViewBag.ProjectManagerId = new SelectList(db.Users,"Id", "FirstName");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,CreationDate,ManagerId")] Project project)
+        public ActionResult Create([Bind(Include = "Id,Name,CreationDate,ProjectManagerId")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace Bug_Tracker.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", project.ProjectManagerId);
             return View(project);
         }
 
@@ -70,6 +73,7 @@ namespace Bug_Tracker.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", project.ProjectManagerId);
             return View(project);
         }
 
@@ -78,7 +82,7 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,CreationDate,ManagerId")] Project project)
+        public ActionResult Edit([Bind(Include = "Id,Name,CreationDate,ProjectManagerId")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace Bug_Tracker.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", project.ProjectManagerId);
             return View(project);
         }
 

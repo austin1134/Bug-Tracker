@@ -12,7 +12,7 @@ namespace Bug_Tracker.Models
             this.Tickets = new HashSet<Ticket>();
         }
         public int Id { get; set; }
-        public int Priority { get; set; }
+        public string Priority { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; } 
     }

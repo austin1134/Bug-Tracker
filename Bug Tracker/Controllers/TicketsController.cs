@@ -50,9 +50,18 @@ namespace Bug_Tracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Tickets.Add(ticket);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var user = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+                if (user != null)
+
+                {
+                    //user.Tickets.Add(ticket.AuthorId);
+                    ticket.AuthorId = user.Id;
+                    ticket.CreationDate = DateTime.Now;
+
+                    db.Tickets.Add(ticket);
+                    db.SaveChanges();
+                    return RedirectToAction("Details", "Tickets", new { id = user.Tickets });
+                }
             }
 
             return View(ticket);

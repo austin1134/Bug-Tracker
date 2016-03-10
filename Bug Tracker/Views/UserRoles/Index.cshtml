@@ -1,5 +1,6 @@
-﻿@using Microsoft.AspNet.Identity
-@model Bug_Tracker.Models.UserRoles
+﻿@using Bug_Tracker.Models
+@using Microsoft.AspNet.Identity
+@model Bug_Tracker.Models.UserRolesViewModel
 @{
     ViewBag.Title = "Contact";
 }
@@ -73,13 +74,12 @@
                                                 </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach (var user in Model.Users)
+                                        @foreach (var user in Model.AllUsers)
                                         {
                                             <tr>
                                                 <td>@user.FirstName + @user.LastName</td>
-                                                <td>@Roles.GetRolesForUser()</td>
+                                                <td></td>
                                                 <td>
-                                                    @Roles.GetAllRoles()
                                                 </td>
                                                 <td>61</td>
                                                 <td>2011/04/25</td>

@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bug_Tracker.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Bug_Tracker.Controllers
 {
@@ -174,6 +175,13 @@ namespace Bug_Tracker.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    ApplicationDbContext db = new ApplicationDbContext();
+                    ApplicationUser addedUser = db.Users.FirstOrDefault(x => x.UserName == user.UserName);
+
+                    UserRolesHelper helper = new UserRolesHelper();
+
+                    helper.AddUserToRole(addedUser.Id, "Submitter");
+
                     //Prevent log in until the user is confirmed.
                     //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     

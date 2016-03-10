@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Bug_Tracker.Models
 {
-    public class UserRoles
+    public class UserRolesViewModel
     {
-        public List<ApplicationUser> Users { get; set; }
+        public List<ApplicationUser> AllUsers { get; set; }
         public List<ApplicationUser> Submitters { get; set; }
         public List<ApplicationUser> Developers { get; set; }
         public List<ApplicationUser> ProjectManagers { get; set; }

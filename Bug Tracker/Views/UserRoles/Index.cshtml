@@ -74,13 +74,13 @@
                                                 </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach (var user in Model.Submitters)
+                                        @foreach (var user in Model.AllUsers)
                                         {
                                             <tr>
-                                                <td>@user. @user.</td>
+                                                <td>@user.UserName</td>
+                                                @*<td>@user.</td>
                                                 <td>@user.</td>
-                                                <td>@user.</td>
-                                                <td>@user.</td>
+                                                <td>@user.</td>*@
                                                 <td>@Html.ActionLink("Change Role", "EditUserRoles", "UserRoles", new { id = user.Id})</td>
                                                 <td></td>
                                             </tr>

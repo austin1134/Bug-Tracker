@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.DynamicData;
 using System.Web.Mvc;
 using Bug_Tracker.Models;
 
@@ -38,6 +39,7 @@ namespace Bug_Tracker.Controllers
         // GET: Tickets/Create
         public ActionResult Create()
         {
+            ViewBag.Projects = new SelectList(db.Projects, "Id", "Name");
             return View();
         }
 
@@ -54,8 +56,8 @@ namespace Bug_Tracker.Controllers
                 if (user != null)
 
                 {
-                    //user.Tickets.Add(ticket.AuthorId);
-                    ticket.AuthorId = user.Id;
+                    var authorId = user.UserName;
+                    ticket.AuthorId = user.UserName;
                     ticket.CreationDate = DateTime.Now;
 
                     db.Tickets.Add(ticket);

@@ -15,52 +15,117 @@ namespace Bug_Tracker.Controllers
     public class UserRolesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private UserRolesHelper rolesHelper;
+
+        public UserRolesController()
+        {
+            this.rolesHelper = new UserRolesHelper(db);    
+        }
 
         // GET: UserRoles
         public ActionResult Index()
         {
-            UserRolesViewModel model = new UserRolesViewModel();
-            UserRolesHelper helper = new UserRolesHelper(db);
+            var roles = db.Roles.ToList();
+            List<RolesViewModel> model = new List<RolesViewModel>();
+            foreach (var r in roles)
+            {
+                model.Add(new RolesViewModel { RoleId = r.Id, RoleName = r.Name });
+            }
+            return View(model);
+        }
 
-            model.AllUsers = db.Users.ToList();
-            model.Submitters = helper.UsersInRole("Submitter");
-            
+        // Get: UserRoles/Edit
+        public ActionResult EditUserRoles(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var role = db.Roles.Find(id);
+            if (role == null)
+
+            if (role == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new UserRolesViewModel();
+            model.RoleId = id;
+            model.RoleName = role.Name;
+            model.SelectedUsers = role.Users.Select(u => u.UserId).ToArray();
+            var availableUsers = model.AllUsers;
+            model.Users = new MultiSelectList(availableUsers, "Id", "Name", null);
 
             return View(model);
         }
 
-//        // GET: UserRoles/Edit
-//        public ActionResult EditUserRoles(int? id)
-//        {
-//            if (id == null)
-//            {
-//                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-//            }
-//            ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+        // POST: UserRoles/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "RoledId, RoleName, SelectedUsers")] UserRolesViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var role = db.Roles.Find(model.RoleId);
+                var users = rolesHelper.UsersInRole(role.Name);
+                // remove unselected users
+                foreach (var u in users)
+                {
+                    if (!model.SelectedUsers.Contains(u.Id))
+                    {
+                        rolesHelper.RemoveUserFromRole(u.Id, role.Name);
+                    }
+                }
+                //add newly selected users
+                foreach (var id in model.SelectedUsers)
+                {
+                    if (!rolesHelper.IsUserInRole(id, role.Name))
+                    {
+                        rolesHelper.AddUserToRole(id, role.Name);
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        //// GET: UserRoles/Edit
+        //public ActionResult EditUserRoles(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
 
-//            ApplicationUserManager usermanager = new ApplicationUserManager();
-//            usermanager.GetRoles(user);
-//            if (user == null)
-//            {
-//                return HttpNotFound();
-//            }
-//            return View();
-//        }
+        //    //ApplicationUserManager usermanager = new ApplicationUserManager();
+        //    UserRolesHelper helper = new UserRolesHelper(db);
+        //    foreach (var x in helper.ListUserRoles(user.Id))
+        //    {
+                
+        //    }
 
-//        // POST: UserRoles/Edit
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public ActionResult EditUserRoles([Bind(Include = "Id,Name,ProjectManagerId")] UserRolesViewModel userRoles)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                db.Entry(userRoles).State = EntityState.Modified;
-//                db.SaveChanges();
-//                return RedirectToAction("Index");
-//            }
-//            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", userRoles.);
-//            return View();
-//        }
+        //    //usermanager.GetRoles(user);
+        //    if (user == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View();
+        //}
+
+        //// POST: UserRoles/Edit
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult EditUserRoles([Bind(Include = "Id,UserName")] UserRolesViewModel userRoles)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(userRoles).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View();
+        //}
 
     }
 }

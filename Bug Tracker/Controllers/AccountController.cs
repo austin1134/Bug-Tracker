@@ -178,7 +178,7 @@ namespace Bug_Tracker.Controllers
                     ApplicationDbContext db = new ApplicationDbContext();
                     ApplicationUser addedUser = db.Users.FirstOrDefault(x => x.UserName == user.UserName);
 
-                    UserRolesHelper helper = new UserRolesHelper();
+                    UserRolesHelper helper = new UserRolesHelper(db);
 
                     helper.AddUserToRole(addedUser.Id, "Submitter");
 

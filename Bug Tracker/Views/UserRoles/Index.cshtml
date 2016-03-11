@@ -66,24 +66,23 @@
                                         <thead>
                                                 <tr>
                                                     <th>Name</th>
+                                                    <th>Username</th>
                                                     <th>Current Role</th>
-                                                    <th>New Role</th>
+                                                    <th>Email</th>
                                                     <th></th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th></th>
                                                 </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach (var user in Model.AllUsers)
+                                        @foreach (var user in Model.Submitters)
                                         {
                                             <tr>
-                                                <td>@user.FirstName + @user.LastName</td>
+                                                <td>@user. @user.</td>
+                                                <td>@user.</td>
+                                                <td>@user.</td>
+                                                <td>@user.</td>
+                                                <td>@Html.ActionLink("Change Role", "EditUserRoles", "UserRoles", new { id = user.Id})</td>
                                                 <td></td>
-                                                <td>
-                                                </td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
                                             </tr>
                                         }
                                         </tbody>

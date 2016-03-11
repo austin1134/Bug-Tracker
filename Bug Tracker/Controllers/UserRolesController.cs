@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Bug_Tracker.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Bug_Tracker.Controllers
 {
-    [Authorize (Roles = "Admin")]   
+    [Authorize(Roles = "Admin")]
     public class UserRolesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -16,61 +20,47 @@ namespace Bug_Tracker.Controllers
         public ActionResult Index()
         {
             UserRolesViewModel model = new UserRolesViewModel();
-            UserRolesHelper helper = new UserRolesHelper();
+            UserRolesHelper helper = new UserRolesHelper(db);
 
-            List<ApplicationUser> AllUsers = db.Users.ToList();
-            model.AllUsers = new List<ApplicationUser>();
-            model.Submitters = new List<ApplicationUser>();
+            model.AllUsers = db.Users.ToList();
+            model.Submitters = helper.UsersInRole("Submitter");
+            
 
-            foreach (ApplicationUser user in AllUsers)
-            { 
-            {
-                model.AllUsers.Add(user);
-            }
             return View(model);
-            }
-
-            foreach (ApplicationUser user in AllUsers)
-            {
-                if (helper.IsUserInRole(user.Id, "Submitter"))
-                {
-                    model.Submitters.Add(user);
-                }
-            }
-
-           return View(model);
         }
 
-        // GET: Tickets/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+//        // GET: UserRoles/Edit
+//        public ActionResult EditUserRoles(int? id)
+//        {
+//            if (id == null)
+//            {
+//                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+//            }
+//            ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
 
-        // POST: Tickets/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,CreationDate")] Ticket ticket)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-                if (user != null)
+//            ApplicationUserManager usermanager = new ApplicationUserManager();
+//            usermanager.GetRoles(user);
+//            if (user == null)
+//            {
+//                return HttpNotFound();
+//            }
+//            return View();
+//        }
 
-                {
-                    //user.Tickets.Add(ticket.AuthorId);
-                    ticket.AuthorId = user.Id;
-                    ticket.CreationDate = DateTime.Now;
+//        // POST: UserRoles/Edit
+//        [HttpPost]
+//        [ValidateAntiForgeryToken]
+//        public ActionResult EditUserRoles([Bind(Include = "Id,Name,ProjectManagerId")] UserRolesViewModel userRoles)
+//        {
+//            if (ModelState.IsValid)
+//            {
+//                db.Entry(userRoles).State = EntityState.Modified;
+//                db.SaveChanges();
+//                return RedirectToAction("Index");
+//            }
+//            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", userRoles.);
+//            return View();
+//        }
 
-                    db.Tickets.Add(ticket);
-                    db.SaveChanges();
-                    return RedirectToAction("Details", "Tickets", new { id = user.Tickets });
-                }
-            }
-
-            return View(ticket);
-        }
     }
 }

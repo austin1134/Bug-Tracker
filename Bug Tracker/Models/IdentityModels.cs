@@ -50,5 +50,7 @@ namespace Bug_Tracker.Models
         public DbSet<TicketStatus> TicketStatuses { get; set; }
         public DbSet<TicketType> TicketTypes { get; set; }
         public DbSet<SendGridCredentials> SendGridCredentials { get; set; }
+
+        public System.Data.Entity.DbSet<Bug_Tracker.Models.UserDropDownViewModel> UserDropDownViewModels { get; set; }
     }
 }

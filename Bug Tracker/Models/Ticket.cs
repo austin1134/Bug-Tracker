@@ -25,6 +25,8 @@ namespace Bug_Tracker.Models
         public virtual ApplicationUser Submitters { get; set; }
         public virtual ApplicationUser Developers { get; set; }
         public virtual Project Projects { get; set; }
+        public virtual TicketType TicketType { get; set; }
+        public virtual TicketPriority TicketPriority { get; set; }
 
         public ICollection<TicketChange> TicketChanges { get; set; }
         public ICollection<Comment> Comments { get; set; }

@@ -40,6 +40,9 @@ namespace Bug_Tracker.Controllers
         public ActionResult Create()
         {
             ViewBag.Projects = new SelectList(db.Projects, "Id", "Name");
+            ViewBag.TicketType = new SelectList(db.TicketTypes, "Id", "Name");
+            ViewBag.TicketPriority = new SelectList(db.TicketPriorities, "Id", "Name");
+
             return View();
         }
 

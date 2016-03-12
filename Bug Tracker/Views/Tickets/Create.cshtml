@@ -31,12 +31,31 @@
         </div>
 
         <div class="form-group">
-            @Html.Label("Project", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Project", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Projects, (SelectList)ViewBag.Projects, "--Select Project--", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Projects, (SelectList) ViewBag.Projects, "--Select Project--", new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.ProjectId, "", new {@class = "text-danger"})
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.Label("Ticket Type", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TicketType, (SelectList) ViewBag.TicketType, "--Select Ticket Type--", new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.TicketType, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        @if (User.IsInRole("Admin") || User.IsInRole("ProjectManager") || User.IsInRole("Developer"))
+            { 
+        <div class="form-group">
+            @Html.Label("Ticket Priority", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TicketPriority, (SelectList)ViewBag.TicketPriority, "--Select Ticket Priority--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TicketPriority, "", new { @class = "text-danger" })
+            </div>
+        </div>
+            }
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -62,16 +62,17 @@
                                     The Buttons library for DataTables provides a framework with common options and API that can be used with DataTables, but is also very extensible, recognising that you will likely want to use buttons which perform an action unique to your applications.
                                 </p>
                                 <div class="table-responsive">
+                                    
                                     <table id="tableExample2" class="table table-striped table-hover">
                                         <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Username</th>
-                                                    <th>Current Role</th>
-                                                    <th>Email</th>
-                                                    <th></th>
-                                                    <th></th>
-                                                </tr>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Username</th>
+                                            <th>Current Role</th>
+                                            <th>Email</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                         @foreach (var user in Model.AllUsers)
@@ -81,7 +82,7 @@
                                                 @*<td>@user.</td>
                                                 <td>@user.</td>
                                                 <td>@user.</td>*@
-                                                <td>@Html.ActionLink("Change Role", "EditUserRoles", "UserRoles", new { id = user.Id})</td>
+                                                <td>@Html.ActionLink("Change Role", "EditUserRoles", "UserRoles", new {id = user.Id})</td>
                                                 <td></td>
                                             </tr>
                                         }

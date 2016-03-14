@@ -48,10 +48,10 @@
                     {
                         <tr>
                             <td>
-                                @Html.Display(item.RoleName)
+                                @item.RoleName
                             </td>
                             <td>
-                                <a href="@Url.Action("Edit", "Roles", new {id = item.RoleId})" alt="View Role">
+                                <a href="@Url.Action("EditUserRoles", "UserRoles", new {id = item.RoleId})" alt="View Role">
                                     <i class="fa fa-edit accentcolor-heading"></i>
                                 </a>
                             </td>

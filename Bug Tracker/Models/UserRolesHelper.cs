@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Web;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -13,7 +14,7 @@ namespace Bug_Tracker.Models
         private ApplicationDbContext db;
         private UserManager<ApplicationUser> userManager;
         private RoleManager<IdentityRole> roleManager;
-
+        
         public UserRolesHelper(ApplicationDbContext context)
         {
             this.userManager = new UserManager<ApplicationUser>(

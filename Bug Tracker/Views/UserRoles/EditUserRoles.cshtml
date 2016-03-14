@@ -1,46 +1,47 @@
-﻿@*@model Bug_Tracker.Models.UserRolesViewModel
+﻿@model Bug_Tracker.Models.UserRolesViewModel
 @{
-    ViewBag.Title = "EditUserRoles";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Project</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model., htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.SelectedProjectManagerId, Model.ProjectManagers, "--Select Project Manager--", new { @class = "form-control", disabled = "disabled" })
-                @Html.ValidationMessageFor(model => model.SelectedProjectManagerId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Assigned Developers", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.ListBoxFor(model => model.SelectedDevelopers, Model.Developers, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SelectedDevelopers, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+<!--Start RolesEdit-->
+<section id="rolesedit">
+    <div class="container container-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>
+                    Edit Role: <span class="accentcolor-heading">@Model.RoleName</span>
+                </h2>
             </div>
         </div>
     </div>
-}
+    <div class="row">
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.RoleId)
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger"})
+            <div class="form-group">
+                @Html.Label("Assigned USers", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div calss="col-md-10">
+                @Html.ListBoxFor(model => model.SelectedUsers, Model.Users, new {@class = "form-control", size = 10})
+                @Html.ValidationMessageFor(model => model.SelectedUsers, "", new {@class = "text-danger"})
+            </div>
+        </div>
 
+            <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit Changes" class="btn btn-accent2"/>
+            </div>
+          </div>
+        }
+    </div>
+</section>
 <div>
     @Html.ActionLink("Back to Users Dashboard", "Index")
-</div>*@
+</div>
 
-
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

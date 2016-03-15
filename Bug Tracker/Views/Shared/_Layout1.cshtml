@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
+    <!-- Page title -->
+    <title>LUNA | Responsive Admin Theme</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/vendor/css")
+    @Styles.Render("~/styles/css")
+</head>
+<body>
+    <!-- Wrapper-->
+    <div class="wrapper">
+        <!-- Header-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div id="mobile-menu">
+                        <div class="left-nav-toggle">
+                            <a href="#">
+                                <i class="stroke-hamburgermenu"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <a class="navbar-brand">
+                        BUG TRACKER
+                        @*<img src="~/images/Code_Bug.png" /></div>*@
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <div class="left-nav-toggle">
+                        <a href="">
+                            <i class="stroke-hamburgermenu"></i>
+                        </a>
+                    </div>
+                    <form class="navbar-form navbar-left">
+                        <input type="text" class="form-control" placeholder="Search data for analysis" style="width: 175px">
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="versions.html">
+                                Versions
+                                <span class="label label-warning pull-right">2</span>
+                            </a>
+                        </li>
+                        <li class="profil-link">
+                            <a href="login.html">
+
+                                <span class="profile-address">@*@Html.Partial("_LoginPartial")*@</span>
+                                <img src="images/profile.jpg" class="img-circle" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End header-->
+        <!-- Navigation-->
+        <aside class="navigation">
+            <nav>
+                <ul class="nav luna-nav">
+                    <li class="nav-category">
+                        Main
+                    </li>
+                    <li class="active">
+                        <a href="index.html">Dashboard</a>
+                    </li>
+                    <li class="activce">
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li class="activce">
+                        @Html.ActionLink("Projects", "Index", "Projects")
+                    </li>
+                    <li class="activce">
+                        @Html.ActionLink("Tickets", "Index", "Tickets")
+                    </li>
+                    <li>
+                        <a href="#monitoring" data-toggle="collapse" aria-expanded="false">
+                            Monitoring<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        </a>
+                        <ul id="monitoring" class="nav nav-second collapse">
+                            <li><a href="metrics.html"> Metrics</a></li>
+                            <li><a href="usage.html"> Usage</a></li>
+                            <li><a href="activity.html"> Activity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-category">
+                        UI Elements
+                    </li>
+                    <li>
+                        <a href="#uielements" data-toggle="collapse" aria-expanded="false">
+                            General<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        </a>
+                        <ul id="uielements" class="nav nav-second collapse">
+                            <li><a href="panels.html">Profile Page</a></li>
+                            <li><a href="panels.html">Panels</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="versions.html">
+                            <span class="badge pull-right">2</span>
+                            Versions
+                        </a>
+                    </li>
+                    <li class="nav-info">
+                        <i class="pe pe-7s-shield text-accent"></i>
+                        <div class="m-t-xs">
+                            <span class="c-white">LUNA</span> admin theme with Dark UI style for monitoring and administration web applications.
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- End navigation-->
+        <!-- Main content-->
+        <section class="content">
+        <div class="container-fluid">
+        @RenderBody()
+        </div>
+        </section>
+        <!-- End main content-->
+    </div>
+    <!-- End wrapper-->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/vendor/js")
+    @Scripts.Render("~/luna/js")
+<script>
+    $(document).ready(function() {
+
+        // Run toastr notification with Welcome message
+        setTimeout(function() {
+            toastr.options = {
+                "positionClass": "toast-top-right",
+                "closeButton": true,
+                "progressBar": true,
+                "showEasing": "swing",
+                "timeOut": "6000"
+            };
+            toastr.warning('<strong>You entered to LUNA</strong> <br/><small>Premium admin theme with Dark UI style. </small>');
+        }, 1600)
+
+
+    });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,123 +1,69 @@
 ﻿@model Bug_Tracker.Models.RegisterViewModel
 @{
+    Layout = "~/Views/Shared/_Layout_Blank.cshtml";
     ViewBag.Title = "Register";
-    Layout = null;
 }
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
-
-    <!-- Page title -->
-    <title>LUNA | Responsive Admin Theme</title>
-
-    <!-- Vendor styles -->
-    <link rel="stylesheet" href="~/vendor/fontawesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="~/vendor/animate.css/animate.css"/>
-    <link rel="stylesheet" href="~/vendor/bootstrap/css/bootstrap.css"/>
-
-    <!-- App styles -->
-    <link rel="stylesheet" href="~/styles/pe-icons/pe-icon-7-stroke.css"/>
-    <link rel="stylesheet" href="~/styles/pe-icons/helper.css"/>
-    <link rel="stylesheet" href="~/styles/stroke-icons/style.css"/>
-    <link rel="stylesheet" href="~/styles/style.css">
-</head>
-<body class="blank">
-
-<!-- Wrapper-->
-<div class="wrapper">
-
-
-    <!-- Main content-->
-    <section class="content">
-        <div class="back-link">
-            <a href="index.html" class="btn btn-accent">Back to Dashboard</a>
-        </div>
-
-        <div class="container-center lg animated slideInDown">
-
-
-            <div class="view-header">
-                <div class="header-icon">
-                    <i class="pe page-header-icon pe-7s-add-user"></i>
-                </div>
-                <div class="header-title">
-                    <h3>Register</h3>
-                    <small>
-                        Please enter your data to register.
-                    </small>
+<div class="register-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>Registration</h3>
+                <small>Full suported AngularJS WebApp/Admin template with very clean and aesthetic style prepared for your next app. </small>
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                    <div action="#" id="loginForm">
+                        <div class="row">
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary("", new {@class = "text-danger"})
+                                <div class="row">
+                                    <div class="form-group col-lg-5">
+                                        <label>First Name</label>
+                                        @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control"})
+                                        <span class="help-block small">Your hard to guess password</span>
+                                    </div>
+                                    <div class="form-group col-lg-5">
+                                        <label>Last Name</label>
+                                        @Html.TextBoxFor(m => m.LastName, new {@class = "form-control"})
+                                        <span class="help-block small">Please repeat your pasword</span>
+                                    </div>
+                                    <div class="form-group col-lg-5">
+                                        <label>Username</label>
+                                        @Html.TextBoxFor(m => m.Username, new {@class = "form-control"})
+                                        <span class="help-block small">Your unique username to app</span>
+                                    </div>
+                                    <div class="form-group col-lg-5">
+                                        <label>Password</label>
+                                        @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+                                        <span class="help-block small">Your hard to guess password</span>
+                                    </div>
+                                    <div class="form-group col-lg-5">
+                                        <label>Repeat Password</label>
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+                                        <span class="help-block small">Please repeat your pasword</span>
+                                    </div>
+                                    <div class="form-group col-lg-5">
+                                        <label>Email Address</label>
+                                        @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+                                        <span class="help-block small">Your address email to contact</span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="text-center">
+                            <button type ="submit" class="btn btn-success" value="Register">Register</button>
+                            <button class="btn btn-default">Cancel</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="panel panel-filled">
-                <div class="panel-body">
-                    <p>
-
-                    </p>
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="row">
-        <div class="form-group col-lg-5">
-            <label>First Name</label>
-            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-            <span class="help-block small">Your hard to guess password</span>
-        </div>
-        <div class="form-group col-lg-5">
-            <label>Last Name</label>
-            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-            <span class="help-block small">Please repeat your pasword</span>
-        </div>
-        <div class="form-group col-lg-5">
-            <label>Username</label>
-            @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
-            <span class="help-block small">Your unique username to app</span>
-        </div>
-        <div class="form-group col-lg-5">
-            <label>Password</label>
-            @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
-            <span class="help-block small">Your hard to guess password</span>
-        </div>
-        <div class="form-group col-lg-5">
-            <label>Repeat Password</label>
-            @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
-            <span class="help-block small">Please repeat your pasword</span>
-        </div>
-        <div class="form-group col-lg-5">
-            <label>Email Address</label>
-            @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
-            <span class="help-block small">Your address email to contact</span>
         </div>
     </div>
-                        <div>
-                            <button type="submit" class="btn btn-accent" value="Register">Register</button>
-                            <a class="btn btn-default" href="login.html">Login</a>
-                        </div>
-}
-                </div>
-            </div>
-
+    <div class="row">
+        <div class="col-md-12 text-center">
+            2016 Copyright Austin Torres
         </div>
-    </section>
-    <!-- End main content-->
-
+    </div>
 </div>
-<!-- End wrapper-->
-
-<!-- Vendor scripts -->
-<script src="~/vendor/pacejs/pace.min.js"></script>
-<script src="~/vendor/jquery/dist/jquery.min.js"></script>
-<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- App scripts -->
-<script src="~/scripts/luna.js"></script>
-
-</body>
-
-</html>

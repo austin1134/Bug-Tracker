@@ -361,7 +361,6 @@
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="forgotPassword.html" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Icons\pe-icon-7-stroke\css\helper.css" />
@@ -371,9 +370,6 @@
     <Content Include="images\Code_Bug.png" />
     <Content Include="images\facepalm logo.png" />
     <Content Include="images\profile.jpg" />
-    <Content Include="login.html" />
-    <Content Include="profile.html" />
-    <Content Include="register.html" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -517,6 +513,7 @@
     <Content Include="Views\Shared\_Layout_Landing.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Shared\_Right_Sidebar.cshtml" />
+    <Content Include="Views\Tables\DataTables.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

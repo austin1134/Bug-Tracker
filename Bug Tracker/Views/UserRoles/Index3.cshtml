@@ -1,6 +1,6 @@
 ﻿@using Bug_Tracker.Models
 @using Microsoft.AspNet.Identity
-@model Bug_Tracker.Models.UserRolesViewModel
+@model IEnumerable<Bug_Tracker.Models.RolesViewModel>
 @{
     ViewBag.Title = "Contact";
 }
@@ -75,14 +75,12 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach (var user in Model.AllUsers)
                                         {
                                             <tr>
-                                                <td>@user.UserName</td>
-                                                @*<td>@user.</td>
-                                                <td>@user.</td>
-                                                <td>@user.</td>*@
-                                                <td>@Html.ActionLink("Change Role", "EditUserRoles", "UserRoles", new {id = user.Id})</td>
+                                                <td>fdsfsdfdf</td>
+                                                <td>hdfggfgfg</td>
+                                                <td>fdfgdfdg</td>
+                                                <td>gdgfdg</td>
                                                 <td></td>
                                             </tr>
                                         }

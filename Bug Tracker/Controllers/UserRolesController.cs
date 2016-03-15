@@ -44,8 +44,6 @@ namespace Bug_Tracker.Controllers
 
             var role = db.Roles.Find(id);
             if (role == null)
-
-            if (role == null)
             {
                 return HttpNotFound();
             }
@@ -54,8 +52,8 @@ namespace Bug_Tracker.Controllers
             model.RoleId = id;
             model.RoleName = role.Name;
             model.SelectedUsers = role.Users.Select(u => u.UserId).ToArray();
-            var availableUsers = model.AllUsers;
-            model.Users = new MultiSelectList(availableUsers, "Id", "Name", null);
+            var availableUsers = db.Users;
+            model.Users = new MultiSelectList(availableUsers, "Id", "UserName", null);
 
             return View(model);
         }
@@ -63,12 +61,12 @@ namespace Bug_Tracker.Controllers
         // POST: UserRoles/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RoledId, RoleName, SelectedUsers")] UserRolesViewModel model)
+        public ActionResult EditUserRoles([Bind(Include = "RoleId, RoleName, SelectedUsers")] UserRolesViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var role = db.Roles.Find(model.RoleId);
-                var users = rolesHelper.UsersInRole(role.Name);
+                var users = db.Users;/*rolesHelper.UsersInRole(role.Name);*/
                 // remove unselected users
                 foreach (var u in users)
                 {

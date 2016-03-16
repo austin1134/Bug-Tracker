@@ -49,14 +49,15 @@
                 </div>
                 <div class="panel-body">
                     <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="Search in table">
+                    <text>Click On The Project Row To View The Projects Details</text>
                     <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
                         <thead>
                         <tr>
                             <th>Title</th>
                             <th>Project Manager</th>
                             <th>Created</th>
-                            <th data-hide="all"># Tickets For This Project: </th>
-                            <th data-hide="all">Developers: </th>
+                            <th data-hide="all"># Tickets For This Project </th>
+                            <th data-hide="all">Developers </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -69,6 +70,12 @@
                                 <td>@project.Tickets.Count</td>
                                 <td>@project.Developers</td>
                                 <td>
+                                    @*<a href="@Url.Action("Edit", new {id = project.Id})" alt="Edit Project">
+                                        <i class="fa fa-edit accentcolor-heading"></i>
+                                    </a>
+                                    <a href="@Url.Action("Details", new {id = project.Id})" alt="View Project Details">
+                                        <i class="fa fa-eye accentcolor-heading"></i>
+                                    </a>*@
                                     @Html.ActionLink("Edit", "Edit", new {id = project.Id}) |
                                     @Html.ActionLink("Details", "Details", new {id = project.Id})
                                 </td>

@@ -56,22 +56,20 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,CreationDate,ProjectManagerId")] Project project)
+        public ActionResult Create([Bind(Include = "Id,ProjectName,CreationDate,SelectedProjectManagerId")] ProjectUsersViewModel model)
         {
-            var helper = new UserRolesHelper(db);
-
-            var developers = helper.UsersInRole("Developer");
-            var projectManagers = helper.UsersInRole("Project Manager");
+            Project project = new Project();
             if (ModelState.IsValid)
             {
+
                 project.CreationDate = DateTime.Now;
+                project.Name = model.ProjectName;
+                project.ProjectManager = db.Users.FirstOrDefault(x => x.Id == model.SelectedProjectManagerId);
                 db.Projects.Add(project);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Developers = new MultiSelectList(developers, "Id", "UserName", null);
-            ViewBag.ProjectManagers = new SelectList(projectManagers, "Id", "UserName", null);
-            return View(project);
+            return View(model);
         }
 
         // GET: Projects/Edit/5

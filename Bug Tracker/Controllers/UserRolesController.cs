@@ -66,7 +66,7 @@ namespace Bug_Tracker.Controllers
             if (ModelState.IsValid)
             {
                 var role = db.Roles.Find(model.RoleId);
-                var users = db.Users;/*rolesHelper.UsersInRole(role.Name);*/
+                var users = rolesHelper.UsersInRole(role.Name);
                 // remove unselected users
                 foreach (var u in users)
                 {
@@ -87,43 +87,6 @@ namespace Bug_Tracker.Controllers
             }
             return View(model);
         }
-        //// GET: UserRoles/Edit
-        //public ActionResult EditUserRoles(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
-
-        //    //ApplicationUserManager usermanager = new ApplicationUserManager();
-        //    UserRolesHelper helper = new UserRolesHelper(db);
-        //    foreach (var x in helper.ListUserRoles(user.Id))
-        //    {
-                
-        //    }
-
-        //    //usermanager.GetRoles(user);
-        //    if (user == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View();
-        //}
-
-        //// POST: UserRoles/Edit
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult EditUserRoles([Bind(Include = "Id,UserName")] UserRolesViewModel userRoles)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(userRoles).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View();
-        //}
 
     }
 }

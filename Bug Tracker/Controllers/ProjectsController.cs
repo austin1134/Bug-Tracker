@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebSockets;
 using Bug_Tracker.Models;
 
 namespace Bug_Tracker.Controllers
@@ -13,6 +14,7 @@ namespace Bug_Tracker.Controllers
     public class ProjectsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private UserRolesHelper helper;
 
         // GET: Projects
         public ActionResult Index()
@@ -39,7 +41,13 @@ namespace Bug_Tracker.Controllers
         // GET: Projects/Create
         public ActionResult Create()
         {
-            ViewBag.ProjectManagerId = new SelectList(db.Users,"Id", "FirstName");
+            var helper = new UserRolesHelper(db);
+
+            var developers = helper.UsersInRole("Developer");
+            var projectManagers = helper.UsersInRole("Project Manager");
+
+            ViewBag.Developers = new MultiSelectList(developers, "Id", "UserName", null);
+            ViewBag.ProjectManagers = new SelectList(projectManagers, "Id", "UserName", null);
             return View();
         }
 
@@ -50,14 +58,19 @@ namespace Bug_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,CreationDate,ProjectManagerId")] Project project)
         {
+            var helper = new UserRolesHelper(db);
+
+            var developers = helper.UsersInRole("Developer");
+            var projectManagers = helper.UsersInRole("Project Manager");
             if (ModelState.IsValid)
             {
+                project.CreationDate = DateTime.Now;
                 db.Projects.Add(project);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", project.ProjectManagerId);
+            ViewBag.Developers = new MultiSelectList(developers, "Id", "UserName", null);
+            ViewBag.ProjectManagers = new SelectList(projectManagers, "Id", "UserName", null);
             return View(project);
         }
 

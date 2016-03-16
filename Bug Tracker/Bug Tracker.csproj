@@ -221,7 +221,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HMTLHelperExtensions.cs" />
+    <Compile Include="Migrations\Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Migrations\201603031456183_InitialCreate.cs" />
     <Compile Include="Migrations\201603031456183_InitialCreate.Designer.cs">
       <DependentUpon>201603031456183_InitialCreate.cs</DependentUpon>

@@ -5,78 +5,99 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h2>
-                @ViewBag.Title
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Dashboard</a></li>
+                    <li>
+                        <span>Forms</span>
+                    </li>
+                    <li class="active">
+                        <span>Forms elements </span>
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                Forms elements
             </h2>
+            <small>Examples of various form controls.</small>
         </div>
-    </div>
-    <div class="row">
-        @using (Html.BeginForm())
-        {
-            @Html.HiddenFor(model => model.ProjectId)
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.ProjectName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProjectName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ProjectName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.Label("Project Manager", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                  @if (Model != null)
-                  {
-                      if (User.IsInRole("Admin"))
-                      {
-                          @Html.DropDownListFor(model => model.SelectedProjectManagerId, Model.ProjectManagers, "--Select Project Manager--", new {@class = "form-control"})
-                      }
-                      else
-                      {
-                          @Html.HiddenFor(model => model.SelectedProjectManagerId)
-                          @Html.DropDownListFor(model => model.SelectedProjectManagerId, Model.ProjectManagers, "--Select Project Manager--", new {@class = "form-control", disabled = "disabled"})
-                      }
-                      @Html.ValidationMessageFor(model => model.SelectedProjectManagerId, "", new {@class = "text-danger"})
-                  }
-                  else
-                  {
-                      <text>Please Create A Project Manager</text>
-                  }
-                </div>
-            </div>
-
-            <div class="form-group">
-                @if (Model != null)
-                {
-                    @Html.Label("Assigned Developers", htmlAttributes: new {@class = "control-label col-md-2"})
-                    <div class="col-md-10">
-                        @Html.ListBoxFor(model => model.SelectedDevelopers, Model.Developers, new {@class = "form-control"})
-                        @Html.ValidationMessageFor(model => model.SelectedDevelopers, "", new {@class = "text-danger"})
-                    </div>
-                }
-                else
-                {
-                    <text>Please Create A Developer</text>
-                }
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create Project" class="btn btn-accent2" />
-                </div>
-            </div>
-        }
-    </div>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+<div class="content animate-panel">
+
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h3><i class="pe-7s-display1"></i>  Create New Project</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.HiddenFor(model => model.ProjectId)
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ProjectName, htmlAttributes: new {@class = "control-label col-md-2"})
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.ProjectName, new {htmlAttributes = new {@class = "form-control"}})
+                                        @Html.ValidationMessageFor(model => model.ProjectName, "", new {@class = "text-danger"})
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Project Manager", htmlAttributes: new {@class = "control-label col-md-2"})
+                                    <div class="col-md-10">
+                                        @if (ViewBag.ProjectManagers != null)
+                                        {
+                                                @Html.DropDownListFor(model => model.SelectedProjectManagerId, (SelectList) ViewBag.ProjectManagers, "--Select Project Manager--", new {@class = "form-control"})
+                                                @Html.ValidationMessageFor(model => model.SelectedProjectManagerId, "", new { @class = "text-danger" })
+                                        }
+                                        else
+                                        {
+                                            <text>Please Create A Project Manager</text>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Assign Developers", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @if (ViewBag.Developers != null)
+                                    {
+                                        <div class="col-md-10">
+                                            @Html.ListBoxFor(model => model.SelectedDevelopers,(MultiSelectList) ViewBag.Developers, new {@class = "form-control"})
+                                            @Html.ValidationMessageFor(model => model.SelectedDevelopers, "", new {@class = "text-danger"})
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <text>Please Create A Developer</text>
+                                    }
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <button class="btn btn-primary" value="Create Project" type="submit">Create Project</button>
+                                        <button class="btn btn-default" type="submit">Cancel</button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

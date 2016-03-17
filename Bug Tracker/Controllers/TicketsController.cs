@@ -18,7 +18,54 @@ namespace Bug_Tracker.Controllers
         // GET: Tickets
         public ActionResult Index()
         {
-            return View(db.Tickets.ToList());
+            TicketsViewModel model = new TicketsViewModel();
+            ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+
+            model.AllTickets = db.Tickets.ToList();
+
+            if (User.IsInRole("Developer"))
+            {
+                //get a list of all tickets in projects in which user is a developer
+                List<Project> developerProjects = user.DeveloperProjects.ToList();
+                List<Ticket> developerProjectTickets = new List<Ticket>();
+                List<Ticket> assignedDeveloperTickets = new List<Ticket>();
+                List<Ticket> projectManagerTickets = new List<Ticket>();
+
+                foreach (Project project in developerProjects)
+                {
+                    foreach (Ticket ticket in project.Tickets)
+                    {
+                        developerProjectTickets.Add(ticket);
+
+                        //get a list of all tickets that the developer is assigned to solve
+                        if (user.Id == ticket.DeveloperId)
+                        {
+                            assignedDeveloperTickets.Add(ticket);
+                        }
+                    }
+                }
+
+                if (User.IsInRole("Project Manager"))
+                {
+                    foreach (Ticket ticket in model.AllTickets)
+                    {
+                        if (ticket.Projects.ProjectManager.Id == user.Id)
+                        {
+                            projectManagerTickets.Add(ticket);
+                        }
+                    }
+                }
+
+                model.DeveloperProjectTickets = developerProjectTickets;
+                model.AssignedDeveloperTickets = assignedDeveloperTickets;
+                model.ProjectManagerTickets = projectManagerTickets;
+            }
+
+            //get a list of all projects in which the user is a submitter
+            List<Ticket> submitterTickets = db.Tickets.Where(x => x.AuthorId == user.Id).ToList();
+            model.SubmitterTickets = submitterTickets;
+
+            return View(model);
         }
 
         // GET: Tickets/Details/5

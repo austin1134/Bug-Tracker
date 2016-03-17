@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -14,10 +15,18 @@ namespace Bug_Tracker.Models
         public ApplicationUser()
         {
             this.Tickets = new HashSet<Ticket>();
+            this.DeveloperProjects = new HashSet<Project>();
+            this.ProjectManagerProjects = new HashSet<Project>();
         }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        [InverseProperty("Developers")]
+        public virtual ICollection<Project> DeveloperProjects { get; set; }
+
+        [InverseProperty("ProjectManager")]
+        public virtual ICollection<Project> ProjectManagerProjects { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
 

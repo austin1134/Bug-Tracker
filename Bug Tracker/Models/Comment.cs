@@ -11,6 +11,7 @@ namespace Bug_Tracker.Models
         public string TicketId { get; set; }
         public string CommentBody { get; set; }
         public DateTime CreationDate { get; set; }
+        public string CreatorId { get; set; }
 
         public virtual Ticket Ticket { get; set; }
         public virtual ApplicationUser Creator { get; set; }

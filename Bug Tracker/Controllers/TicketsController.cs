@@ -62,8 +62,8 @@ namespace Bug_Tracker.Controllers
             }
 
             //get a list of all projects in which the user is a submitter
-            List<Ticket> submitterTickets = db.Tickets.Where(x => x.AuthorId == user.Id).ToList();
-            model.SubmitterTickets = submitterTickets;
+            //List<Ticket> submitterTickets = db.Tickets.Where(x => x.AuthorId == user.Id).ToList();
+            //model.SubmitterTickets = submitterTickets;
 
             return View(model);
         }
@@ -75,7 +75,12 @@ namespace Bug_Tracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Ticket ticket = db.Tickets.Find(id);
+            UserRolesHelper helper = new UserRolesHelper(db);
+            var developers = helper.UsersInRole("Developer");
+            ViewBag.Developers = new SelectList(developers, "Id", "UserName");
+
             if (ticket == null)
             {
                 return HttpNotFound();
@@ -106,7 +111,6 @@ namespace Bug_Tracker.Controllers
                 if (user != null)
 
                 {
-                    var authorId = user.UserName;
                     ticket.AuthorId = user.UserName;
                     ticket.CreationDate = DateTime.Now;
 

@@ -5,66 +5,103 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Dashboard</a></li>
+                    <li>
+                        <span>Forms</span>
+                    </li>
+                    <li class="active">
+                        <span>Forms elements </span>
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                Forms elements
+            </h2>
+            <small>Examples of various form controls.</small>
+        </div>
+    </div>
+</div>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        <h4>Ticket</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+<div class="content animate-panel">
+
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h3><i class="pe-7s-news-paper"></i>  Create New Ticket</h3>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})
-            </div>
-        </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-        <div class="form-group">
-            @Html.Label("Project", htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Projects, (SelectList) ViewBag.Projects, "--Select Project--", new {@class = "form-control"})
-                @Html.ValidationMessageFor(model => model.ProjectId, "", new {@class = "text-danger"})
-            </div>
-        </div>
+                                    <div class="form-group">
+                                        @Html.Label("Projects", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownListFor(model => model.Projects, (SelectList)ViewBag.Projects, "--Select Project--", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-        <div class="form-group">
-            @Html.Label("Ticket Type", htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.TicketType, (SelectList) ViewBag.TicketType, "--Select Ticket Type--", new {@class = "form-control"})
-                @Html.ValidationMessageFor(model => model.TicketType, "", new {@class = "text-danger"})
-            </div>
-        </div>
+                                    <div class="form-group">
+                                        @Html.Label("Ticket Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownListFor(model => model.TicketType, (SelectList)ViewBag.TicketType, "--Select Ticket Type--", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.TicketType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-        @if (User.IsInRole("Admin") || User.IsInRole("ProjectManager") || User.IsInRole("Developer"))
-            { 
-        <div class="form-group">
-            @Html.Label("Ticket Priority", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.TicketPriority, (SelectList)ViewBag.TicketPriority, "--Select Ticket Priority--", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TicketPriority, "", new { @class = "text-danger" })
-            </div>
-        </div>
-            }
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                                    if (User.IsInRole("Admin") || User.IsInRole("ProjectManager") || User.IsInRole("Developer"))
+                                    {
+                                        <div class="form-group">
+                                            @Html.Label("Ticket Priority", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.TicketPriority, (SelectList)ViewBag.TicketPriority, "--Select Ticket Priority--", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.TicketPriority, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    }
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <button class="btn btn-primary" value="Create Ticket" type="submit">Create Ticket</button>
+                                        <button class="btn btn-default" type="submit">Cancel</button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>

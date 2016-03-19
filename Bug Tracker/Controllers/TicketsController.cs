@@ -8,9 +8,11 @@ using System.Web;
 using System.Web.DynamicData;
 using System.Web.Mvc;
 using Bug_Tracker.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Bug_Tracker.Controllers
 {
+    [Authorize]
     public class TicketsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -62,8 +64,8 @@ namespace Bug_Tracker.Controllers
             }
 
             //get a list of all projects in which the user is a submitter
-            //List<Ticket> submitterTickets = db.Tickets.Where(x => x.AuthorId == user.Id).ToList();
-            //model.SubmitterTickets = submitterTickets;
+            List<Ticket> submitterTickets = db.Tickets.Where(x => x.AuthorId == user.Id).ToList();
+            model.SubmitterTickets = submitterTickets;
 
             return View(model);
         }
@@ -79,7 +81,7 @@ namespace Bug_Tracker.Controllers
             Ticket ticket = db.Tickets.Find(id);
             UserRolesHelper helper = new UserRolesHelper(db);
             var developers = helper.UsersInRole("Developer");
-            ViewBag.Developers = new SelectList(developers, "Id", "UserName");
+            ViewBag.DeveloperId = new SelectList(developers, "Id", "UserName");
 
             if (ticket == null)
             {
@@ -88,12 +90,29 @@ namespace Bug_Tracker.Controllers
             return View(ticket);
         }
 
+        // POST: Tickets/Details/AssignDeveloper
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AssignDeveloper([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,TicketTypeId,TicketPriorityId,CreationDate")] Ticket ticket)
+        {
+            if (ModelState.IsValid)
+            {
+                {
+                    db.Entry(ticket).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Tickets");
+                }
+            }
+            ViewBag.DeveloperId = new SelectList(db.Projects, "Id", "UserName", ticket.DeveloperId);
+            return RedirectToAction("Details", "Tickets", new { id = ticket.Id});
+        }
+
         // GET: Tickets/Create
         public ActionResult Create()
         {
-            ViewBag.Projects = new SelectList(db.Projects, "Id", "Name");
-            ViewBag.TicketType = new SelectList(db.TicketTypes, "Id", "Name");
-            ViewBag.TicketPriority = new SelectList(db.TicketPriorities, "Id", "Name");
+            ViewBag.ProjectId = new SelectList(db.Projects, "Id", "Name");
+            ViewBag.TicketTypeId = new SelectList(db.TicketTypes, "Id", "Name");
+            ViewBag.TicketPriorityId = new SelectList(db.TicketPriorities, "Id", "Priority");
 
             return View();
         }
@@ -103,22 +122,22 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,CreationDate")] Ticket ticket)
+        public ActionResult Create([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,TicketTypeId,TicketPriorityId,CreationDate")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
-                var user = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-                if (user != null)
-
                 {
-                    ticket.AuthorId = user.UserName;
+                    ticket.AuthorId = User.Identity.GetUserId();
                     ticket.CreationDate = DateTime.Now;
 
                     db.Tickets.Add(ticket);
                     db.SaveChanges();
-                    return RedirectToAction("Details", "Tickets", new { id = user.Tickets });
+                    return RedirectToAction("Index", "Tickets");
                 }
             }
+            ViewBag.ProjectId = new SelectList(db.Projects, "Id", "Name", ticket.ProjectId);
+            ViewBag.TicketTypeId = new SelectList(db.TicketTypes, "Id", "Name", ticket.TicketTypeId);
+            ViewBag.TicketPriorityId = new SelectList(db.TicketPriorities, "Id", "Priority", ticket.TicketPriorityId);
 
             return View(ticket);
         }
@@ -143,7 +162,7 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,CreationDate")] Ticket ticket)
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,TicketTypeId,TicketPriorityId,CreationDate")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {

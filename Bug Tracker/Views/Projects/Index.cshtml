@@ -65,10 +65,10 @@
                         {
                             <tr>
                                 <td>@project.Name</td>
-                                <td>@project.ProjectManager</td>
+                                <td>@*@project.ProjectManager.FirstName @project.ProjectManager.LastName*@</td>
                                 <td>@project.CreationDate</td>
                                 <td>@project.Tickets.Count</td>
-                                <td>@project.Developers</td>
+                                <td>@project.Developers.GetEnumerator()</td>
                                 <td>
                                     @*<a href="@Url.Action("Edit", new {id = project.Id})" alt="Edit Project">
                                         <i class="fa fa-edit accentcolor-heading"></i>

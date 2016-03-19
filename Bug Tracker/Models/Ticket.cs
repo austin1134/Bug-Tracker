@@ -19,8 +19,12 @@ namespace Bug_Tracker.Models
         public string Description { get; set; }
         public string AuthorId { get; set; }
         public string DeveloperId { get; set; }
-        public string ProjectId { get; set; }
+        public int ProjectId { get; set; }
         public DateTime CreationDate { get; set; }
+
+        public int TicketTypeId { get; set; }
+        public int? TicketPriorityId { get; set; }
+        public int? TicketStatusId { get; set; }
 
         public virtual ApplicationUser Submitters { get; set; }
         public virtual ApplicationUser Developers { get; set; }

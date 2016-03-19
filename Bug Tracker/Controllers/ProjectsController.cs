@@ -11,6 +11,7 @@ using Bug_Tracker.Models;
 
 namespace Bug_Tracker.Controllers
 {
+    [Authorize]
     public class ProjectsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

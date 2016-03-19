@@ -64,19 +64,28 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        @Html.Label("Projects", htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
-                                            @Html.DropDownListFor(model => model.Projects, (SelectList)ViewBag.Projects, "--Select Project--", new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
-                                        </div>
+                                @*<div class="form-group">
+                                    @Html.Label("Projects", htmlAttributes: new {@class = "control-label col-md-2"})
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(model => model.ProjectId, (SelectList) ViewBag.Projects, "--Select Project--", new {@class = "form-control"})
+                                        @Html.ValidationMessageFor(model => model.ProjectId, "", new {@class = "text-danger"})
                                     </div>
+                                </div>*@
+
+
+                                <div class="form-group">
+                                    @Html.Label("Projects", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownList("ProjectId", null, "--Select Project--", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
                                     <div class="form-group">
                                         @Html.Label("Ticket Type", htmlAttributes: new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
-                                            @Html.DropDownListFor(model => model.TicketType, (SelectList)ViewBag.TicketType, "--Select Ticket Type--", new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(model => model.TicketType, "", new { @class = "text-danger" })
+                                            @Html.DropDownList("TicketTypeId", null, "--Select Ticket Type--", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.TicketTypeId, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
@@ -85,8 +94,8 @@
                                         <div class="form-group">
                                             @Html.Label("Ticket Priority", htmlAttributes: new { @class = "control-label col-md-2" })
                                             <div class="col-md-10">
-                                                @Html.DropDownListFor(model => model.TicketPriority, (SelectList)ViewBag.TicketPriority, "--Select Ticket Priority--", new { @class = "form-control" })
-                                                @Html.ValidationMessageFor(model => model.TicketPriority, "", new { @class = "text-danger" })
+                                                @Html.DropDownList("TicketPriorityId", null, "--Select Ticket Priority--", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.TicketPriorityId, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     }

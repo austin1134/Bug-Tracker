@@ -1,0 +1,39 @@
+﻿@model  IEnumerable<Bug_Tracker.Models.Comment>
+@using Bug_Tracker.Models
+
+<div class="widget">
+    <div class="widget-header">
+        <div class="title">
+            <span class="fs1" aria-hidden="true" data-icon="&#xe06a;"></span> Comments
+        </div>
+    </div>
+    <div class="widget-body" style="cursor:default">
+        @if (Model.FirstOrDefault() != null)
+        {
+            <ul class="comments">
+                @foreach (Comment comment in Model)
+                {
+                    <li>
+                        <div class="user pull-left">
+                            <img src="~/Images/avatar.jpg" alt="user">
+                        </div>
+                        <div class="info">
+                            <div class="name">
+                                @comment.Creator.FirstName @comment.Creator.LastName
+                            </div>
+                            <div class="time">
+                                <i class="icon-time"></i>
+                                @comment.CreationDate.ToString("d")
+                            </div>
+                            <small>@comment.CommentBody</small>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <div>No comments have been posted for this ticket.</div>
+        }
+    </div>
+</div>

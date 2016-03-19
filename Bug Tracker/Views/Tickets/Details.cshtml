@@ -1,4 +1,5 @@
-﻿@model Bug_Tracker.Models.Ticket
+﻿@using Bug_Tracker.Models
+@model Bug_Tracker.Models.Ticket
 
 @{
     ViewBag.Title = "Details";
@@ -63,7 +64,15 @@
 
 
                     <div class="m-t-md">
-                        <canvas id="lineOptions" height="60"></canvas>
+                        @*@{
+                            IEnumerable<Bug_Tracker.Models.Comment> comment = Model.Comments;
+                            @Html.Partial("_CommentsViewPartial", Model.Comments)
+                        }
+                        @{
+                            Comment Comment = Model.Comment;
+                            @Html.Partial("_CreateCommentsPartial", Model.Comment)
+                        }*@
+                        @*<canvas id="lineOptions" height="60"></canvas>*@
                     </div>
                 </div>
             </div>
@@ -330,7 +339,7 @@
                         <h3>Edit Developers Assigned To This Ticket</h3>
                     </div>
 
-                    @using (Html.BeginForm("Details", "Tickets", FormMethod.Post))
+                    @using (Html.BeginForm("AssignDeveloper", "Tickets", FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
                         @Html.HiddenFor(x => x.Id)
@@ -339,16 +348,16 @@
                         @Html.HiddenFor(x => x.Title)
                         @Html.HiddenFor(x => x.Description)
                         @Html.HiddenFor(x => x.ProjectId)
-                        @Html.HiddenFor(x => x.TicketType)
-                        @Html.HiddenFor(x => x.TicketStatus)
-                        @Html.HiddenFor(x => x.TicketPriority)
+                        @Html.HiddenFor(x => x.TicketTypeId)
+                        @Html.HiddenFor(x => x.TicketStatusId)
+                        @Html.HiddenFor(x => x.TicketPriorityId)
 
                         <div class="form-horizontal">
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
                                 <label class="control-label col-md-2">Assigned Developer</label>
                                 <div class="col-md-10">
-                                    @Html.DropDownListFor(model => model.DeveloperId, (SelectList)ViewBag.Developers, htmlAttributes: new { @class = "form-control" })
+                                    @Html.DropDownList("DeveloperId", null, htmlAttributes: new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.DeveloperId, "", new { @class = "text-danger" })
                                 </div>
                             </div>

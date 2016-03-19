@@ -8,81 +8,93 @@ using System.Web;
 using System.Web.Mvc;
 using Bug_Tracker.Models;
 
-namespace Bug_Tracker.Controllers
+namespace BugTracker.Controllers
 {
+    [Authorize(Roles = "Developer, Admin, Project Manager")]
     public class CommentsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+                private ApplicationDbContext db = new ApplicationDbContext();
+                // GET: Comments
+                public ActionResult _CommentsViewPartial()
+                {
+                    var comments = db.Comments.Include(c => c.Creator);
+                    return View(comments.OrderByDescending(x => x.CreationDate).ToList());
+                }
 
-        // GET: Comments
-        public ActionResult Index()
-        {
-            var comments = db.Comments.Include(c => c.Creator);
-            return View(comments.ToList());
-        }
+        //        // GET: Comments/Details/5
+        //        public ActionResult Details(int? id)
+        //        {
+        //            if (id == null)
+        //            {
+        //                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //            }
+        //            Comment comment = db.Comments.Find(id);
+        //            if (comment == null)
+        //            {
+        //                return HttpNotFound();
+        //            }
+        //            return View(comment);
+        //        }
 
-        // GET: Comments/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Comment comment = db.Comments.Find(id);
-            if (comment == null)
-            {
-                return HttpNotFound();
-            }
-            return View(comment);
-        }
-
-        // GET: Comments/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //        // GET: Comments/Create
+        //        public ActionResult Create()
+        //        {
+        //            return View();
+        //        }
 
         // POST: Comments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TicketId,CommentBody,CreationDate,CreatorId")] Comment comment)
+        public ActionResult Create(Comment comment)
         {
-            if (ModelState.IsValid)
+            Ticket ticket = db.Tickets.FirstOrDefault(x => x.Id == comment.TicketId);
+
+            //only allow specified users to post comments, otherwise redirect to unauthorized error page
+            if (User.IsInRole("Admin") || ticket.Projects.ProjectManager.UserName == User.Identity.Name || ticket.Developers.UserName == User.Identity.Name || ticket.Submitters.UserName == User.Identity.Name)
             {
+                ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+
+                comment.CreationDate = DateTime.Now;
+                comment.CreatorId = user.Id;
+
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(comment);
-        }
 
-        // GET: Comments/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Details", "Tickets", new { id = comment.TicketId });
             }
-            Comment comment = db.Comments.Find(id);
-            if (comment == null)
-            {
-                return HttpNotFound();
-            }
-            return View(comment);
-        }
 
-        // POST: Comments/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Comment comment = db.Comments.Find(id);
-            db.Comments.Remove(comment);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            else
+            {
+                return RedirectToAction("Unauthorized", "Error");
+            }
         }
+    
+
+
+//        // GET: Comments/Delete/5
+//        public ActionResult Delete(int? id)
+//        {
+//            if (id == null)
+//            {
+//                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+//            }
+//            Comment comment = db.Comments.Find(id);
+//            if (comment == null)
+//            {
+//                return HttpNotFound();
+//            }
+//            return View(comment);
+//        }
+
+//        // POST: Comments/Delete/5
+//        [HttpPost, ActionName("Delete")]
+//        [ValidateAntiForgeryToken]
+//        public ActionResult DeleteConfirmed(int id)
+//        {
+//            Comment comment = db.Comments.Find(id);
+//            db.Comments.Remove(comment);
+//            db.SaveChanges();
+//            return RedirectToAction("Index");
+//        }
 
         protected override void Dispose(bool disposing)
         {

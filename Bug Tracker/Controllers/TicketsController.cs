@@ -83,6 +83,9 @@ namespace Bug_Tracker.Controllers
             var developers = helper.UsersInRole("Developer");
             ViewBag.DeveloperId = new SelectList(developers, "Id", "UserName");
 
+            var currentDeveloper = db.Users.Where(x => ticket.DeveloperId == User.Identity.Name);
+            ViewBag.AssignedDeveloper = currentDeveloper.FirstOrDefault();
+
             if (ticket == null)
             {
                 return HttpNotFound();

@@ -371,6 +371,7 @@
     <Content Include="images\Bug Tracker Text and Logo2_preview.png" />
     <Content Include="images\Code_Bug.png" />
     <Content Include="images\facepalm logo.png" />
+    <Content Include="images\MyPicture.jpg" />
     <Content Include="images\profile.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />

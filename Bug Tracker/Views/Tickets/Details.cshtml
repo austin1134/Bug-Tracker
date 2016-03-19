@@ -62,16 +62,10 @@
                     </div>
 
 
-
                     <div class="m-t-md">
-                        @*@{
-                            IEnumerable<Bug_Tracker.Models.Comment> comment = Model.Comments;
-                            @Html.Partial("_CommentsViewPartial", Model.Comments)
-                        }
-                        @{
-                            Comment Comment = Model.Comment;
-                            @Html.Partial("_CreateCommentsPartial", Model.Comment)
-                        }*@
+                        @Html.Partial("_CommentsViewPartial", Model.Comments)
+                    
+                        @Html.Partial("_CreateCommentsPartial", new Comment {TicketId = Model.Id})
                         @*<canvas id="lineOptions" height="60"></canvas>*@
                     </div>
                 </div>
@@ -336,7 +330,15 @@
 
                     <div>
                         <i class="pe-7s-user fa-4x"></i>
-                        <h3>Edit Developers Assigned To This Ticket</h3>
+                        <h3>Edit Developer Assigned To This Ticket</h3>
+                        @if (Model.DeveloperId != null)
+                        {
+                            <text>Currently Assigned Developer: @ViewBag.AssignedDeveloper</text>
+                        }
+                        else
+                        {
+                            <text>There is </text>
+                        }
                     </div>
 
                     @using (Html.BeginForm("AssignDeveloper", "Tickets", FormMethod.Post))
@@ -355,7 +357,7 @@
                         <div class="form-horizontal">
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
-                                <label class="control-label col-md-2">Assigned Developer</label>
+                                <label class="control-label col-md-2">Assign Developer</label>
                                 <div class="col-md-10">
                                     @Html.DropDownList("DeveloperId", null, htmlAttributes: new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.DeveloperId, "", new { @class = "text-danger" })
@@ -371,136 +373,32 @@
                     
                         </div>
                     </div>
-                </div>
-            </div>
+            
+            @*<div class="hpanel stats">
+                <div class="panel-body">
+                    <div>
+                        <i class="pe-7s-user fa-4x"></i>
+                        <h3>Comments</h3>
+                    </div>
 
-            @*<div class="font-bold m-b-sm">
-                Developers Assigned To This Ticket
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-
-                    @foreach (developer in Model.TicketDevelopers)
+                    @foreach (Comment comment in Model.Comments)
                     {
-                        <div class="hpanel">
-                            <div class="panel-body text-center">
-                                <img alt="logo" class="img-circle img-small" src="~/Images/a1.jpg">
-                                <div class="m-t-sm">
-                                    <strong>Mark Newon</strong>
-                                    <p class="small">UI Designer</p>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Comments</label>
+                                <div class="col-md-10">
+                                 @comment.CommentBody
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Save" class="btn" />
                                 </div>
                             </div>
                         </div>
                     }
+
+                    </div>
+                    </div>*@
                 </div>
             </div>
-        </div>*@
-
-
-@*<div>
-    <h4>Ticket</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AuthorId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AuthorId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DeveloperId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DeveloperId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProjectId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreationDate)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-
-<div class="col-md-6">
-    <div class="page-title clearfix">
-        <h2>
-            Assign a Developer to '@Model.TicketTitle'
-        </h2>
-    </div>
-
-    @using (Html.BeginForm("AssignDeveloper", "Ticket", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-        @Html.HiddenFor(x => x.Id)
-        @Html.HiddenFor(x => x.CreationDate)
-        @Html.HiddenFor(x => x.SubmitterId)
-        @Html.HiddenFor(x => x.TicketTitle)
-        @Html.HiddenFor(x => x.TicketDescription)
-        @Html.HiddenFor(x => x.ProjectId)
-
-        @Html.HiddenFor(x => x.TicketTypeId)
-        @Html.HiddenFor(x => x.TicketStatusId)
-        @Html.HiddenFor(x => x.TicketPriorityId)
-
-        <div class="form-horizontal">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                <label class="control-label col-md-2">Assigned Developer</label>
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.DeveloperId, (List<SelectListItem>)ViewBag.developersDropdown, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.DeveloperId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    @Html.ActionLink("Cancel", "Index", "Home")
-                </div>
-            </div>
-
-        </div>
-    }
-</div>
-<div class="col-md-3">
-
-</div>*@

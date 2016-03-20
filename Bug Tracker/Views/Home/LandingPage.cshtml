@@ -1,0 +1,98 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Landing.cshtml";
+    ViewBag.Title = "Index";
+}
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand">Dashboard</a>
+            <div class="brand-desc">
+                Landing Page For FacePalm Bug Tracking Application
+            </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header id="page-top">
+    <div class="container">
+        <div class="heading">
+            <h1>
+                Welcome To FacePalm A Bug Tracking Application
+            </h1>
+            <span>This application allows you to organize, prioritize,<br /> and more effectively deal with pesky bugs.</span>
+            <p class="small">
+                Give it a try by selecting one of the demo accounts below!
+            </p>
+            <a href="#" class="btn btn-success btn-sm">Learn more</a>
+        </div>
+        <div class="heading-image animate-panel" data-child="img-animate" data-effect="fadeInRight">
+            <img class="img-animate" src="~/Images/front-end-technologies.png">
+            <br />
+            <img class="img-animate" src="~/Images/C_Logo.png">
+            <img class="img-animate" src="~/Images/.NET_MVC_Logo.png">
+            <img class="img-animate" src="~/Images/sql-server-logo.png">
+        </div>
+    </div>
+</header>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Admin</h4>
+                <p>Demo a administrator account, which gives you access to all features of the application.</p>
+                <p><a class="navy-link btn btn-sm" href="#" role="button">Learn more</a></p>
+            </div>
+            <div class="col-md-3">
+                <h4>Project Manager</h4>
+                <p>Demo a project manager account, which gives you access to all the responsibilites of managing projects you are assigned to.</p>
+                <p><a class="navy-link btn btn-sm" href="#" role="button">Learn more</a></p>
+            </div>
+            <div class="col-md-3">
+                <h4>Developer</h4>
+                <p>Demo a developer account, where you are responsible for resolving tickets assigned to you.</p>
+                <p><a class="navy-link btn btn-sm" href="#" role="button">Learn more</a></p>
+            </div>
+            <div class="col-md-3">
+                <h4>Submitter</h4>
+                <p>Demo a submitter account, where your role is to simply report bugs via tickets.</p>
+                <p><a class="navy-link btn btn-sm" href="#" role="button">Learn more</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(function () {
+
+            // Page scrolling feature
+            $('a.page-scroll').bind('click', function (event) {
+                var link = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $(link.attr('href')).offset().top - 50
+                }, 500);
+                event.preventDefault();
+            });
+
+            $('body').scrollspy({
+                target: '.navbar-fixed-top',
+                offset: 80
+            });
+
+        });
+    </script>
+}

@@ -217,6 +217,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\TicketAttachmentsController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\UserRolesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -368,11 +369,19 @@
     <Content Include="Icons\pe-icon-7-stroke\css\helper.css" />
     <Content Include="Icons\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="images\.NET_MVC_Logo.png" />
     <Content Include="images\Bug Tracker Text and Logo2_preview.png" />
     <Content Include="images\Code_Bug.png" />
+    <Content Include="images\C_Logo.png" />
     <Content Include="images\facepalm logo.png" />
+    <Content Include="images\facepalm _logo1.png" />
+    <Content Include="images\front-end-technologies.png" />
+    <Content Include="images\landing\header.jpg" />
+    <Content Include="images\loading-bars.svg" />
     <Content Include="images\MyPicture.jpg" />
     <Content Include="images\profile.jpg" />
+    <Content Include="images\profileAvatar.png" />
+    <Content Include="images\sql-server-logo.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -519,10 +528,12 @@
     <Content Include="Views\Tables\DataTables.cshtml" />
     <Content Include="Views\Shared\_CreateCommentsPartial.cshtml" />
     <Content Include="Views\Shared\_CommentsViewPartial.cshtml" />
+    <Content Include="Views\Home\LandingPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Comments\" />
+    <Folder Include="Views\TicketAttachments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

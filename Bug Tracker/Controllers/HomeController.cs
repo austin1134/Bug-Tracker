@@ -20,9 +20,9 @@ namespace Bug_Tracker.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult LandingPage()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "FacePalm landing page.";
 
             return View();
         }

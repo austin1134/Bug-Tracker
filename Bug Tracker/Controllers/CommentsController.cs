@@ -17,8 +17,7 @@ namespace BugTracker.Controllers
                 // GET: Comments
                 public ActionResult _CommentsViewPartial()
                 {
-                    var comments = db.Comments.Include(c => c.Creator);
-                    return View(comments.OrderByDescending(x => x.CreationDate).ToList());
+                    return View();
                 }
 
         //        // GET: Comments/Details/5

@@ -1,0 +1,38 @@
+﻿@model Bug_Tracker.Models.TicketAttachment
+
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Attacher.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attacher.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+    </dl>
+</div>

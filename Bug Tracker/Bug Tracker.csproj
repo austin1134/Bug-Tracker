@@ -532,6 +532,7 @@
     <Content Include="Views\Home\LandingPage.cshtml" />
     <Content Include="Views\Shared\_AddTicketAttachmentPartial.cshtml" />
     <Content Include="Views\Shared\_AssignDeveloperPartial.cshtml" />
+    <Content Include="Views\Shared\_TicketAttachmentViewPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

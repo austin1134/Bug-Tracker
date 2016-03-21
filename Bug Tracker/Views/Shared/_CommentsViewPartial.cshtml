@@ -1,21 +1,20 @@
 ﻿@model  IEnumerable<Bug_Tracker.Models.Comment>
-@using Bug_Tracker.Models
 
 <div class="widget">
     <div class="widget-header">
         <div class="title">
-            <span class="fs1" aria-hidden="true" data-icon="&#xe06a;"></span> Comments
+            <span class="fs1" aria-hidden="true" data-icon="&#xe06a;"></span>
         </div>
     </div>
     <div class="widget-body" style="cursor:default">
-        @if (Model.FirstOrDefault() != null)
+        @if (Model != null)
         {
             <ul class="comments">
-                @foreach (Comment comment in Model)
+                @foreach (var comment in Model)
                 {
                     <li>
                         <div class="user pull-left">
-                            <img src="~/Images/avatar.jpg" alt="user">
+                            <img src="~/Images/profileAvatar.png" alt="user">
                         </div>
                         <div class="info">
                             <div class="name">
@@ -23,7 +22,7 @@
                             </div>
                             <div class="time">
                                 <i class="icon-time"></i>
-                                @comment.CreationDate.ToString("d")
+                                @comment.CreationDate
                             </div>
                             <small>@comment.CommentBody</small>
                         </div>

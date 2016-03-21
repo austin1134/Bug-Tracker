@@ -15,13 +15,51 @@ namespace BugTracker.Controllers
     {
                 private ApplicationDbContext db = new ApplicationDbContext();
                 // GET: Comments
-                public ActionResult _CommentsViewPartial()
-                {
-                    return View();
-                }
+                
+               // // GET: Comments/Details/5
+               // public ActionResult Details(int? id)
+               // {
+               //     if (id == null)
+               //     {
+               //         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+               //     }
+               //     Comment comment = db.Comments.Find(id);
+               //     if (comment == null)
+               //     {
+               //         return HttpNotFound();
+               //     }
+               //     return View(comment);
+               // }
 
-        //        // GET: Comments/Details/5
-        //        public ActionResult Details(int? id)
+               // // GET: Comments/Create
+               // public ActionResult _CreateCommmentsPartial()
+               //{
+               //     return View();
+               //}
+
+        // POST: Comments/Create
+        [HttpPost]
+        public ActionResult Create(Comment comment)
+        {
+            Ticket ticket = db.Tickets.FirstOrDefault(x => x.Id == comment.TicketId);
+
+            if (User.IsInRole("Admin") || ticket.Projects.ProjectManager.UserName == User.Identity.Name || ticket.Developers.UserName == User.Identity.Name || ticket.Submitters.UserName == User.Identity.Name)
+            {
+                ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+
+                comment.CreationDate = DateTime.Now;
+                comment.CreatorId = user.Id;
+
+                db.Comments.Add(comment);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Details", "Tickets", new { id = comment.TicketId });
+        }
+
+
+
+        //        // GET: Comments/Delete/5
+        //        public ActionResult Delete(int? id)
         //        {
         //            if (id == null)
         //            {
@@ -35,65 +73,16 @@ namespace BugTracker.Controllers
         //            return View(comment);
         //        }
 
-        //        // GET: Comments/Create
-        //        public ActionResult Create()
+        //        // POST: Comments/Delete/5
+        //        [HttpPost, ActionName("Delete")]
+        //        [ValidateAntiForgeryToken]
+        //        public ActionResult DeleteConfirmed(int id)
         //        {
-        //            return View();
+        //            Comment comment = db.Comments.Find(id);
+        //            db.Comments.Remove(comment);
+        //            db.SaveChanges();
+        //            return RedirectToAction("Index");
         //        }
-
-        // POST: Comments/Create
-        [HttpPost]
-        public ActionResult Create(Comment comment)
-        {
-            Ticket ticket = db.Tickets.FirstOrDefault(x => x.Id == comment.TicketId);
-
-            //only allow specified users to post comments, otherwise redirect to unauthorized error page
-            if (User.IsInRole("Admin") || ticket.Projects.ProjectManager.UserName == User.Identity.Name || ticket.Developers.UserName == User.Identity.Name || ticket.Submitters.UserName == User.Identity.Name)
-            {
-                ApplicationUser user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
-
-                comment.CreationDate = DateTime.Now;
-                comment.CreatorId = user.Id;
-
-                db.Comments.Add(comment);
-                db.SaveChanges();
-
-                return RedirectToAction("Details", "Tickets", new { id = comment.TicketId });
-            }
-
-            else
-            {
-                return RedirectToAction("Unauthorized", "Error");
-            }
-        }
-    
-
-
-//        // GET: Comments/Delete/5
-//        public ActionResult Delete(int? id)
-//        {
-//            if (id == null)
-//            {
-//                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-//            }
-//            Comment comment = db.Comments.Find(id);
-//            if (comment == null)
-//            {
-//                return HttpNotFound();
-//            }
-//            return View(comment);
-//        }
-
-//        // POST: Comments/Delete/5
-//        [HttpPost, ActionName("Delete")]
-//        [ValidateAntiForgeryToken]
-//        public ActionResult DeleteConfirmed(int id)
-//        {
-//            Comment comment = db.Comments.Find(id);
-//            db.Comments.Remove(comment);
-//            db.SaveChanges();
-//            return RedirectToAction("Index");
-//        }
 
         protected override void Dispose(bool disposing)
         {

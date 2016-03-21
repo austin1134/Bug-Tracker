@@ -374,6 +374,7 @@
     <Content Include="images\Code_Bug.png" />
     <Content Include="images\C_Logo.png" />
     <Content Include="images\facepalm logo.png" />
+    <Content Include="images\facepalm logo2.png" />
     <Content Include="images\facepalm _logo1.png" />
     <Content Include="images\front-end-technologies.png" />
     <Content Include="images\landing\header.jpg" />
@@ -529,6 +530,8 @@
     <Content Include="Views\Shared\_CreateCommentsPartial.cshtml" />
     <Content Include="Views\Shared\_CommentsViewPartial.cshtml" />
     <Content Include="Views\Home\LandingPage.cshtml" />
+    <Content Include="Views\Shared\_AddTicketAttachmentPartial.cshtml" />
+    <Content Include="Views\Shared\_AssignDeveloperPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

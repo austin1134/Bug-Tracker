@@ -9,18 +9,21 @@ namespace Bug_Tracker.Models
     public class TicketChange
     {
         public int Id { get; set; }
-        public string TicketId { get; set; }
+        public int TicketId { get; set; }
         public DateTime ChangeDate { get; set; }
-        public string NewAssignedDeveloper { get; set; }
+
         public string OldAssignedDeveloper { get; set; }
+        public string OldStatus { get; set; }
+        public string OldType { get; set; }
+        public string OldPriority { get; set; }
+        public string NewStatus { get; set; }
+        public string NewType { get; set; }
+        public string NewPriority { get; set; }
+        public string NewAssignedDeveloper { get; set; }
+        public string EditorName { get; set; }
+
+        public string AllChanges { get; set; }
 
         public virtual Ticket Ticket { get; set; }
-        public virtual TicketStatus OldStatus { get; set; }
-        public virtual TicketType OldType { get; set; }
-        public virtual TicketPriority OldPriority { get; set; }
-        public virtual TicketStatus NewStatus { get; set; }
-        public virtual TicketType NewType { get; set; }
-        public virtual TicketPriority NewPriority { get; set; }
-        public virtual ApplicationUser EditorName { get; set; }
     }
 }

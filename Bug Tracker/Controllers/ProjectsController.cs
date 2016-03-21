@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.WebSockets;
 using Bug_Tracker.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Bug_Tracker.Controllers
 {
@@ -21,7 +22,7 @@ namespace Bug_Tracker.Controllers
         public ActionResult Index()
         {
             var projects = db.Projects.Include(p => p.ProjectManager);
-            return View(projects.ToList());
+            return View(projects.OrderByDescending(x => x.CreationDate).ToList());
         }
 
         // GET: Projects/Details/5
@@ -57,15 +58,20 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ProjectName,CreationDate,SelectedProjectManagerId")] ProjectUsersViewModel model)
+        public ActionResult Create([Bind(Include = "Id,ProjectName,CreationDate,SelectedDevelopers,SelectedProjectManagerId")] ProjectUsersViewModel model)
         {
             Project project = new Project();
             if (ModelState.IsValid)
             {
-
                 project.CreationDate = DateTime.Now;
                 project.Name = model.ProjectName;
                 project.ProjectManager = db.Users.FirstOrDefault(x => x.Id == model.SelectedProjectManagerId);
+                model.ProjectId = project.Id;
+                foreach (var developer in model.SelectedDevelopers)
+                {
+                    project.Developers.Add(db.Users.Find(developer));
+                }
+
                 db.Projects.Add(project);
                 db.SaveChanges();
                 return RedirectToAction("Index");

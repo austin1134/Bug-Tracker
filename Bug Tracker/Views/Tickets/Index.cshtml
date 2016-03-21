@@ -64,7 +64,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach (var ticket in Model.AllTickets)
+                            @foreach (var ticket in Model.AllTickets.OrderByDescending(x => x.CreationDate))
                             {
                                 <tr>
                                     <td>@ticket.Title</td>
@@ -129,7 +129,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var ticket in Model.AssignedDeveloperTickets)
+                                @foreach (var ticket in Model.AssignedDeveloperTickets.OrderByDescending(x => x.CreationDate))
                                 {
                                     <tr>
                                         <td>@ticket.Title</td>
@@ -179,7 +179,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach (var ticket in Model.ProjectManagerTickets)
+                            @foreach (var ticket in Model.ProjectManagerTickets.OrderByDescending(x => x.CreationDate))
                             {
                                 <tr>
                                     <td>@ticket.Title</td>
@@ -229,7 +229,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach (var ticket in Model.DeveloperProjectTickets)
+                        @foreach (var ticket in Model.DeveloperProjectTickets.OrderByDescending(x => x.CreationDate))
                         {
                             <tr>
                                 <td>@ticket.Title</td>
@@ -279,7 +279,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var ticket in Model.SubmitterTickets)
+                                @foreach (var ticket in Model.SubmitterTickets.OrderByDescending(x => x.CreationDate))
                                 {
                                     <tr>
                                         <td>@ticket.Title</td>

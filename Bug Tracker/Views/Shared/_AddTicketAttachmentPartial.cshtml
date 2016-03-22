@@ -1,6 +1,6 @@
 ﻿@model Bug_Tracker.Models.TicketAttachment
 
-@using (Html.BeginForm("Create", "TicketAttachments", FormMethod.Post, new {encytype = "multipart/form-data"}))
+@using (Html.BeginForm("Create", "TicketAttachments", FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new {@class = "text-danger"})
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.Label("Upload File", htmlAttributes: new {@class = "contorl-label col-md-2"})
+                    @Html.Label("Upload File", htmlAttributes: new {@class = "control-label col-md-2"})
                     <div class="col-md-10">
                         <input type="file" id="fileUpload" name="fileUpload" class="btn btn-accent form-control" style="margin-top: 0px"/>
                     </div>

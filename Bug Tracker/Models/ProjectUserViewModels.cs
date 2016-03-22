@@ -17,7 +17,7 @@ namespace Bug_Tracker.Models
         {
             public int ProjectId { get; set; }
 
-            public DateTime CreationTime { get; set; }
+            public DateTimeOffset CreationTime { get; set; }
 
             [Display(Name = "Project Name")]
             public string ProjectName { get; set; }

@@ -10,7 +10,7 @@ namespace Bug_Tracker.Models
         public int Id { get; set; }
         public int TicketId { get; set; }
         public string CommentBody { get; set; }
-        public DateTime CreationDate { get; set; }
+        public DateTimeOffset CreationDate { get; set; }
         public string CreatorId { get; set; }
 
         public virtual Ticket Ticket { get; set; }

@@ -238,6 +238,7 @@
     <Compile Include="Models\SendGridCredentials.cs" />
     <Compile Include="Models\TicketAttachment.cs" />
     <Compile Include="Models\TicketChange.cs" />
+    <Compile Include="Models\TicketNotification.cs" />
     <Compile Include="Models\TicketPriority.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketStatus.cs" />

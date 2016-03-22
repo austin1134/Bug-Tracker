@@ -104,8 +104,9 @@
 
                     <h4>Comments</h4>
                     <div class="m-t-md">
+                        @Model.Attachments.FirstOrDefault()
                         @Html.Partial("_CommentsViewPartial", @Model.Comments)
-                    
+
                         @Html.Partial("_CreateCommentsPartial", new Comment {TicketId = Model.Id})
                         @*<canvas id="lineOptions" height="60"></canvas>*@
                     </div>
@@ -360,10 +361,8 @@
         </div>
         <div class="col-md-5">
                                     @Html.Partial("_AssignDeveloperPartial")
-                                    @{
-                                        TicketAttachment ticket = new TicketAttachment();
-                                        @Html.Partial("_AddTicketAttachmentPartial", ticket)
-                                    }
+                                    @Html.Partial("_AddTicketAttachmentPartial", new TicketAttachment { TicketId = Model.Id })
+                                    
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ namespace Bug_Tracker.Models
         public int TicketId { get; set; }
         public string Property { get; set; }
         public string UserId { get; set; }
-        public DateTime ChangeDate { get; set; }
+        public DateTimeOffset ChangeDate { get; set; }
 
         public string OldAssignedDeveloper { get; set; }
         public string OldStatus { get; set; }

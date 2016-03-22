@@ -49,18 +49,18 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TicketId,Description,Url,CreationDate,AttacherId")] TicketAttachment ticketAttachment, HttpPostedFileBase fileUpload)
+        public ActionResult Create(TicketAttachment ticketAttachment, HttpPostedFileBase fileUpload)
         {
             if (ModelState.IsValid)
             {
                 ticketAttachment.AttacherId = User.Identity.GetUserId();
                 //ticketAttachment.CreationDate = new DateTimeOffset(DateTime.Now);
-                //if (fileUpload != null && fileUpload.ContentLength > 0)
+                if (fileUpload != null && fileUpload.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    ticketAttachment.Url = Path.Combine(Server.MapPath("~/img/"), fileName);
+                    ticketAttachment.Url = Path.Combine(Server.MapPath("~/images/"), fileName);
                     fileUpload.SaveAs(ticketAttachment.Url);
-                    ticketAttachment.Url = "~/img/" + fileName;
+                    ticketAttachment.Url = "~/images/" + fileName;
                 }
                 db.TicketAttachments.Add(ticketAttachment);
                 db.SaveChanges();

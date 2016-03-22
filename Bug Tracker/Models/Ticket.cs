@@ -20,7 +20,7 @@ namespace Bug_Tracker.Models
         public string AuthorId { get; set; }
         public string DeveloperId { get; set; }
         public int ProjectId { get; set; }
-        public DateTime CreationDate { get; set; }
+        public DateTimeOffset CreationDate { get; set; }
 
         public int TicketTypeId { get; set; }
         public int? TicketPriorityId { get; set; }

@@ -20,9 +20,8 @@
                             <div class="name">
                                 @comment.Creator.FirstName @comment.Creator.LastName
                             </div>
-                            <div class="time">
-                                <i class="icon-time"></i>
-                                @comment.CreationDate
+                            <div class="col-md-offset-1">
+                                @comment.CreationDate.ToString("d")
                             </div>
                             <small>@comment.CommentBody</small>
                         </div>

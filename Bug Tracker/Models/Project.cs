@@ -15,7 +15,7 @@ namespace Bug_Tracker.Models
         }
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime CreationDate { get; set; }
+        public DateTimeOffset CreationDate { get; set; }
         public string ProjectManagerId { get; set; }
 
         [InverseProperty("ProjectManagerProjects")]

@@ -315,44 +315,44 @@ namespace Bug_Tracker.Controllers
             return RedirectToAction("Index");
         }
 
-        //private async Task<TicketNotifcation> Notify(Ticket ticket)
-        //{
-        //    string body = null;
-        //    ApplicationUser toUser = null;
-        //    var userId = User.Identity.GetUserId();
-        //    var fromUser = db.Users.FirstOrDefault(u => u.Id == userId);
-        //    var subject = "changes to Ticket: " + ticket.Title;
+        private async Task<TicketNotification> Notify(Ticket ticket)
+        {
+            string body = null;
+            ApplicationUser toUser = null;
+            var userId = User.Identity.GetUserId();
+            var fromUser = db.Users.FirstOrDefault(u => u.Id == userId);
+            var subject = "changes to Ticket: " + ticket.Title;
 
-        //    if (userId != ticket.DeveloperId)
-        //    {
-        //        //person making the change is NOT the assigned developer, so notify the developer
-        //        toUser = db.Users.Find(ticket.DeveloperId);
-        //        //Build the mail message
-        //        body = "<p>" + toUser.FirstName + ",<br/>" + fromUser.FirstName + fromUser.LastName +
-        //               " has made some changes to a ticket assigned to you. Please check your assigned tickets to view these changes. </p>";
-        //    }
-        //    else
-        //    {
-        //        //person making the change is the assigned developer, so notify the PM
-        //        toUser = db.Projects.Find(ticket.ProjectId).ProjectManager;
-        //        body = "<p>" + toUser.FirstName + ",<br/>" + fromUser.FirstName + fromUser.LastName +
-        //               " hase made some changes to an assigned ticket for project " +
-        //               db.Projects.Find(ticket.ProjectId).Name + ".</p>";
-        //    }
+            if (userId != ticket.DeveloperId)
+            {
+                //person making the change is NOT the assigned developer, so notify the developer
+                toUser = db.Users.Find(ticket.DeveloperId);
+                //Build the mail message
+                body = "<p>" + toUser.FirstName + ",<br/>" + fromUser.FirstName + fromUser.LastName +
+                       " has made some changes to a ticket assigned to you. Please check your assigned tickets to view these changes. </p>";
+            }
+            else
+            {
+                //person making the change is the assigned developer, so notify the PM
+                toUser = db.Projects.Find(ticket.ProjectId).ProjectManager;
+                body = "<p>" + toUser.FirstName + ",<br/>" + fromUser.FirstName + fromUser.LastName +
+                       " hase made some changes to an assigned ticket for project " +
+                       db.Projects.Find(ticket.ProjectId).Name + ".</p>";
+            }
 
-        //    EmailService e = new EmailService();
-        //    await e.SendAsync(new IdentityMessage {Subject = subject, Body = body, Destination = toUser.Email});
+            EmailService e = new EmailService();
+            await e.SendAsync(new IdentityMessage {Subject = subject, Body = body, Destination = toUser.Email});
 
-        //    //if we get this far, we've successfully send the notification, so create a new entry for the db
+            //if we get this far, we've successfully send the notification, so create a new entry for the db
 
-        //    return new TicketNotifcation
-        //    {
-        //        Sent = new DateTimeOffset(DateTime.Now),
-        //        TicketId = ticket.Id,
-        //        FromUserId = fromUser.Id,
-        //        ToUserId = toUser.Id
-        //    };
-        //}
+            return new TicketNotification
+            {
+                Sent = new DateTimeOffset(DateTime.Now),
+                TicketId = ticket.Id,
+                FromUserId = fromUser.Id,
+                ToUserId = toUser.Id
+            };
+        }
 
 
         protected override void Dispose(bool disposing)

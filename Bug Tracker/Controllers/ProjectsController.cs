@@ -100,16 +100,16 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,CreationDate,ProjectManagerId")] Project project)
+        public ActionResult Edit([Bind(Include = "Id,Name,CreationDate,ProjectManagerId")] ProjectUsersViewModel model)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(project).State = EntityState.Modified;
+                db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", project.ProjectManagerId);
-            return View(project);
+            ViewBag.ProjectManagerId = new SelectList(db.Users, "Id", "FirstName", model.SelectedProjectManagerId);
+            return View(model);
         }
 
         // GET: Projects/Delete/5

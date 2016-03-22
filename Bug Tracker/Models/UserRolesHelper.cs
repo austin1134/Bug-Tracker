@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
@@ -59,6 +60,15 @@ namespace Bug_Tracker.Models
             //var userIDs = roleManager.FindByName(roleName).Users.Select(r => r.UserId);
             //return userManager.Users.Where(u => userIDs.Contains(u.Id)).Select(u =>
             //    new UserDropDownViewModel {Id = u.Id, UserName = u.UserName}).ToList();
-        } 
+        }
+
+        //public IList<string> ListDevelopersOnProject(string userId)
+        //{
+        //    Project project = new Project();
+        //    var projectId = project.Id;
+        //    var developers = UsersInRole("Developer");
+        //    var developersOnProject = developers.Where(x => x.Id == projectId);
+        //    return userManager.GetRoles(userId);
+        //}
     }
 }

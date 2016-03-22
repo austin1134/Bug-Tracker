@@ -54,8 +54,8 @@ namespace Bug_Tracker.Controllers
             if (ModelState.IsValid)
             {
                 ticketAttachment.AttacherId = User.Identity.GetUserId();
-                ticketAttachment.CreationDate = new DateTime(DateTime.Now);
-                if (fileUpload != null && fileUpload.ContentLength > 0)
+                //ticketAttachment.CreationDate = new DateTimeOffset(DateTime.Now);
+                //if (fileUpload != null && fileUpload.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
                     ticketAttachment.Url = Path.Combine(Server.MapPath("~/img/"), fileName);
@@ -68,37 +68,6 @@ namespace Bug_Tracker.Controllers
             }
             return View(ticketAttachment);
         }
-
-        //// GET: TicketAttachments/Edit/5
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    TicketAttachment ticketAttachment = db.TicketAttachments.Find(id);
-        //    if (ticketAttachment == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(ticketAttachment);
-        //}
-
-        //// POST: TicketAttachments/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "Id,TicketId,Description,Url,CreationDate,AttacherId")] TicketAttachment ticketAttachment)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(ticketAttachment).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(ticketAttachment);
-        //}
 
         //// GET: TicketAttachments/Delete/5
         //public ActionResult Delete(int? id)

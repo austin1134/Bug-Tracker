@@ -58,8 +58,8 @@ namespace Bug_Tracker.Controllers
                 if (fileUpload != null && fileUpload.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    ticketAttachment.Url = Path.Combine(Server.MapPath("~/images/"), fileName);
-                    fileUpload.SaveAs(ticketAttachment.Url);
+                    var savelocation = Path.Combine(Server.MapPath("~/images/"), fileName);
+                    fileUpload.SaveAs(savelocation);
                     ticketAttachment.Url = "~/images/" + fileName;
                 }
                 db.TicketAttachments.Add(ticketAttachment);

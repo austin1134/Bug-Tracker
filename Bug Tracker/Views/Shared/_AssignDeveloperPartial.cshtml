@@ -11,7 +11,7 @@
             <h3>Edit Developer Assigned To This Ticket</h3>
             @if (Model.DeveloperId != null)
             {
-                <text>Currently Assigned Developer: @ViewBag.AssignedDeveloper</text>
+                <strong><text>Currently Assigned Developer: @ViewBag.AssignedDeveloper</text></strong>
             }
             else
             {
@@ -37,7 +37,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-2">Assign Developer</label>
                     <div class="col-md-10">
-                        @Html.DropDownList("DeveloperId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.DropDownList("DeveloperId", null, "--Developer Assignment--", htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.DeveloperId, "", new { @class = "text-danger" })
                     </div>
                 </div>

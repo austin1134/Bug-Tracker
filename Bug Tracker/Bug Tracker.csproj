@@ -371,6 +371,7 @@
     <Content Include="Icons\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
     <Content Include="images\.NET_MVC_Logo.png" />
+    <Content Include="images\AccessDeniedYoda.jpg" />
     <Content Include="images\Bug Tracker Text and Logo2_preview.png" />
     <Content Include="images\Code_Bug.png" />
     <Content Include="images\C_Logo.png" />
@@ -621,11 +622,10 @@
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Views\Shared\_ListTicketChangesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Comments\" />
-    <Folder Include="Views\TicketAttachments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

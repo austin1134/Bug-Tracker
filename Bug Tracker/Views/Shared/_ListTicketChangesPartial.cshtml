@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Bug_Tracker.Models.TicketChange>
+
+<div class="hpanel">
+
+    <div class="panel-body">
+
+        <h4>Ticket History</h4>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-striped">
+                <tbody>
+                @foreach (var change in Model.Ticket.TicketChanges)
+                {
+                    <tr>
+                        <td>
+                            <span class="label label-success">Added</span>
+                        </td>
+                        <td class="issue-info">
+                            <a href="#">
+                                Ticket Property Changed: @change.Property
+                            </a>
+                            <br/>
+                            <small>
+                                Old Value: @change.OldValue
+                            </small>
+                            <br />
+                            <small>
+                                New Value: @change.NewValue
+                            </small>
+                        </td>
+                        <td>
+                            Editor: @change.EditorName
+                        </td>
+                        <td>
+                            Changed: @change.ChangeDate
+                        </td>
+                        <td class="text-right">
+                            <button class="btn btn-default btn-xs"> Action</button>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

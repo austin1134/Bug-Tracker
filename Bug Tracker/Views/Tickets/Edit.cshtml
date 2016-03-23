@@ -21,7 +21,22 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+    @Html.HiddenFor(x => x.DeveloperId);
+    @Html.HiddenFor(x => x.AuthorId);
+    @Html.HiddenFor(x => x.Comments);
+    @Html.HiddenFor(x => x.CreationDate);
+    @Html.HiddenFor(x => x.Developers);
+    @Html.HiddenFor(x => x.Projects);
+    @Html.HiddenFor(x => x.ProjectId);
+    @Html.HiddenFor(x => x.Submitters);
+    @Html.HiddenFor(x => x.TicketPriority);
+    @Html.HiddenFor(x => x.TicketPriorityId);
+    @Html.HiddenFor(x => x.TicketStatus);
+    @Html.HiddenFor(x => x.TicketStatusId);
+    @Html.HiddenFor(x => x.TicketType);
+    @Html.HiddenFor(x => x.TicketTypeId);
+
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })

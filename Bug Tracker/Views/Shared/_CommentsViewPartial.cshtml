@@ -10,7 +10,7 @@
         @if (Model != null)
         {
             <ul class="comments">
-                @foreach (var comment in Model)
+                @foreach (var comment in Model.OrderByDescending(x => x.CreationDate))
                 {
                     <li>
                         <div class="user pull-left">

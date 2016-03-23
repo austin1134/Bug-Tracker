@@ -14,18 +14,10 @@ namespace Bug_Tracker.Models
         public string UserId { get; set; }
         public DateTimeOffset ChangeDate { get; set; }
 
-        public string OldAssignedDeveloper { get; set; }
-        public string OldStatus { get; set; }
-        public string OldType { get; set; }
-        public string OldPriority { get; set; }
-        public string NewStatus { get; set; }
-        public string NewType { get; set; }
-        public string NewPriority { get; set; }
-        public string NewAssignedDeveloper { get; set; }
         public string EditorName { get; set; }
 
-        public string AllChanges { get; set; }
-
         public virtual Ticket Ticket { get; set; }
+        public string OldValue { get; set; }
+        public string NewValue { get; set; }
     }
 }

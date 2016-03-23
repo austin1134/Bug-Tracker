@@ -111,6 +111,18 @@ namespace Bug_Tracker.Controllers
             }
         }
 
+
+        // POST: /DemoAccount/Login
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Guest(string userId)
+        {
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]

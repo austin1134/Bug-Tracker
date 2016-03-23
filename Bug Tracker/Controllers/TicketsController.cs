@@ -83,11 +83,12 @@ namespace Bug_Tracker.Controllers
             UserRolesHelper helper = new UserRolesHelper(db);
             var developers = helper.UsersInRole("Developer");
             ViewBag.DeveloperId = new SelectList(developers, "Id", "UserName");
+            ticket.TicketChanges = db.TicketChanges.Where(t => t.TicketId == id).OrderBy(t => t.ChangeDate).ToList();
 
             var currentDeveloper = db.Users.FirstOrDefault(u => u.Id == ticket.DeveloperId);
             if (currentDeveloper != null)
             {
-                ViewBag.AssignedDeveloper = currentDeveloper;
+                ViewBag.AssignedDeveloper = currentDeveloper.UserName;
             }
 
             if (ticket == null)
@@ -150,14 +151,14 @@ namespace Bug_Tracker.Controllers
         }
 
         // GET: Tickets/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             UserRolesHelper helper = new UserRolesHelper(db);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ticket ticket = db.Tickets.Find(id);
+            Ticket ticket = await db.Tickets.FindAsync(id);
             TempData["oldticket"] = ticket;
             if (ticket == null)
             {
@@ -175,119 +176,119 @@ namespace Bug_Tracker.Controllers
         // POST: Tickets/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,TicketTypeId,TicketPriorityId,CreationDate")] Ticket ticket)
-        //{
-        //    UserRolesHelper helper = new UserRolesHelper(db);
-        //    if (ModelState.IsValid)
-        //    {
-        //        var oldTicket = (Ticket) TempData["oldticket"];
-        //        TicketNotification notification = null;
-        //        //determine whats changed and for each changed property, add a new TicketHistory entry
-        //        // to the DB and save the changes again
-        //        if (oldTicket.Description != ticket.Description)
-        //        {
-        //            db.TicketChanges.Add(new TicketChange
-        //            {
-        //                Property = "Description",
-        //                ChangeDate = DateTimeOffset.Now,
-        //                UserId = User.Identity.GetUserId(),
-        //                TicketId = ticket.Id,
-        //                OldValue = oldTicket.Description,
-        //                NewValue = ticket.Description
-        //            });
-        //            notification = await Notify(ticket);
-        //        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,TicketTypeId,TicketPriorityId,CreationDate")] Ticket ticket)
+        {
+            UserRolesHelper helper = new UserRolesHelper(db);
+            if (ModelState.IsValid)
+            {
+                var oldTicket = (Ticket) TempData["oldticket"];
+                TicketNotification notification = null;
+                //determine whats changed and for each changed property, add a new TicketHistory entry
+                // to the DB and save the changes again
+                if (oldTicket.Description != ticket.Description)
+                {
+                    db.TicketChanges.Add(new TicketChange
+                    {
+                        Property = "Description",
+                        ChangeDate = DateTimeOffset.Now,
+                        UserId = User.Identity.GetUserId(),
+                        TicketId = ticket.Id,
+                        OldValue = oldTicket.Description,
+                        NewValue = ticket.Description
+                    });
+                    notification = await Notify(ticket);
+                }
 
-        //        if (oldTicket.ProjectId != ticket.ProjectId)
-        //        {
-        //            db.TicketChanges.Add(new TicketChange
-        //            {
-        //                Property = "Project",
-        //                ChangeDate = DateTimeOffset.Now,
-        //                UserId = User.Identity.GetUserId(),
-        //                TicketId = ticket.Id,
-        //                OldValue = oldTicket.Projects.Name,
-        //                NewValue = db.Projects.Find(ticket.ProjectId).Name
-        //            });
-        //            notification = await Notify(ticket);
-        //        }
+                if (oldTicket.ProjectId != ticket.ProjectId)
+                {
+                    db.TicketChanges.Add(new TicketChange
+                    {
+                        Property = "Project",
+                        ChangeDate = DateTimeOffset.Now,
+                        UserId = User.Identity.GetUserId(),
+                        TicketId = ticket.Id,
+                        OldValue = oldTicket.Projects.Name,
+                        NewValue = db.Projects.Find(ticket.ProjectId).Name
+                    });
+                    notification = await Notify(ticket);
+                }
 
-        //        if (oldTicket.TicketTypeId != ticket.TicketTypeId)
-        //        {
-        //            db.TicketChanges.Add(new TicketChange
-        //            {
-        //                Property = "Type",
-        //                ChangeDate = DateTimeOffset.Now,
-        //                UserId = User.Identity.GetUserId(),
-        //                TicketId = ticket.Id,
-        //                OldValue = oldTicket.TicketType.Name,
-        //                NewValue = db.TicketTypes.Find(ticket.TicketTypeId).Name
-        //            });
-        //            notification = await Notify(ticket);
-        //        }
+                if (oldTicket.TicketTypeId != ticket.TicketTypeId)
+                {
+                    db.TicketChanges.Add(new TicketChange
+                    {
+                        Property = "Type",
+                        ChangeDate = DateTimeOffset.Now,
+                        UserId = User.Identity.GetUserId(),
+                        TicketId = ticket.Id,
+                        OldValue = oldTicket.TicketType.Name,
+                        NewValue = db.TicketTypes.Find(ticket.TicketTypeId).Name
+                    });
+                    notification = await Notify(ticket);
+                }
 
-        //        if (oldTicket.TicketPriorityId != ticket.TicketPriorityId)
-        //        {
-        //            db.TicketChanges.Add(new TicketChange
-        //            {
-        //                Property = "Priority",
-        //                ChangeDate = DateTimeOffset.Now,
-        //                UserId = User.Identity.GetUserId(),
-        //                TicketId = ticket.Id,
-        //                OldValue = oldTicket.TicketPriority.Priority,
-        //                NewValue = db.TicketPriorities.Find(ticket.TicketPriorityId).Priority
-        //            });
-        //            notification = await Notify(ticket);
-        //        }
+                if (oldTicket.TicketPriorityId != ticket.TicketPriorityId)
+                {
+                    db.TicketChanges.Add(new TicketChange
+                    {
+                        Property = "Priority",
+                        ChangeDate = DateTimeOffset.Now,
+                        UserId = User.Identity.GetUserId(),
+                        TicketId = ticket.Id,
+                        OldValue = oldTicket.TicketPriority.Priority,
+                        NewValue = db.TicketPriorities.Find(ticket.TicketPriorityId).Priority
+                    });
+                    notification = await Notify(ticket);
+                }
 
-        //        if (oldTicket.TicketStatusId != ticket.TicketStatusId)
-        //        {
-        //            db.TicketChanges.Add(new TicketChange
-        //            {
-        //                Property = "Status",
-        //                ChangeDate = DateTimeOffset.Now,
-        //                UserId = User.Identity.GetUserId(),
-        //                TicketId = ticket.Id,
-        //                OldValue = oldTicket.TicketStatus.Status,
-        //                NewValue = db.TicketStatuses.Find(ticket.TicketStatusId).Status
-        //            });
-        //            notification = await Notify(ticket);
-        //        }
+                if (oldTicket.TicketStatusId != ticket.TicketStatusId)
+                {
+                    db.TicketChanges.Add(new TicketChange
+                    {
+                        Property = "Status",
+                        ChangeDate = DateTimeOffset.Now,
+                        UserId = User.Identity.GetUserId(),
+                        TicketId = ticket.Id,
+                        OldValue = oldTicket.TicketStatus.Status,
+                        NewValue = db.TicketStatuses.Find(ticket.TicketStatusId).Status
+                    });
+                    notification = await Notify(ticket);
+                }
 
-        //        if (oldTicket.DeveloperId != ticket.DeveloperId)
-        //        {
-        //            db.TicketChanges.Add(new TicketChange
-        //            {
-        //                Property = "Developer",
-        //                ChangeDate = DateTimeOffset.Now,
-        //                UserId = User.Identity.GetUserId(),
-        //                TicketId = ticket.Id,
-        //                OldValue = oldTicket.Developers.UserName,
-        //                NewValue = db.Users.Find(ticket.DeveloperId).UserName
-        //            });
-        //            notification = await Notify(ticket);
-        //        }
-        //        ticket.Updated = new DateTimeOffset(DateTime.Now);
-        //        if (notification != null)
-        //        {
-        //            //notification was sent, so log it to the db
-        //            db.TicketChanges.Add(notification);
-        //        }
-        //        db.Entry(ticket).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    ViewBag.DeveloperId = new SelectList(helper.ListUsersOnProject(ticket.ProjectId), "Id", "Name",
-        //        ticket.DeveloperId);
-        //    ViewBag.Projects = new SelectList(db.Projects, "Id", "Name", ticket.ProjectId);
-        //    ViewBag.TicketPriorityId = new SelectList(db.TicketPriorities, "Id", "Name", ticket.TicketPriorityId);
-        //    ViewBag.TicketStatusId = new SelectList(db.TicketStatuses, "Id", "Name", ticket.TicketStatusId);
-        //    ViewBag.TicketTypeId = new SelectList(db.TicketTypes, "Id", "Name", ticket.TicketTypeId);
+                if (oldTicket.DeveloperId != ticket.DeveloperId)
+                {
+                    db.TicketChanges.Add(new TicketChange
+                    {
+                        Property = "Developer",
+                        ChangeDate = DateTimeOffset.Now,
+                        UserId = User.Identity.GetUserId(),
+                        TicketId = ticket.Id,
+                        OldValue = oldTicket.Developers.UserName,
+                        NewValue = db.Users.Find(ticket.DeveloperId).UserName
+                    });
+                    notification = await Notify(ticket);
+                }
+                ticket.Updated = new DateTimeOffset(DateTime.Now);
+                if (notification != null)
+                {
+                    //notification was sent, so log it to the db
+                    //db.TicketNotification.Add(notification);
+                }
+                db.Entry(ticket).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            //ViewBag.DeveloperId = new SelectList(helper.ListUsersOnProject(ticket.ProjectId), "Id", "Name",
+            //    ticket.DeveloperId);
+            ViewBag.Projects = new SelectList(db.Projects, "Id", "Name", ticket.ProjectId);
+            ViewBag.TicketPriorityId = new SelectList(db.TicketPriorities, "Id", "Name", ticket.TicketPriorityId);
+            ViewBag.TicketStatusId = new SelectList(db.TicketStatuses, "Id", "Name", ticket.TicketStatusId);
+            ViewBag.TicketTypeId = new SelectList(db.TicketTypes, "Id", "Name", ticket.TicketTypeId);
 
-        //    return View(ticket);
-        //}
+            return View(ticket);
+        }
 
         // GET: Tickets/Delete/5
         public ActionResult Delete(int? id)

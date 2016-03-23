@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.Web.Services.Configuration;
 
 namespace Bug_Tracker.Models
@@ -16,6 +17,7 @@ namespace Bug_Tracker.Models
         }
         public int Id { get; set; }
         public string Title { get; set; }
+        [AllowHtml]
         public string Description { get; set; }
         public string AuthorId { get; set; }
         public string DeveloperId { get; set; }
@@ -36,5 +38,6 @@ namespace Bug_Tracker.Models
         public ICollection<TicketChange> TicketChanges { get; set; }
         public ICollection<Comment> Comments { get; set; }
         public ICollection<TicketAttachment> Attachments { get; set; }
+        public DateTimeOffset Updated { get; set; }
     }
 }

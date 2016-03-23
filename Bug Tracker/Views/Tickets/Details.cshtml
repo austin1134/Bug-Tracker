@@ -74,9 +74,9 @@
             </h1>
             <h6>
                 <div class="col-md-offset-11">
-                                <a href=@Url.Action("Edit", "Tickets", new { id = @Model.Id }) class="btn btn-sm btn-default">
-                <i class="fa fa-pencil fa-2x"></i> Edit
-            </a>
+                    <a href=@Url.Action("Edit", "Tickets", new {id = @Model.Id}) class="btn btn-sm btn-default">
+                        <i class="fa fa-pencil fa-2x"></i> Edit
+                    </a>
                 </div>
                 <strong>Created By:</strong>@Model.AuthorId
                 <strong>Creation Date:</strong>@Model.CreationDate.ToString("D")
@@ -101,10 +101,11 @@
                     <div class="pull-right">
                         @*<button class="btn btn-success btn-xs">  Resolved</button>*@
                     </div>
+                    <h4>Ticket Attachments</h4>
+                    @Html.Partial("_TicketAttachmentViewPartial", @Model.Attachments)
 
                     <h4>Comments</h4>
                     <div class="m-t-md">
-                        @Html.Partial("_TicketAttachmentViewPartial", @Model.Attachments)
                         @Html.Partial("_CommentsViewPartial", @Model.Comments)
 
                         @Html.Partial("_CreateCommentsPartial", new Comment {TicketId = Model.Id})
@@ -122,36 +123,40 @@
                     <div class="table-responsive">
                         <table class="table table-hover table-bordered table-striped">
                             <tbody>
-                                @foreach (var change in Model.TicketChanges)
-                                {
-                                    <tr>
-                                        <td>
-                                            <span class="label label-success">Added</span>
-                                        </td>
-                                        <td class="issue-info">
-                                            <a href="#">
-                                                Ticket Property Changed: @change.Property
-                                            </a>
-                                            <br />
-                                            <small>
-                                                Old Value: @change.OldValue
-                                            </small>
-                                            <br />
-                                            <small>
-                                                New Value: @change.NewValue
-                                            </small>
-                                        </td>
-                                        <td>
-                                            Editor: @change.EditorName
-                                        </td>
-                                        <td>
-                                            Changed: @change.ChangeDate
-                                        </td>
-                                        <td class="text-right">
-                                            <button class="btn btn-default btn-xs"> Action</button>
-                                        </td>
-                                    </tr>
-                                }
+                            @if (Model.TicketChanges != null)
+                            {
+                                foreach (var change in Model.TicketChanges.OrderByDescending(x => x.ChangeDate))
+                                 {
+                                     <tr>
+                                         <td>
+                                             <span class="label label-warning">Change</span>
+                                         </td>
+                                         <td class="issue-info">
+                                             <a href="#">
+                                                 Ticket Property Changed: @change.Property
+                                             </a>
+                                             <br/>
+                                             <small>
+                                                 Old Value: @change.OldValue
+                                             </small>
+                                             <br/>
+                                             <small>
+                                                 New Value: @change.NewValue
+                                             </small>
+                                         </td>
+                                         <td>
+                                             Editor: @change.EditorName
+                                         </td>
+                                         <td>
+                                             Changed: @change.ChangeDate.ToString("D")
+                                         </td>
+                                     </tr>
+                                 }
+                            }
+                            else
+                            {
+                                <tr>No changes have been made to this ticket</tr>
+                            }
                             </tbody>
                         </table>
                     </div>

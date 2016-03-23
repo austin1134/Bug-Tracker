@@ -67,7 +67,7 @@ namespace Bug_Tracker.Models
         //    Project project = new Project();
         //    var projectId = project.Id;
         //    var developers = UsersInRole("Developer");
-        //    var developersOnProject = developers.Where(x => x.Id == projectId);
+        //    var developersOnProject = developers.Where(x => x.Id == project.);
         //    return userManager.GetRoles(userId);
         //}
     }

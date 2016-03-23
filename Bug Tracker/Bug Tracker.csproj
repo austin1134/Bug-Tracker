@@ -362,6 +362,11 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\img\green%402x.png" />
     <Content Include="Content\img\green.png" />
+    <Content Include="Content\roundabout-carousel\css\style.css" />
+    <Content Include="Content\roundabout-carousel\index.html" />
+    <Content Include="Content\roundabout-carousel\js\index.js" />
+    <Content Include="Content\roundabout-carousel\license.txt" />
+    <Content Include="Content\roundabout-carousel\README.txt" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -622,7 +627,6 @@
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.woff" />
-    <Content Include="Views\Shared\_ListTicketChangesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Bug_Tracker.Models.TicketAttachment>
-
 @foreach (var attachment in Model)
 {
-    <img src="@attachment.Url" style="width:100px; height:50px" alt="thumb" />
+    <img src="@Url.Content(attachment.Url)" style="width:100px; height:50px" alt="thumb" />
 }

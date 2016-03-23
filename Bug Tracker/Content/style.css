@@ -3946,3 +3946,7 @@ ul.h-list li:hover a {
   -moz-box-sizing: border-box;
 }
 
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }

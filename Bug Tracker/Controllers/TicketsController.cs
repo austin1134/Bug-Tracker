@@ -106,6 +106,29 @@ namespace Bug_Tracker.Controllers
             if (ModelState.IsValid)
             {
                 {
+                    //var oldTicket = (Ticket)TempData["oldticket"];
+                    //TicketNotification notification = null;
+
+                    //if (oldTicket.DeveloperId != ticket.DeveloperId)
+                    //{
+                    //    db.TicketChanges.Add(new TicketChange
+                    //    {
+                    //        Property = "Developer",
+                    //        ChangeDate = DateTimeOffset.Now,
+                    //        UserId = User.Identity.GetUserId(),
+                    //        TicketId = ticket.Id,
+                    //        OldValue = oldTicket.Developers.UserName,
+                    //        NewValue = db.Users.Find(ticket.DeveloperId).UserName
+                    //    });
+                    //    notification = await Notify(ticket);
+                    //}
+                    //ticket.Updated = new DateTimeOffset(DateTime.Now);
+                    //if (notification != null)
+                    //{
+                    //    //notification was sent, so log it to the db
+                    //    //db.TicketNotification.Add(notification);
+                    //}
+
                     db.Entry(ticket).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index", "Tickets");
@@ -160,6 +183,7 @@ namespace Bug_Tracker.Controllers
             }
             Ticket ticket = await db.Tickets.FindAsync(id);
             TempData["oldticket"] = ticket;
+
             if (ticket == null)
             {
                 return HttpNotFound();
@@ -167,8 +191,8 @@ namespace Bug_Tracker.Controllers
             //ViewBag.AssignedUSerId = new SelectList(helper.ListUsersOnProject(ticket.ProjectId), "Id", "Name",
             //    ticket.DeveloperId);
             ViewBag.ProjectId = new SelectList(db.Projects, "Id", "Name", ticket.ProjectId);
-            ViewBag.TicketPriorityId = new SelectList(db.TicketPriorities, "Id", "Name", ticket.TicketPriorityId);
-            ViewBag.TicketStatusId = new SelectList(db.TicketStatuses, "Id", "Name", ticket.TicketStatusId);
+            ViewBag.TicketPriorityId = new SelectList(db.TicketPriorities, "Id", "Priority", ticket.TicketPriorityId);
+            ViewBag.TicketStatusId = new SelectList(db.TicketStatuses, "Id", "Status", ticket.TicketStatusId);
             ViewBag.TicketTypeId = new SelectList(db.TicketTypes, "Id", "Name", ticket.TicketTypeId);
             return View(ticket);
         }

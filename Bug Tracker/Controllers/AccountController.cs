@@ -116,9 +116,11 @@ namespace Bug_Tracker.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Guest(string userId)
+        public async Task<ActionResult> Guest(string id)
         {
-
+            ApplicationDbContext db = new ApplicationDbContext();
+            var guest = db.Users.Find(id);
+            await SignInManager.SignInAsync(guest, false, false);
             return RedirectToAction("Index", "Home");
         }
 

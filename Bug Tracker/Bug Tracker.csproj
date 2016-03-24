@@ -389,6 +389,7 @@
     <Content Include="images\MyPicture.jpg" />
     <Content Include="images\profile.jpg" />
     <Content Include="images\profileAvatar.png" />
+    <Content Include="images\Profileavatar3.jpg" />
     <Content Include="images\sql-server-logo.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />

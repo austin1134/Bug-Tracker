@@ -1,4 +1,9 @@
 ﻿@using Bug_Tracker
+@using Bug_Tracker.Models
+
+@functions {
+    public ViewDataDictionary ApplicationUser { get; set; }
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +42,7 @@
 
     <!-- Navigation -->
     <aside id="menu">
-        @Html.Partial("_Navigation")
+        @Html.Partial("_Navigation", ApplicationUser)
     </aside>
 
     <!-- Main view  -->

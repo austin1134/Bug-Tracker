@@ -1,0 +1,125 @@
+﻿@model Bug_Tracker.Models.Ticket
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <script src="~/tinymce/js/tinymce/themes/modern/theme.min.js"></script>
+    <script src="~/tinymce/js/tinymce/jquery.tinymce.min.js"></script>
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea',
+            statusbar: false,
+            browser_spellcheck: true,
+            height: 200
+        });
+    </script>
+</head>
+
+    <div class="small-header transition animated fadeIn">
+        <div class="hpanel">
+            <div class="panel-body">
+                <div id="hbreadcrumb" class="pull-right">
+                    <ol class="hbreadcrumb breadcrumb">
+                        <li><a href="@Url.Action("Index", "Home")">Dashboard</a></li>
+                        <li>
+                            <span>Tickets</span>
+                        </li>
+                        <li class="active">
+                            <span>Edit</span>
+                        </li>
+                    </ol>
+                </div>
+                @*<h2 class="font-light m-b-xs">
+                    Forms elements
+                </h2>
+                <small>Examples of various form controls.</small>*@
+            </div>
+        </div>
+    </div>
+
+    <div class="content animate-panel">
+
+        <div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            <h3><i class="pe-7s-news-paper"></i>  Edit Ticket: @Model.Title</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            <div class="form-horizontal">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.HiddenFor(x => x.DeveloperId);
+                                    @Html.HiddenFor(x => x.ProjectId);
+                                    @Html.HiddenFor(x => x.CreationDate)
+                                    @Html.HiddenFor(x => x.AuthorId)
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(model => model.Submitters)
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly"} })
+                                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @id = "mytextarea" } })
+                                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Projects", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("ProjectId", null, "--Select Project--", new { @class = "form-control", @disabled = "disabled"})
+                                            @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Ticket Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("TicketTypeId", null, "--Select Ticket Type--", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.TicketTypeId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    if (User.IsInRole("Admin") || User.IsInRole("ProjectManager") || User.IsInRole("Developer"))
+                                    {
+                                        <div class="form-group">
+                                            @Html.Label("Ticket Priority", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownList("TicketPriorityId", null, "--Select Ticket Priority--", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.TicketPriorityId, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <button class="btn btn-primary" value="Create Ticket" type="submit">Submit Edit(s)</button>
+                                            <button class="btn btn-default" type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

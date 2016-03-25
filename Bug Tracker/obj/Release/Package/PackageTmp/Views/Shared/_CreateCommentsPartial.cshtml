@@ -1,0 +1,21 @@
+﻿@model Bug_Tracker.Models.Comment
+
+<h5>Add a New Comment</h5>
+
+@using (Html.BeginForm("Create", "Comments", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.TicketId)
+
+    <div class="form-group">
+        <div class="col-lg-10">
+            @Html.TextAreaFor(model => model.CommentBody, new { @class = "form-control", @style = "width:100%", @id = "noresize", @rows = "4" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-10">
+            <br />
+            <button type="submit" class="btn">Post</button>
+        </div>
+    </div>
+}

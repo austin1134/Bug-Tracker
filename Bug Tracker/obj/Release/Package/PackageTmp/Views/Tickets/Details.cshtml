@@ -1,0 +1,174 @@
+﻿@using Bug_Tracker.Models
+@model Bug_Tracker.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="normalheader transition">
+    <div class="hpanel">
+        <div class="panel-body">
+            <a class="small-header-action" href="">
+                    <div class="clip-header">
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+</a>
+
+            <div id="hbreadcrumb" class="pull-right m-t-lg">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li>
+                        <span>Tables</span>
+                    </li>
+                    <li class="active">
+                        <span>Ticket: @Model.Title</span>
+                    </li>
+                </ol>
+            </div>
+            <h1 class="font-light m-b-xs">
+                Ticket Details For Ticket: @Model.Title
+                <br/>
+                <h4>Ticket Status:
+                    @if (Model.TicketStatus == null)
+                    {
+                        <text>No Status Has Been Assigned Yet</text>
+                    }
+                    else if (Model.TicketStatus.Status == "In Progress")
+                    {
+                        <button class="btn btn-primary btn-sm"> In Progress</button>
+                    }
+                    else if (Model.TicketStatus.Status == "Resolved")
+                    {
+                        <button class="btn btn-success btn-sm"> Resolved</button>
+                    }
+                    <br/>
+                    Ticket Priority:
+                    @if (Model.TicketPriority == null)
+                    {
+                        <text>No Priority Has Been Assigned Yet</text>
+                    }
+                    else if (Model.TicketPriority.Priority == "Urgent")
+                    {
+                        <button class="btn btn-danger2 btn-sm"> Urgent</button>
+                    }
+                    else if (Model.TicketPriority.Priority == "Essential")
+                    {
+                        <button class="btn btn-warning2 btn-sm"> Essential</button>
+                    }
+                    else if (Model.TicketPriority.Priority == "Low")
+                    {
+                        <button class="btn btn-success btn-sm"> Low</button>
+                    }
+                    <br/>
+                    Ticket Type:
+                    @if (Model.TicketType == null)
+                    {
+                        <text>Ticket Type Hasn't Been Assigned Yet</text>
+                    }
+                    else
+                    {
+                        <button class="btn btn-info btn-sm">@Model.TicketType.Name</button>
+                    }
+                </h4>
+            </h1>
+            <h6>
+                <div class="col-md-offset-11">
+                    <a href=@Url.Action("Edit", "Tickets", new {id = @Model.Id}) class="btn btn-sm btn-default">
+                        <i class="fa fa-pencil fa-2x"></i> Edit
+                    </a>
+                </div>
+                <strong>Created By:</strong>@Model.AuthorId
+                <strong>Creation Date:</strong>@Model.CreationDate.ToString("D")
+            </h6>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+
+    <div class="row">
+
+        <div class="col-md-7">
+
+            <div class="font-bold m-b-sm">
+                Ticket Details
+            </div>
+
+            <div class="hpanel">
+                <div class="panel-body">
+
+                    <div class="pull-right">
+                        @*<button class="btn btn-success btn-xs">  Resolved</button>*@
+                    </div>
+                    <h4>Ticket Attachments</h4>
+                    @Html.Partial("_TicketAttachmentViewPartial", @Model.Attachments)
+
+                    <h4>Comments</h4>
+                    <div class="m-t-md">
+                        @Html.Partial("_CommentsViewPartial", @Model.Comments)
+
+                        @Html.Partial("_CreateCommentsPartial", new Comment {TicketId = Model.Id})
+                        @*<canvas id="lineOptions" height="60"></canvas>*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="hpanel">
+
+                <div class="panel-body">
+
+                    <h4>Ticket History</h4>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped">
+                            <tbody>
+                            @if (Model.TicketChanges != null)
+                            {
+                                foreach (var change in Model.TicketChanges.OrderByDescending(x => x.ChangeDate))
+                                 {
+                                     <tr>
+                                         <td>
+                                             <span class="label label-warning">Change</span>
+                                         </td>
+                                         <td class="issue-info">
+                                             <a href="#">
+                                                 Ticket Property Changed: @change.Property
+                                             </a>
+                                             <br/>
+                                             <small>
+                                                 Old Value: @change.OldValue
+                                             </small>
+                                             <br/>
+                                             <small>
+                                                 New Value: @change.NewValue
+                                             </small>
+                                         </td>
+                                         <td>
+                                             Editor: @change.EditorName
+                                         </td>
+                                         <td>
+                                             Changed: @change.ChangeDate.ToString("D")
+                                         </td>
+                                     </tr>
+                                 }
+                            }
+                            else
+                            {
+                                <tr>No changes have been made to this ticket</tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-5">
+                                    @Html.Partial("_AssignDeveloperPartial")
+                                    @Html.Partial("_AddTicketAttachmentPartial", new TicketAttachment { TicketId = Model.Id })
+                                    
+                </div>
+            </div>
+        </div>

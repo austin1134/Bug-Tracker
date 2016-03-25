@@ -1,0 +1,54 @@
+﻿@model Bug_Tracker.Models.Ticket
+<div class="font-bold m-b-sm">
+    Developer Management
+</div>
+
+<div class="hpanel stats">
+    <div class="panel-body">
+
+        <div>
+            <i class="pe-7s-user fa-4x"></i>
+            <h3>Edit Developer Assigned To This Ticket</h3>
+            @if (Model.DeveloperId != null)
+            {
+                <strong><text>Currently Assigned Developer: @ViewBag.AssignedDeveloper</text></strong>
+            }
+            else
+            {
+                <text>There is </text>
+            }
+        </div>
+
+        @using (Html.BeginForm("AssignDeveloper", "Tickets", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(x => x.Id)
+            @Html.HiddenFor(x => x.CreationDate)
+            @Html.HiddenFor(x => x.AuthorId)
+            @Html.HiddenFor(x => x.Title)
+            @Html.HiddenFor(x => x.Description)
+            @Html.HiddenFor(x => x.ProjectId)
+            @Html.HiddenFor(x => x.TicketTypeId)
+            @Html.HiddenFor(x => x.TicketStatusId)
+            @Html.HiddenFor(x => x.TicketPriorityId)
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label class="control-label col-md-2">Assign Developer</label>
+                    <div class="col-md-10">
+                        @Html.DropDownList("DeveloperId", null, "--Developer Assignment--", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DeveloperId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

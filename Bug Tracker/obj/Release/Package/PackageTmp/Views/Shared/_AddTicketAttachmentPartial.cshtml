@@ -1,0 +1,39 @@
+﻿@model Bug_Tracker.Models.TicketAttachment
+
+@using (Html.BeginForm("Create", "TicketAttachments", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+    @Html.HiddenFor(model => model.TicketId)
+
+    <div class="hpanel stats">
+        <div class="panel-body">
+            <div>
+                <i class="pe-7s-paperclip fa-4x"></i>
+                <h3>Upload A New Ticket Attachment</h3>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Description, new {rows = 3, style = "width:100%", @class = "form-control"})
+                        @*@Html.ValidationMessage(model => model.Description, "", new {@class = "text-danger"})*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("Upload File", htmlAttributes: new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        <input type="file" id="fileUpload" name="fileUpload" class="btn btn-accent form-control" style="margin-top: 0px"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Add" class="btn btn-main"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -49,7 +49,7 @@
                 </div>
                 <div class="panel-body">
                     <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="Search in table">
-                    <text>Click On The Project Row To View The Projects Details</text>
+                    <text>Click On The Project Row To View More Details</text>
                     <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
                         <thead>
                         <tr>
@@ -65,10 +65,10 @@
                         {
                             <tr>
                                 <td>@project.Name</td>
-                                <td>@*@project.ProjectManager.FirstName @project.ProjectManager.LastName*@</td>
+                                @*<td>@project.ProjectManager.FirstName @project.ProjectManager.LastName</td>*@
                                 <td>@project.CreationDate</td>
-                                <td>@project.Tickets.Count</td>
-                                <td>@project.Developers.GetEnumerator()</td>
+                                <td>@project.Tickets.Count()</td>
+                                <td>@project.Developers.Count()</td>
                                 <td>
                                     @*<a href="@Url.Action("Edit", new {id = project.Id})" alt="Edit Project">
                                         <i class="fa fa-edit accentcolor-heading"></i>

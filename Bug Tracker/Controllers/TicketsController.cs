@@ -202,7 +202,7 @@ namespace Bug_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,TicketTypeId,TicketPriorityId,CreationDate")] Ticket ticket)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Description,AuthorId,DeveloperId,ProjectId,TicketTypeId,TicketPriorityId,TicketStatusId,CreationDate")] Ticket ticket)
         {
             UserRolesHelper helper = new UserRolesHelper(db);
             if (ModelState.IsValid)

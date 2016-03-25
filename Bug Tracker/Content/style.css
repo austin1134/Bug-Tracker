@@ -1536,7 +1536,7 @@ body {
   min-height: 100%;
 }
 .content {
-  padding: 25px 40px 40px 40px;
+  padding: 25px 40px 0px 40px;
   min-width: 320px;
 }
 .footer {

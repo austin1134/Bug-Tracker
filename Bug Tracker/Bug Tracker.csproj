@@ -231,6 +231,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\DashBoardViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PriorityLevels.cs" />
@@ -471,6 +472,7 @@
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
     <None Include="Properties\PublishProfiles\atorres-bugtracker.pubxml" />
+    <None Include="Properties\PublishProfiles\AustinTorresBudgetTracker.pubxml" />
     <None Include="Properties\PublishProfiles\AustinTorresBugTracker.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />

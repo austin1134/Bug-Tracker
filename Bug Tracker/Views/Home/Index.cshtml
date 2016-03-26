@@ -1,64 +1,60 @@
-﻿@{
+﻿@using Bug_Tracker.Models
+@model Bug_Tracker.Models.DashBoardViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 <div class="content animate-panel">
-
     <div class="row">
-        <div class="col-md-3">
-            <div class="hpanel hbggreen">
-                <div class="panel-body">
-                    <div class="text-center">
-                        <h3>Title text</h3>
-                        <p class="text-big font-light">
-                            20
-                        </p>
-                        <small>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </small>
+        <div class="col-md-4">
+            <div class="hpanel">
+
+
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h3>Breakdown Of All Tickets By Type</h3>
+                        </div>
+                        @*<div class="stats-icon pull-right">
+                            <i class="pe-7s-news-paper fa-4x"></i>
+                        </div>*@
+                        <div class="clearfix"></div>
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="myPieChart" style="height: 100px"></div>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="hpanel hbgblue">
-                <div class="panel-body">
-                    <div class="text-center">
-                        <h3>Title text</h3>
-                        <p class="text-big font-light">
-                            160
-                        </p>
-                        <small>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
+
+        <div class="col-md-4">
             <div class="hpanel hbgyellow">
                 <div class="panel-body">
                     <div class="text-center">
-                        <h3>Title text</h3>
+                        <h3>Tickets That Need To Be Assigned A Developer</h3>
                         <p class="text-big font-light">
-                            750
+                            @Model.UnassignedTickets.Count()
                         </p>
                         <small>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Tickets that have yet to be assigned to a developer.
                         </small>
+                        <p> </p>
+                        <p> </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="hpanel hbgred">
                 <div class="panel-body">
                     <div class="text-center">
-                        <h3>Title text</h3>
+                        <h3>Tickets That Need Immediate Attention</h3>
                         <p class="text-big font-light">
-                            0,43
+                            @Model.ImmediateAttentionTickets.Count()
                         </p>
                         <small>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Tickets that need immediate attention because of their priority and unassigned developer.
                         </small>
                     </div>
                 </div>
@@ -67,36 +63,36 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg-4">
+            <div class="hpanel">
+                <div class="panel-body text-center h-200">
+                    <i class="pe-7s-news-paper fa-4x"></i>
+                    <h1 class="m-xs text-success">@Model.ResolvedTickets.Count() ticket(s) in total have been resolved.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
             <div class="hpanel">
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
-                                <tr>
-                                    <th>Task</th>
-                                    <th>Date</th>
-                                </tr>
+                            <tr>
+                                <th>Task</th>
+                                <th>Date</th>
+                            </tr>
                             </thead>
                             <tbody>
+                            @foreach (var ticket in Model.UnassignedTickets)
+                            {
                                 <tr>
                                     <td>
-                                        <span class="text-success font-bold">Lorem ipsum</span>
+                                        <span class="text-warning font-bold">@ticket.Title</span>
                                     </td>
-                                    <td>Jul 14, 2013</td>
+                                    <td>@ticket.CreationDate.ToString("g")</td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-success font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 09, 2015</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-success font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 24, 2014</td>
-                                </tr>
+                            }
                             </tbody>
                         </table>
                     </div>
@@ -104,110 +100,27 @@
 
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="hpanel">
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
-                                <tr>
-                                    <th>Task</th>
-                                    <th>Date</th>
-                                </tr>
+                            <tr>
+                                <th>Title</th>
+                                <th>Creation Date</th>
+                            </tr>
                             </thead>
                             <tbody>
+                            @foreach (var ticket in Model.ImmediateAttentionTickets)
+                            {
                                 <tr>
                                     <td>
-                                        <span class="text-info font-bold">Lorem ipsum</span>
+                                        <span class="text-danger font-bold">@*<a href="@Html.ActionLink("Ticket", "Details", "Tickets", null, new {id = ticket.Id})"></a>*@@ticket.Title</span>
                                     </td>
-                                    <td>Jul 14, 2013</td>
+                                    <td>@ticket.CreationDate.ToString("g")</td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-info font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 09, 2015</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-info font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 24, 2014</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="hpanel">
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Task</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="text-warning font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 14, 2013</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-warning font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 09, 2015</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-warning font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 24, 2014</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="hpanel">
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Task</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="text-danger font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 14, 2013</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-danger font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 09, 2015</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="text-danger font-bold">Lorem ipsum</span>
-                                    </td>
-                                    <td>Jul 24, 2014</td>
-                                </tr>
+                            }
                             </tbody>
                         </table>
                     </div>
@@ -217,3 +130,49 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/flot/js")
+
+    <script type="text/javascript">
+
+        $(function () {
+            /**
+             * Pie Chart Data
+             */
+            var pieChartData = [
+                { label: "User Interface (@Model.UserInterfaceTickets.Count())", data: @Model.UserInterfaceTickets.Count(), color: "#ffff00", },
+                { label: "Broken Functionality (@Model.BrokenFunctionalityTickets.Count())", data: @Model.BrokenFunctionalityTickets.Count(), color: "#ff0000", },
+                { label: "Performance Issue (@Model.PerformanceIssueTickets.Count())", data: @Model.PerformanceIssueTickets.Count(), color: "#ff6600", },
+                { label: "Other (@Model.OtherTickets.Count())", data: @Model.OtherTickets.Count(), color: "#0000ff", }
+            ];
+
+            /**
+             * Pie Chart Options
+             */
+            var pieChartOptions = {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true
+                },
+                tooltip: true,
+                tooltipOpts: {
+                    content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+                    shifts: {
+                        x: 20,
+                        y: 0
+                    },
+                    defaultTheme: false
+                }
+            };
+
+            $.plot($("#myPieChart"), pieChartData, pieChartOptions);
+
+        });
+    </script>
+}

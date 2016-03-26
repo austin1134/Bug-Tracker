@@ -13,15 +13,22 @@ namespace Bug_Tracker.Controllers
         public ActionResult Index()
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            string currentuser = User.Identity.GetUserId();
+
             return View(new DashBoardViewModel
             {
                 ImmediateAttentionTickets = db.Tickets.Where(t => t.TicketPriorityId == 3 && t.DeveloperId == null)
                     .OrderByDescending(t => t.CreationDate).ToList(),
-                UnassignedTickets = db.Tickets.Where(t => t.DeveloperId == null & t.Projects.ProjectManagerId == currentuser)
+                UnassignedTickets = db.Tickets.Where(t => t.DeveloperId == null)
                     .OrderByDescending(t => t.CreationDate).ToList(),
-                Projects = db.Projects.OrderByDescending(t => t.CreationDate).ToList(),
-                Tickets = db.Tickets.OrderByDescending(t => t.CreationDate)
+                UserInterfaceTickets = db.Tickets.Where(t => t.TicketTypeId == 1),
+                PerformanceIssueTickets = db.Tickets.Where(t => t.TicketTypeId == 2),
+                BrokenFunctionalityTickets = db.Tickets.Where(t => t.TicketTypeId == 3),
+                OtherTickets = db.Tickets.Where(t => t.TicketTypeId == 4),
+                ResolvedTickets = db.Tickets.Where(x => x.TicketStatusId == 2),
+                AllUsers = db.Users.ToList()
+                
+                //Projects = db.Projects.Where(projectId == currentuser).OrderByDescending(t => t.CreationDate).ToList(),
+
             });
         }
 

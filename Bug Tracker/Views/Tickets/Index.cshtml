@@ -316,7 +316,6 @@
                                     <th>Type</th>
                                     <th>Priority</th>
                                     <th>Status</th>
-                                    <th>Created By</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -344,7 +343,6 @@
                                         {
                                             <td>@ticket.TicketStatus.Status</td>
                                         }
-                                        <td>@ticket.AuthorId</td>
                                         <td>
                                             @Html.ActionLink("Edit", "Edit", new { id = ticket.Id }) |
                                             @Html.ActionLink("Details", "Details", new { id = ticket.Id })

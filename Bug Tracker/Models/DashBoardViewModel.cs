@@ -7,12 +7,14 @@ namespace Bug_Tracker.Models
 {
     public class DashBoardViewModel
     {
-        public IEnumerable<Ticket> Tickets { get; set; }
+        public IQueryable<Ticket> UserInterfaceTickets { get; set; }
+        public IQueryable<Ticket> PerformanceIssueTickets { get; set; }
+        public IQueryable<Ticket> BrokenFunctionalityTickets { get; set; }
+        public IQueryable<Ticket> OtherTickets { get; set; }
+
+        public IEnumerable<Ticket> ResolvedTickets { get; set; }
         public IEnumerable<Ticket> UnassignedTickets { get; set; }
         public IEnumerable<Ticket> ImmediateAttentionTickets { get; set; }  
-        public IEnumerable<Project> Projects { get; set; }
-        public List<ApplicationUser> Developers { get; set; }
-        public List<ApplicationUser> ProjectManagers { get; set; }
-        public List<ApplicationUser> Admins { get; set; }
+        public List<ApplicationUser> AllUsers { get; set; }
     }
 }

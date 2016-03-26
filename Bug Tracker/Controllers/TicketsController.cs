@@ -160,6 +160,7 @@ namespace Bug_Tracker.Controllers
                 {
                     ticket.AuthorId = User.Identity.GetUserId();
                     ticket.CreationDate = DateTime.Now;
+                    ticket.TicketStatusId = 3;
 
                     db.Tickets.Add(ticket);
                     db.SaveChanges();

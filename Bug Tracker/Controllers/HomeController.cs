@@ -26,9 +26,6 @@ namespace Bug_Tracker.Controllers
                 OtherTickets = db.Tickets.Where(t => t.TicketTypeId == 4),
                 ResolvedTickets = db.Tickets.Where(x => x.TicketStatusId == 2),
                 AllUsers = db.Users.ToList()
-                
-                //Projects = db.Projects.Where(projectId == currentuser).OrderByDescending(t => t.CreationDate).ToList(),
-
             });
         }
 

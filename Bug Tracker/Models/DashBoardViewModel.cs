@@ -14,7 +14,8 @@ namespace Bug_Tracker.Models
 
         public IEnumerable<Ticket> ResolvedTickets { get; set; }
         public IEnumerable<Ticket> UnassignedTickets { get; set; }
-        public IEnumerable<Ticket> ImmediateAttentionTickets { get; set; }  
+        public IEnumerable<Ticket> ImmediateAttentionTickets { get; set; }
+        public IEnumerable<Ticket> AllTickets { get; set; }   
         public List<ApplicationUser> AllUsers { get; set; }
     }
 }

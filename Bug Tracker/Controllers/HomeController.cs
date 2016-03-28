@@ -25,6 +25,7 @@ namespace Bug_Tracker.Controllers
                 BrokenFunctionalityTickets = db.Tickets.Where(t => t.TicketTypeId == 3),
                 OtherTickets = db.Tickets.Where(t => t.TicketTypeId == 4),
                 ResolvedTickets = db.Tickets.Where(x => x.TicketStatusId == 2),
+                AllTickets = db.Tickets,
                 AllUsers = db.Users.ToList()
             });
         }

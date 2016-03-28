@@ -643,7 +643,9 @@
     <Content Include="Vendor\flot\jquery.flot.time.js" />
     <Content Include="Vendor\flot\jquery.js" />
     <Content Include="Vendor\flot\LICENSE.txt" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -752,6 +754,7 @@
     <Content Include="Vendor\flot\README.md" />
     <Content Include="Vendor\blueimp-gallery\.bower.json" />
     <Content Include="Vendor\blueimp-gallery\bower.json" />
+    <Content Include="Views\Shared\_TicketNotificationHeaderPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,7 +21,7 @@ namespace Bug_Tracker.Models
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string UserProfilePicture { get; set; }
+        //public string UserProfilePicture { get; set; }
 
         [InverseProperty("Developers")]
         public virtual ICollection<Project> DeveloperProjects { get; set; }

@@ -472,6 +472,7 @@
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
     <None Include="Properties\PublishProfiles\atorres-bugtracker.pubxml" />
+    <None Include="Properties\PublishProfiles\austintorres-bugtracker.pubxml" />
     <None Include="Properties\PublishProfiles\AustinTorresBudgetTracker.pubxml" />
     <None Include="Properties\PublishProfiles\AustinTorresBugTracker.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

@@ -1,5 +1,26 @@
 ﻿@model IEnumerable<Bug_Tracker.Models.TicketAttachment>
-@foreach (var attachment in Model)
-{
-    <img src="@Url.Content(attachment.Url)" style="width:100px; height:50px" alt="thumb" />
-}
+
+<div class="content animate-panel">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-body">
+                    <div class="text-center">
+                        <h4>Pictures Relating To The Ticketed Issue</h4><i class="fa fa-picture-o"> </i> @Model.Count() images <small>(Note: Use Arrow Keys To Scroll Between Pictures)</small>
+                    </div>
+                    
+                    <div class="lightBoxGallery">
+                        @foreach (var attachment in Model)
+                        {
+                            <a href="@Url.Content(attachment.Url)" title="@attachment.Description" data-gallery=""><img src="@Url.Content(attachment.Url)" style="width: 225px; height: 150px"></a>
+                            @*<img src="@Url.Content(attachment.Url)" style="width:100px; height:50px" alt="thumb" />*@
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

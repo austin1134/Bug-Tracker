@@ -133,11 +133,25 @@
                                 {
                                     <tr>
                                         <td>@ticket.Title</td>
-                                        <td>@ticket.Projects</td>
+                                        <td>@ticket.Projects.Name</td>
                                         <td>@ticket.CreationDate</td>
-                                        <td>@ticket.TicketType</td>
-                                        <td>@ticket.TicketPriority</td>
-                                        <td>@ticket.TicketStatus</td>
+                                        <td>@ticket.TicketType.Name</td>
+                                        @if (ticket.TicketPriority == null)
+                                        {
+                                            <td>No Priority Assigned</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@ticket.TicketPriority.Priority</td>
+                                        }
+                                        @if (ticket.TicketStatus == null)
+                                        {
+                                            <td>No Status Assigned</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@ticket.TicketStatus.Status</td>
+                                        }
                                         <td>@ticket.AuthorId</td>
                                         <td>
                                             @Html.ActionLink("Edit", "Edit", new { id = ticket.Id }) |
@@ -183,15 +197,29 @@
                             {
                                 <tr>
                                     <td>@ticket.Title</td>
-                                    <td>@ticket.Projects</td>
+                                    <td>@ticket.Projects.Name</td>
                                     <td>@ticket.CreationDate</td>
-                                    <td>@ticket.TicketType</td>
-                                    <td>@ticket.TicketPriority</td>
-                                    <td>@ticket.TicketStatus</td>
+                                    <td>@ticket.TicketType.Name</td>
+                                    @if (ticket.TicketPriority == null)
+                                    {
+                                        <td>No Priority Assigned</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ticket.TicketPriority.Priority</td>
+                                    }
+                                    @if (ticket.TicketStatus == null)
+                                    {
+                                        <td>No Status Assigned</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ticket.TicketStatus.Status</td>
+                                    }
                                     <td>@ticket.AuthorId</td>
                                     <td>
-                                        @Html.ActionLink("Edit", "Edit", new {id = ticket.Id}) |
-                                        @Html.ActionLink("Details", "Details", new {id = ticket.Id})
+                                        @Html.ActionLink("Edit", "Edit", new { id = ticket.Id }) |
+                                        @Html.ActionLink("Details", "Details", new { id = ticket.Id })
                                     </td>
                                 </tr>
                             }
@@ -233,15 +261,29 @@
                         {
                             <tr>
                                 <td>@ticket.Title</td>
-                                <td>@ticket.Projects</td>
+                                <td>@ticket.Projects.Name</td>
                                 <td>@ticket.CreationDate</td>
-                                <td>@ticket.TicketType</td>
-                                <td>@ticket.TicketPriority</td>
-                                <td>@ticket.TicketStatus</td>
+                                <td>@ticket.TicketType.Name</td>
+                                @if (ticket.TicketPriority == null)
+                                {
+                                    <td>No Priority Assigned</td>
+                                }
+                                else
+                                {
+                                    <td>@ticket.TicketPriority.Priority</td>
+                                }
+                                @if (ticket.TicketStatus == null)
+                                {
+                                    <td>No Status Assigned</td>
+                                }
+                                else
+                                {
+                                    <td>@ticket.TicketStatus.Status</td>
+                                }
                                 <td>@ticket.AuthorId</td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new {id = ticket.Id}) |
-                                    @Html.ActionLink("Details", "Details", new {id = ticket.Id})
+                                    @Html.ActionLink("Edit", "Edit", new { id = ticket.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = ticket.Id })
                                 </td>
                             </tr>
                         }
@@ -274,7 +316,6 @@
                                     <th>Type</th>
                                     <th>Priority</th>
                                     <th>Status</th>
-                                    <th>Created By</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -283,12 +324,25 @@
                                 {
                                     <tr>
                                         <td>@ticket.Title</td>
-                                        <td>@ticket.Projects</td>
+                                        <td>@ticket.Projects.Name</td>
                                         <td>@ticket.CreationDate</td>
-                                        <td>@ticket.TicketType</td>
-                                        <td>@ticket.TicketPriority</td>
-                                        <td>@ticket.TicketStatus</td>
-                                        <td>@ticket.AuthorId</td>
+                                        <td>@ticket.TicketType.Name</td>
+                                        @if (ticket.TicketPriority == null)
+                                        {
+                                            <td>No Priority Assigned</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@ticket.TicketPriority.Priority</td>
+                                        }
+                                        @if (ticket.TicketStatus == null)
+                                        {
+                                            <td>No Status Assigned</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@ticket.TicketStatus.Status</td>
+                                        }
                                         <td>
                                             @Html.ActionLink("Edit", "Edit", new { id = ticket.Id }) |
                                             @Html.ActionLink("Details", "Details", new { id = ticket.Id })
@@ -317,7 +371,7 @@
     <script type="text/javascript">
 
         $(function() {
-            // Initialize Example 1
+            // Initialize Table 1
             $('#table1').dataTable({
                 dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
                 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],

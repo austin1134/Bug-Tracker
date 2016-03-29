@@ -1,4 +1,6 @@
-﻿<div class="color-line">
+﻿
+
+<div class="color-line">
 </div>
 <div id="logo" class="light-version">
 <img src="~/images/facepalm logo.png"/>
@@ -37,10 +39,11 @@
             <li class="dropdown">
                 <a class="dropdown-toggle label-menu-corner" href="#" data-toggle="dropdown">
                     <i class="pe-7s-news-paper"></i>
-                    <span class="label label-success">4</span>
+                    <span class="label label-success">3</span>
                 </a>
                 <ul class="dropdown-menu hdropdown notification animated flipInX">
-                    <li>
+                    @Html.Partial("_TicketNotificationHeaderPartial")
+                    @*<li>
                         <a>
                             <span class="label label-success">NEW</span> It is a long established.
                         </a>
@@ -54,8 +57,8 @@
                         <a>
                             <span class="label label-danger">ERR</span> Contrary to popular belief.
                         </a>
-                    </li>
-                    <li class="summary"><a href="#">See all notifications</a></li>
+                    </li>*@
+                    <li class="summary"><a href="">See all tickets</a></li>
                 </ul>
             </li>
 

@@ -1,0 +1,10 @@
+﻿@model Bug_Tracker.Models.DashBoardViewModel
+
+@foreach (var ticket in Model.AllTickets.OrderByDescending(x => x.CreationDate).Take(3))
+{
+    <li>
+        <a>
+            <span class="label label-success">NEW</span>@ticket.Title
+        </a>
+    </li>
+}

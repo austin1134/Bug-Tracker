@@ -10,10 +10,10 @@
     <div class="hpanel">
         <div class="panel-body">
             <a class="small-header-action" href="">
-                    <div class="clip-header">
-                        <i class="fa fa-arrow-up"></i>
-                    </div>
-</a>
+                <div class="clip-header">
+                    <i class="fa fa-arrow-up"></i>
+                </div>
+            </a>
 
             <div id="hbreadcrumb" class="pull-right m-t-lg">
                 <ol class="hbreadcrumb breadcrumb">
@@ -85,15 +85,14 @@
     </div>
 </div>
 
+@Html.Partial("_TicketAttachmentViewPartial", @Model.Attachments)
+
 <div class="content animate-panel">
 
     <div class="row">
 
         <div class="col-md-7">
 
-            <div class="font-bold m-b-sm">
-                Ticket Details
-            </div>
 
             <div class="hpanel">
                 <div class="panel-body">
@@ -101,8 +100,6 @@
                     <div class="pull-right">
                         @*<button class="btn btn-success btn-xs">  Resolved</button>*@
                     </div>
-                    <h4>Ticket Attachments</h4>
-                    @Html.Partial("_TicketAttachmentViewPartial", @Model.Attachments)
 
                     <h4>Comments</h4>
                     <div class="m-t-md">
@@ -166,9 +163,41 @@
 
         </div>
         <div class="col-md-5">
-                                    @Html.Partial("_AssignDeveloperPartial")
                                     @Html.Partial("_AddTicketAttachmentPartial", new TicketAttachment { TicketId = Model.Id })
-                                    
+                                    @Html.Partial("_AssignDeveloperPartial")
                 </div>
             </div>
-        </div>
+        </div> 
+
+
+
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+<!-- Local style for demo purpose -->
+<style>
+    .lightBoxGallery {
+        text-align: center;
+    }
+
+        .lightBoxGallery a {
+            margin: 5px;
+            display: inline-block;
+        }
+</style>
+
+@section Styles {
+    @Styles.Render("~/bundles/blueimp/css")
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/blueimp/js")
+}

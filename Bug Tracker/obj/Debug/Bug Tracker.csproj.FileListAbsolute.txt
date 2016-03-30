@@ -77,7 +77,6 @@ C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tr
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\obj\Debug\Bug Tracker.csprojResolveAssemblyReference.cache
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\obj\Debug\Bug Tracker.dll
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\obj\Debug\Bug Tracker.pdb
 C:\Users\austi\OneDrive\Documents\Visual Studio 2015\Projects\Bug Tracker\Bug Tracker\obj\Debug\Bug_Tracker.Migrations.InitialCreate.resources

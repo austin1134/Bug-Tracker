@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Landing.cshtml";
+    ViewBag.Title = "Index";
+}
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="align-center">
+                <img src="~/images/facepalm logo.png"/>
+            </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <a href="@Url.Action("Login", "Account")" class="navbar-brand">Register/Login</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header id="page-top">
+    <div class="container">
+        <div class="heading">
+            <h1>
+                Welcome To FacePalm A Bug Tracking Application
+            </h1>
+            <span>This application allows you to organize, prioritize,<br /> and more effectively deal with pesky software bugs.</span>
+            <p class="small">
+                Give it a try by selecting one of the demo accounts below!
+            </p>
+            @*<a href="#" class="btn btn-success btn-sm">Learn more</a>*@
+        </div>
+        <div class="heading-image animate-panel" data-child="img-animate" data-effect="fadeInRight">
+            <h4>Technologies used to build this application.</h4>
+            <img class="img-animate" src="~/Images/front-end-technologies.png">
+            <br/>
+            <img class="img-animate" src="~/Images/C_Logo.png">
+            <img class="img-animate" src="~/Images/.NET_MVC_Logo.png">
+            <img class="img-animate" src="~/Images/sql-server-logo.png">
+        </div>
+    </div>
+</header>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Admin</h4>
+                <p>Demo a administrator account, which gives you access to all features of the application.</p>
+
+                <form method="post" action="@Url.Action("Guest", "Account", new { id = "fccb1180-1f08-4350-8c8a-42107ad14f39" })">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-info">Demo Admin</button>
+                </form>
+            
+            </div>
+            <div class="col-md-3">
+
+                @*<img src="@Url.Content(Model.UserProfilePicture)" class="img-cirlce m-b" style="width: 100px; height: 50px" alt="thumb"/>*@
+
+                <h4>Project Manager</h4>
+                <p>Demo a project manager account, which gives you access to all the responsibilites of managing projects you are assigned to.</p>
+
+                <form method="post" action="@Url.Action("Guest", "Account", new {id = "a1a90343-7a07-4960-b5e5-ca623969e493"})">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-info">Demo Project Manager</button>
+                </form>
+
+            </div>
+            <div class="col-md-3">
+                <h4>Developer</h4>
+                <p>Demo a developer account, where you are responsible for resolving tickets assigned to you.</p>
+                
+                <form method="post" action="@Url.Action("Guest", "Account", new { id = "948432d0-94bc-4cad-b53e-501f26b6a1aa" })">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-info">Demo Developer</button>
+                </form>
+            
+            </div>
+            <div class="col-md-3">
+                <h4>Submitter</h4>
+                <p>Demo a submitter account, where your role is to simply report bugs via tickets.</p><br/>
+                
+                <form method="post" action="@Url.Action("Guest", "Account", new { id = "c313f9f4-38ba-47af-8f70-5ebf5bb2bcbe" })">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-info">Demo Submitter</button>
+                </form>
+            
+            </div>
+        </div>
+    </div>
+</section>
+
+@*@section Scripts {
+    <script type="text/javascript">
+
+        $(function () {
+
+            // Page scrolling feature
+            $('a.page-scroll').bind('click', function (event) {
+                var link = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $(link.attr('href')).offset().top - 50
+                }, 500);
+                event.preventDefault();
+            });
+
+            $('body').scrollspy({
+                target: '.navbar-fixed-top',
+                offset: 80
+            });
+
+        });
+    </script>
+}*@

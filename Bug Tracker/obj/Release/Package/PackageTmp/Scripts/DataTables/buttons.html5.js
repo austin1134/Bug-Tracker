@@ -3,7 +3,7 @@
  * 2015 SpryMedia Ltd - datatables.net/license
  *
  * FileSaver.js (2015-05-07.2) - MIT license
- * Copyright © 2015 Eli Grey - http://eligrey.com
+ * Copyright © 2015 Eli Grey - https://eligrey.com
  */
 
 (function( factory ){
@@ -57,7 +57,7 @@ var _saveAs = (function(view) {
 		, get_URL = function() {
 			return view.URL || view.webkitURL || view;
 		}
-		, save_link = doc.createElementNS("http://www.w3.org/1999/xhtml", "a")
+		, save_link = doc.createElementNS("https://www.w3.org/1999/xhtml", "a")
 		, can_use_save_link = "download" in save_link
 		, click = function(node) {
 			var event = doc.createEvent("MouseEvents");
@@ -138,7 +138,7 @@ var _saveAs = (function(view) {
 					} else {
 						var new_tab = view.open(object_url, "_blank");
 						if (new_tab === undefined && typeof safari !== "undefined") {
-							//Apple do not allow window.open, see http://bit.ly/1kZffRI
+							//Apple do not allow window.open, see https://bit.ly/1kZffRI
 							view.location.href = object_url;
 						}
 					}
@@ -172,7 +172,7 @@ var _saveAs = (function(view) {
 			}
 			// Object and web filesystem URLs have a problem saving in Google Chrome when
 			// viewed in a tab, so I force save with application/octet-stream
-			// http://code.google.com/p/chromium/issues/detail?id=91158
+			// https://code.google.com/p/chromium/issues/detail?id=91158
 			// Update: Google errantly closed 91158, I submitted it again:
 			// https://code.google.com/p/chromium/issues/detail?id=389642
 			if (view.chrome && type && type !== force_saveable_type) {
@@ -422,17 +422,17 @@ var _isSafari = function ()
 // Excel - Pre-defined strings to build a minimal XLSX file
 var excelStrings = {
 	"_rels/.rels": '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">\
-	<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>\
+<Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">\
+	<Relationship Id="rId1" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>\
 </Relationships>',
 
 	"xl/_rels/workbook.xml.rels": '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">\
-	<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>\
+<Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">\
+	<Relationship Id="rId1" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>\
 </Relationships>',
 
 	"[Content_Types].xml": '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\
-<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">\
+<Types xmlns="https://schemas.openxmlformats.org/package/2006/content-types">\
 	<Default Extension="xml" ContentType="application/xml"/>\
 	<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>\
 	<Default Extension="jpeg" ContentType="image/jpeg"/>\
@@ -441,7 +441,7 @@ var excelStrings = {
 </Types>',
 
 	"xl/workbook.xml": '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\
-<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">\
+<workbook xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">\
 	<fileVersion appName="xl" lastEdited="5" lowestEdited="5" rupBuild="24816"/>\
 	<workbookPr showInkAnnotation="0" autoCompressPictures="0"/>\
 	<bookViews>\
@@ -453,7 +453,7 @@ var excelStrings = {
 </workbook>',
 
 	"xl/worksheets/sheet1.xml": '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\
-<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">\
+<worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">\
 	<sheetData>\
 		__DATA__\
 	</sheetData>\
@@ -715,7 +715,7 @@ DataTable.ext.buttons.excelHtml5 = {
 };
 
 //
-// PDF export - using pdfMake - http://pdfmake.org
+// PDF export - using pdfMake - https://pdfmake.org
 //
 DataTable.ext.buttons.pdfHtml5 = {
 	className: 'buttons-pdf buttons-html5',

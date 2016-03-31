@@ -26,12 +26,12 @@
 #	Whitman Publishing Co, 2 Niagara Av, Ealing, London (undated),
 #	which I found in the UCLA library.
 #
-#	<a href="http://www.pettswoodvillage.co.uk/Daylight_Savings_William_Willett.pdf">
+#	<a href="https://www.pettswoodvillage.co.uk/Daylight_Savings_William_Willett.pdf">
 #	William Willett, The Waste of Daylight, 19th edition
 #	</a> (1914-03)
 #
 #	Brazil's Departamento Servico da Hora (DSH),
-#	<a href="http://pcdsh01.on.br/HISTHV.htm">
+#	<a href="https://pcdsh01.on.br/HISTHV.htm">
 #	History of Summer Time
 #	</a> (1998-09-21, in Portuguese)
 
@@ -154,7 +154,7 @@
 # between 160 and 170 hours more daylight leisure, to a war which
 # plunged Europe into darkness for four years, and shook the
 # foundations of civilization throughout the world.
-#	-- <a href="http://www.winstonchurchill.org/fh114willett.htm">
+#	-- <a href="https://www.winstonchurchill.org/fh114willett.htm">
 #	"A Silent Toast to William Willett", Pictorial Weekly
 #	</a>
 
@@ -192,8 +192,8 @@
 # official designation; the reply of the 21st was that there wasn't
 # but he couldn't think of anything better than the "Double British
 # Summer Time" that the BBC had been using informally.
-# http://student.cusu.cam.ac.uk/~jsm28/british-time/bbc-19410418.png
-# http://student.cusu.cam.ac.uk/~jsm28/british-time/ho-19410421.png
+# https://student.cusu.cam.ac.uk/~jsm28/british-time/bbc-19410418.png
+# https://student.cusu.cam.ac.uk/~jsm28/british-time/ho-19410421.png
 
 # From Sir Alexander Maxwell in the above-mentioned letter (1941-04-21):
 # [N]o official designation has as far as I know been adopted for the time
@@ -210,21 +210,21 @@
 # the history of summer time legislation in the United Kingdom.
 # Since 1998 Joseph S. Myers has been updating
 # and extending this list, which can be found in
-# http://student.cusu.cam.ac.uk/~jsm28/british-time/
-# <a href="http://www.polyomino.org.uk/british-time/">
+# https://student.cusu.cam.ac.uk/~jsm28/british-time/
+# <a href="https://www.polyomino.org.uk/british-time/">
 # History of legal time in Britain
 # </a>
 # Rob Crowther (2012-01-04) reports that that URL no longer
 # exists, and the article can now be found at:
-# <a href="http://www.polyomino.org.uk/british-time/">
-# http://www.polyomino.org.uk/british-time/
+# <a href="https://www.polyomino.org.uk/british-time/">
+# https://www.polyomino.org.uk/british-time/
 # </a>
 
 # From Joseph S. Myers (1998-01-06):
 #
 # The legal time in the UK outside of summer time is definitely GMT, not UTC;
 # see Lord Tanlaw's speech
-# <a href="http://www.parliament.the-stationery-office.co.uk/pa/ld199697/ldhansrd/pdvn/lds97/text/70611-20.htm#70611-20_head0">
+# <a href="https://www.parliament.the-stationery-office.co.uk/pa/ld199697/ldhansrd/pdvn/lds97/text/70611-20.htm#70611-20_head0">
 # (Lords Hansard 11 June 1997 columns 964 to 976)
 # </a>.
 
@@ -283,7 +283,7 @@
 # ZZSI395Y1994.html ZZSI484Y1997.html ZZSI506Y2001.html
 #
 # [These are all relative to the root, e.g., the first is
-# <http://www.irishstatutebook.ie/ZZA13Y1923.html>.]
+# <https://www.irishstatutebook.ie/ZZA13Y1923.html>.]
 #
 # (These are those I found, but there could be more.  In any case these
 # should allow various updates to the comments in the europe file to cover
@@ -464,7 +464,7 @@ Rule	EU	1979	1995	-	Sep	lastSun	 1:00u	0	-
 Rule	EU	1981	max	-	Mar	lastSun	 1:00u	1:00	S
 Rule	EU	1996	max	-	Oct	lastSun	 1:00u	0	-
 # The most recent directive covers the years starting in 2002.  See:
-# <a="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32000L0084:EN:NOT">
+# <a="https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32000L0084:EN:NOT">
 # Directive 2000/84/EC of the European Parliament and of the Council
 # of 19 January 2001 on summer-time arrangements.
 # </a>
@@ -576,13 +576,13 @@ Rule	Russia	1996	2010	-	Oct	lastSun	 2:00s	0	-
 # According to the law Russia is abolishing daylight saving time.
 #
 # Medvedev signed a law "On the Calculation of Time" (in russian):
-# <a href="http://bmockbe.ru/events/?ID=7583">
-# http://bmockbe.ru/events/?ID=7583
+# <a href="https://bmockbe.ru/events/?ID=7583">
+# https://bmockbe.ru/events/?ID=7583
 # </a>
 #
 # Medvedev signed a law on the calculation of the time (in russian):
-# <a href="http://www.regnum.ru/news/polit/1413906.html">
-# http://www.regnum.ru/news/polit/1413906.html
+# <a href="https://www.regnum.ru/news/polit/1413906.html">
+# https://www.regnum.ru/news/polit/1413906.html
 # </a>
 
 # From Arthur David Olson (2011-06-15):
@@ -699,16 +699,16 @@ Zone	Europe/Vienna	1:05:20 -	LMT	1893 Apr
 #
 # Sources (Russian language):
 # 1.
-# <a href="http://www.belta.by/ru/all_news/society/V-Belarusi-otmenjaetsja-perexod-na-sezonnoe-vremja_i_572952.html">
-# http://www.belta.by/ru/all_news/society/V-Belarusi-otmenjaetsja-perexod-na-sezonnoe-vremja_i_572952.html
+# <a href="https://www.belta.by/ru/all_news/society/V-Belarusi-otmenjaetsja-perexod-na-sezonnoe-vremja_i_572952.html">
+# https://www.belta.by/ru/all_news/society/V-Belarusi-otmenjaetsja-perexod-na-sezonnoe-vremja_i_572952.html
 # </a>
 # 2.
-# <a href="http://naviny.by/rubrics/society/2011/09/16/ic_articles_116_175144/">
-# http://naviny.by/rubrics/society/2011/09/16/ic_articles_116_175144/
+# <a href="https://naviny.by/rubrics/society/2011/09/16/ic_articles_116_175144/">
+# https://naviny.by/rubrics/society/2011/09/16/ic_articles_116_175144/
 # </a>
 # 3.
-# <a href="http://news.tut.by/society/250578.html">
-# http://news.tut.by/society/250578.html
+# <a href="https://news.tut.by/society/250578.html">
+# https://news.tut.by/society/250578.html
 # </a>
 # Zone	NAME		GMTOFF	RULES	FORMAT	[UNTIL]
 Zone	Europe/Minsk	1:50:16 -	LMT	1880
@@ -841,17 +841,17 @@ Zone	Europe/Prague	0:57:44 -	LMT	1850
 # Denmark, Faroe Islands, and Greenland
 
 # From Jesper Norgaard Welen (2005-04-26):
-# http://www.hum.aau.dk/~poe/tid/tine/DanskTid.htm says that the law
+# https://www.hum.aau.dk/~poe/tid/tine/DanskTid.htm says that the law
 # [introducing standard time] was in effect from 1894-01-01....
-# The page http://www.retsinfo.dk/_GETDOCI_/ACCN/A18930008330-REGL
+# The page https://www.retsinfo.dk/_GETDOCI_/ACCN/A18930008330-REGL
 # confirms this, and states that the law was put forth 1893-03-29.
 #
 # The EU treaty with effect from 1973:
-# http://www.retsinfo.dk/_GETDOCI_/ACCN/A19722110030-REGL
+# https://www.retsinfo.dk/_GETDOCI_/ACCN/A19722110030-REGL
 #
 # This provoked a new law from 1974 to make possible summer time changes
 # in subsequenet decrees with the law
-# http://www.retsinfo.dk/_GETDOCI_/ACCN/A19740022330-REGL
+# https://www.retsinfo.dk/_GETDOCI_/ACCN/A19740022330-REGL
 #
 # It seems however that no decree was set forward until 1980.  I have
 # not found any decree, but in another related law, the effecting DST
@@ -863,7 +863,7 @@ Zone	Europe/Prague	0:57:44 -	LMT	1850
 # The law is about the management of the extra hour, concerning
 # working hours reported and effect on obligatory-rest rules (which
 # was suspended on that night):
-# http://www.retsinfo.dk/_GETDOCI_/ACCN/C19801120554-REGL
+# https://www.retsinfo.dk/_GETDOCI_/ACCN/C19801120554-REGL
 
 # From Jesper Norgaard Welen (2005-06-11):
 # The Herning Folkeblad (1980-09-26) reported that the night between
@@ -910,7 +910,7 @@ Zone Atlantic/Faroe	-0:27:04 -	LMT	1908 Jan 11	# Torshavn
 # rules since at least 1991.  Assume EU rules since 1980.
 
 # From Gwillin Law (2001-06-06), citing
-# <http://www.statkart.no/efs/efshefter/2001/efs5-2001.pdf> (2001-03-15),
+# <https://www.statkart.no/efs/efshefter/2001/efs5-2001.pdf> (2001-03-15),
 # and with translations corrected by Steffen Thorsen:
 #
 # Greenland has four local times, and the relation to UTC
@@ -1008,7 +1008,7 @@ Zone America/Thule	-4:35:08 -	LMT	1916 Jul 28 # Pituffik air base
 # summer time next spring.''
 
 # From Peter Ilieve (1998-11-04), heavily edited:
-# <a href="http://trip.rk.ee/cgi-bin/thw?${BASE}=akt&${OOHTML}=rtd&TA=1998&TO=1&AN=1390">
+# <a href="https://trip.rk.ee/cgi-bin/thw?${BASE}=akt&${OOHTML}=rtd&TA=1998&TO=1&AN=1390">
 # The 1998-09-22 Estonian time law
 # </a>
 # refers to the Eighth Directive and cites the association agreement between
@@ -1018,7 +1018,7 @@ Zone America/Thule	-4:35:08 -	LMT	1916 Jul 28 # Pituffik air base
 # for their standard and summer times. He says no, they use "suveaeg"
 # (summer time) and "talveaeg" (winter time).
 
-# From <a href="http://www.baltictimes.com/">The Baltic Times</a> (1999-09-09)
+# From <a href="https://www.baltictimes.com/">The Baltic Times</a> (1999-09-09)
 # via Steffen Thorsen:
 # This year will mark the last time Estonia shifts to summer time,
 # a council of the ruling coalition announced Sept. 6....
@@ -1071,8 +1071,8 @@ Zone	Europe/Tallinn	1:39:00	-	LMT	1880
 # Office of University of Helsinki, ISBN 952-10-3221-9, available online (in
 # Finnish) at
 #
-# <a href="http://almanakka.helsinki.fi/aikakirja/Aikakirja2007kokonaan.pdf">
-# http://almanakka.helsinki.fi/aikakirja/Aikakirja2007kokonaan.pdf
+# <a href="https://almanakka.helsinki.fi/aikakirja/Aikakirja2007kokonaan.pdf">
+# https://almanakka.helsinki.fi/aikakirja/Aikakirja2007kokonaan.pdf
 # </a>
 #
 # Page 105 (56 in PDF version) has a handy table of all past daylight savings
@@ -1080,8 +1080,8 @@ Zone	Europe/Tallinn	1:39:00	-	LMT	1880
 #
 # This is also confirmed by Finnish Broadcasting Company's archive at:
 #
-# <a href="http://www.yle.fi/elavaarkisto/?s=s&g=1&ag=5&t=&a=3401">
-# http://www.yle.fi/elavaarkisto/?s=s&g=1&ag=5&t=&a=3401
+# <a href="https://www.yle.fi/elavaarkisto/?s=s&g=1&ag=5&t=&a=3401">
+# https://www.yle.fi/elavaarkisto/?s=s&g=1&ag=5&t=&a=3401
 # </a>
 #
 # The news clip from 1981 says that "the time between 2 and 3 o'clock does not
@@ -1203,12 +1203,12 @@ Zone	Europe/Paris	0:09:21 -	LMT	1891 Mar 15  0:01
 
 # From Joerg Schilling (2002-10-23):
 # In 1945, Berlin was switched to Moscow Summer time (GMT+4) by
-# <a href="http://www.dhm.de/lemo/html/biografien/BersarinNikolai/">
+# <a href="https://www.dhm.de/lemo/html/biografien/BersarinNikolai/">
 # General [Nikolai] Bersarin</a>.
 
 # From Paul Eggert (2003-03-08):
-# <a href="http://www.parlament-berlin.de/pds-fraktion.nsf/727459127c8b66ee8525662300459099/defc77cb784f180ac1256c2b0030274b/$FILE/bersarint.pdf">
-# http://www.parlament-berlin.de/pds-fraktion.nsf/727459127c8b66ee8525662300459099/defc77cb784f180ac1256c2b0030274b/$FILE/bersarint.pdf
+# <a href="https://www.parlament-berlin.de/pds-fraktion.nsf/727459127c8b66ee8525662300459099/defc77cb784f180ac1256c2b0030274b/$FILE/bersarint.pdf">
+# https://www.parlament-berlin.de/pds-fraktion.nsf/727459127c8b66ee8525662300459099/defc77cb784f180ac1256c2b0030274b/$FILE/bersarint.pdf
 # </a>
 # says that Bersarin issued an order to use Moscow time on May 20.
 # However, Moscow did not observe daylight saving in 1945, so
@@ -1219,7 +1219,7 @@ Zone	Europe/Paris	0:09:21 -	LMT	1891 Mar 15  0:01
 Rule	Germany	1946	only	-	Apr	14	2:00s	1:00	S
 Rule	Germany	1946	only	-	Oct	 7	2:00s	0	-
 Rule	Germany	1947	1949	-	Oct	Sun>=1	2:00s	0	-
-# http://www.ptb.de/de/org/4/44/441/salt.htm says the following transition
+# https://www.ptb.de/de/org/4/44/441/salt.htm says the following transition
 # occurred at 3:00 MEZ, not the 2:00 MEZ given in Shanks & Pottenger.
 # Go with the PTB.
 Rule	Germany	1947	only	-	Apr	 6	3:00s	1:00	S
@@ -1389,7 +1389,7 @@ Zone Atlantic/Reykjavik	-1:27:24 -	LMT	1837
 # From Paul Eggert (2006-03-22):
 # For Italian DST we have three sources: Shanks & Pottenger, Whitman, and
 # F. Pollastri
-# <a href="http://toi.iriti.cnr.it/uk/ienitlt.html">
+# <a href="https://toi.iriti.cnr.it/uk/ienitlt.html">
 # Day-light Saving Time in Italy (2006-02-03)
 # </a>
 # (`FP' below), taken from an Italian National Electrotechnical Institute
@@ -1499,11 +1499,11 @@ Link	Europe/Rome	Europe/San_Marino
 
 # From Andrei Ivanov (2000-03-06):
 # This year Latvia will not switch to Daylight Savings Time (as specified in
-# <a href="http://www.lv-laiks.lv/wwwraksti/2000/071072/vd4.htm">
+# <a href="https://www.lv-laiks.lv/wwwraksti/2000/071072/vd4.htm">
 # The Regulations of the Cabinet of Ministers of the Rep. of Latvia of
 # 29-Feb-2000 (#79)</a>, in Latvian for subscribers only).
 
-# <a href="http://www.rferl.org/newsline/2001/01/3-CEE/cee-030101.html">
+# <a href="https://www.rferl.org/newsline/2001/01/3-CEE/cee-030101.html">
 # From RFE/RL Newsline (2001-01-03), noted after a heads-up by Rives McDow:
 # </a>
 # The Latvian government on 2 January decided that the country will
@@ -1553,7 +1553,7 @@ Zone	Europe/Vaduz	0:38:04 -	LMT	1894 Jun
 # I would like to inform that in this year Lithuanian time zone
 # (Europe/Vilnius) was changed.
 
-# From <a href="http://www.elta.lt/">ELTA</a> No. 972 (2582) (1999-09-29),
+# From <a href="https://www.elta.lt/">ELTA</a> No. 972 (2582) (1999-09-29),
 # via Steffen Thorsen:
 # Lithuania has shifted back to the second time zone (GMT plus two hours)
 # to be valid here starting from October 31,
@@ -1562,7 +1562,7 @@ Zone	Europe/Vaduz	0:38:04 -	LMT	1894 Jun
 # motion to give up shifting to summer time in spring, as it was
 # already done by Estonia.
 
-# From the <a href="http://www.tourism.lt/informa/ff.htm">
+# From the <a href="https://www.tourism.lt/informa/ff.htm">
 # Fact File, Lithuanian State Department of Tourism
 # </a> (2000-03-27): Local time is GMT+2 hours ..., no daylight saving.
 
@@ -1572,7 +1572,7 @@ Zone	Europe/Vaduz	0:38:04 -	LMT	1894 Jun
 # down in EU Directive 2000/84 of 19.I.01 (i.e. at the same times as its
 # neighbour Latvia). The text of the Lithuanian government Order of
 # 7.XI.02 to this effect can be found at
-# http://www.lrvk.lt/nut/11/n1749.htm
+# https://www.lrvk.lt/nut/11/n1749.htm
 
 
 # Zone	NAME		GMTOFF	RULES	FORMAT	[UNTIL]
@@ -1667,12 +1667,12 @@ Zone	Europe/Malta	0:58:04 -	LMT	1893 Nov  2 0:00s # Valletta
 # to the Winter Time).
 #
 # News (in Russian):
-# <a href="http://www.kyivpost.ua/russia/news/pridnestrove-otkazalos-ot-perehoda-na-zimnee-vremya-30954.html">
-# http://www.kyivpost.ua/russia/news/pridnestrove-otkazalos-ot-perehoda-na-zimnee-vremya-30954.html
+# <a href="https://www.kyivpost.ua/russia/news/pridnestrove-otkazalos-ot-perehoda-na-zimnee-vremya-30954.html">
+# https://www.kyivpost.ua/russia/news/pridnestrove-otkazalos-ot-perehoda-na-zimnee-vremya-30954.html
 # </a>
 #
-# <a href="http://www.allmoldova.com/moldova-news/1249064116.html">
-# http://www.allmoldova.com/moldova-news/1249064116.html
+# <a href="https://www.allmoldova.com/moldova-news/1249064116.html">
+# https://www.allmoldova.com/moldova-news/1249064116.html
 # </a>
 #
 # The substance of this change (reinstatement of the Tiraspol entry)
@@ -1691,8 +1691,8 @@ Zone	Europe/Malta	0:58:04 -	LMT	1893 Nov  2 0:00s # Valletta
 # Following Moldova and neighboring Ukraine- Transnistria (Pridnestrovie)-
 # Tiraspol will go back to winter time on October 30, 2011.
 # News from Moldova (in russian):
-# <a href="http://ru.publika.md/link_317061.html">
-# http://ru.publika.md/link_317061.html
+# <a href="https://ru.publika.md/link_317061.html">
+# https://ru.publika.md/link_317061.html
 # </a>
 
 
@@ -1762,7 +1762,7 @@ Zone	Europe/Monaco	0:29:32 -	LMT	1891 Mar 15
 # Amsterdam mean time.
 
 # The data before 1945 are taken from
-# <http://www.phys.uu.nl/~vgent/wettijd/wettijd.htm>.
+# <https://www.phys.uu.nl/~vgent/wettijd/wettijd.htm>.
 
 # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
 Rule	Neth	1916	only	-	May	 1	0:00	1:00	NST	# Netherlands Summer Time
@@ -1799,7 +1799,7 @@ Zone Europe/Amsterdam	0:19:32 -	LMT	1835
 			1:00	EU	CE%sT
 
 # Norway
-# http://met.no/met/met_lex/q_u/sommertid.html (2004-01) agrees with Shanks &
+# https://met.no/met/met_lex/q_u/sommertid.html (2004-01) agrees with Shanks &
 # Pottenger.
 # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
 Rule	Norway	1916	only	-	May	22	1:00	1:00	S
@@ -1824,12 +1824,12 @@ Zone	Europe/Oslo	0:43:00 -	LMT	1895 Jan  1
 # time they were declared as parts of Norway.  Svalbard was declared
 # as a part of Norway by law of 1925-07-17 no 11, section 4 and Jan
 # Mayen by law of 1930-02-27 no 2, section 2. (From
-# http://www.lovdata.no/all/nl-19250717-011.html and
-# http://www.lovdata.no/all/nl-19300227-002.html).  The law/regulation
+# https://www.lovdata.no/all/nl-19250717-011.html and
+# https://www.lovdata.no/all/nl-19300227-002.html).  The law/regulation
 # for normal/standard time in Norway is from 1894-06-29 no 1 (came
 # into operation on 1895-01-01) and Svalbard/Jan Mayen seem to be a
 # part of this law since 1925/1930. (From
-# http://www.lovdata.no/all/nl-18940629-001.html ) I have not been
+# https://www.lovdata.no/all/nl-18940629-001.html ) I have not been
 # able to find if Jan Mayen used a different time zone (e.g. -0100)
 # before 1930. Jan Mayen has only been "inhabitated" since 1921 by
 # Norwegian meteorologists and maybe used the same time as Norway ever
@@ -1843,7 +1843,7 @@ Zone	Europe/Oslo	0:43:00 -	LMT	1895 Jan  1
 # so it must have diverged from Oslo time during the war, as Oslo was
 # keeping Berlin time.
 #
-# <http://home.no.net/janmayen/history.htm> says that the meteorologists
+# <https://home.no.net/janmayen/history.htm> says that the meteorologists
 # burned down their station in 1940 and left the island, but returned in
 # 1941 with a small Norwegian garrison and continued operations despite
 # frequent air ttacks from Germans.  In 1943 the Americans established a
@@ -1853,11 +1853,11 @@ Zone	Europe/Oslo	0:43:00 -	LMT	1895 Jan  1
 #
 # Svalbard is more complicated, as it was raided in August 1941 by an
 # Allied party that evacuated the civilian population to England (says
-# <http://www.bartleby.com/65/sv/Svalbard.html>).  The Svalbard FAQ
-# <http://www.svalbard.com/SvalbardFAQ.html> says that the Germans were
+# <https://www.bartleby.com/65/sv/Svalbard.html>).  The Svalbard FAQ
+# <https://www.svalbard.com/SvalbardFAQ.html> says that the Germans were
 # expelled on 1942-05-14.  However, small parties of Germans did return,
 # and according to Wilhelm Dege's book "War North of 80" (1954)
-# <http://www.ucalgary.ca/UofC/departments/UP/1-55238/1-55238-110-2.html>
+# <https://www.ucalgary.ca/UofC/departments/UP/1-55238/1-55238-110-2.html>
 # the German armed forces at the Svalbard weather station code-named
 # Haudegen did not surrender to the Allies until September 1945.
 #
@@ -1878,11 +1878,11 @@ Rule	Poland	1945	only	-	Apr	29	0:00	1:00	S
 Rule	Poland	1945	only	-	Nov	 1	0:00	0	-
 # For 1946 on the source is Kazimierz Borkowski,
 # Torun Center for Astronomy, Dept. of Radio Astronomy, Nicolaus Copernicus U.,
-# <http://www.astro.uni.torun.pl/~kb/Artykuly/U-PA/Czas2.htm#tth_tAb1>
+# <https://www.astro.uni.torun.pl/~kb/Artykuly/U-PA/Czas2.htm#tth_tAb1>
 # Thanks to Przemyslaw Augustyniak (2005-05-28) for this reference.
 # He also gives these further references:
-# Mon Pol nr 13, poz 162 (1995) <http://www.abc.com.pl/serwis/mp/1995/0162.htm>
-# Druk nr 2180 (2003) <http://www.senat.gov.pl/k5/dok/sejm/053/2180.pdf>
+# Mon Pol nr 13, poz 162 (1995) <https://www.abc.com.pl/serwis/mp/1995/0162.htm>
+# Druk nr 2180 (2003) <https://www.senat.gov.pl/k5/dok/sejm/053/2180.pdf>
 Rule	Poland	1946	only	-	Apr	14	0:00s	1:00	S
 Rule	Poland	1946	only	-	Oct	 7	2:00s	0	-
 Rule	Poland	1947	only	-	May	 4	2:00s	1:00	S
@@ -2016,7 +2016,7 @@ Zone Atlantic/Madeira	-1:07:36 -	LMT	1884		# Funchal
 # Romania
 #
 # From Paul Eggert (1999-10-07):
-# <a href="http://www.nineoclock.ro/POL/1778pol.html">
+# <a href="https://www.nineoclock.ro/POL/1778pol.html">
 # Nine O'clock</a> (1998-10-23) reports that the switch occurred at
 # 04:00 local time in fall 1998.  For lack of better info,
 # assume that Romania and Moldova switched to EU rules in 1997,
@@ -2195,13 +2195,13 @@ Zone Asia/Novosibirsk	 5:31:40 -	LMT	1919 Dec 14 6:00
 # time zone." ("Russia Zone 5" or old "USSR Zone 5" is GMT +0600)
 #
 # Russian Government web site (Russian language)
-# <a href="http://www.government.ru/content/governmentactivity/rfgovernmentdecisions/archiv">
-# http://www.government.ru/content/governmentactivity/rfgovernmentdecisions/archive/2009/09/14/991633.htm
+# <a href="https://www.government.ru/content/governmentactivity/rfgovernmentdecisions/archiv">
+# https://www.government.ru/content/governmentactivity/rfgovernmentdecisions/archive/2009/09/14/991633.htm
 # </a>
 # or Russian-English translation by WorldTimeZone.com with reference
 # map to local region and new Russia Time Zone map after March 28, 2010
-# <a href="http://www.worldtimezone.com/dst_news/dst_news_russia03.html">
-# http://www.worldtimezone.com/dst_news/dst_news_russia03.html
+# <a href="https://www.worldtimezone.com/dst_news/dst_news_russia03.html">
+# https://www.worldtimezone.com/dst_news/dst_news_russia03.html
 # </a>
 #
 # Thus, when Russia will switch to DST on the night of March 28, 2010
@@ -2453,7 +2453,7 @@ Zone	Atlantic/Canary	-1:01:36 -	LMT	1922 Mar # Las Palmas de Gran C.
 # The laws regulating [DST] are available on the site of the Swedish
 # Parliament beginning with 1985 - the laws regulating 1980/1984 are
 # not available on the site (to my knowledge they are only available
-# in Swedish): <http://www.riksdagen.se/english/work/sfst.asp> (type
+# in Swedish): <https://www.riksdagen.se/english/work/sfst.asp> (type
 # "sommartid" without the quotes in the field "Fritext" and then click
 # the Sok-button).
 #
@@ -2552,29 +2552,29 @@ Zone	Europe/Zurich	0:34:08 -	LMT	1848 Sep 12
 # From Amar Devegowda (2007-01-03):
 # The time zone rules for Istanbul, Turkey have not been changed for years now.
 # ... The latest rules are available at -
-# http://www.timeanddate.com/worldclock/timezone.html?n=107
+# https://www.timeanddate.com/worldclock/timezone.html?n=107
 # From Steffen Thorsen (2007-01-03):
 # I have been able to find press records back to 1996 which all say that
 # DST started 01:00 local time and end at 02:00 local time.  I am not sure
 # what happened before that.  One example for each year from 1996 to 2001:
-# http://newspot.byegm.gov.tr/arsiv/1996/21/N4.htm
-# http://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING97/03/97X03X25.TXT
-# http://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING98/03/98X03X02.HTM
-# http://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING99/10/99X10X26.HTM#%2016
-# http://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING2000/03/00X03X06.HTM#%2021
-# http://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING2001/03/23x03x01.HTM#%2027
+# https://newspot.byegm.gov.tr/arsiv/1996/21/N4.htm
+# https://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING97/03/97X03X25.TXT
+# https://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING98/03/98X03X02.HTM
+# https://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING99/10/99X10X26.HTM#%2016
+# https://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING2000/03/00X03X06.HTM#%2021
+# https://www.byegm.gov.tr/YAYINLARIMIZ/CHR/ING2001/03/23x03x01.HTM#%2027
 # From Paul Eggert (2007-01-03):
 # Prefer the above source to Shanks & Pottenger for time stamps after 1990.
 
 # From Steffen Thorsen (2007-03-09):
 # Starting 2007 though, it seems that they are adopting EU's 1:00 UTC
 # start/end time, according to the following page (2007-03-07):
-# http://www.ntvmsnbc.com/news/402029.asp
+# https://www.ntvmsnbc.com/news/402029.asp
 # The official document is located here - it is in Turkish...:
-# http://rega.basbakanlik.gov.tr/eskiler/2007/03/20070307-7.htm
+# https://rega.basbakanlik.gov.tr/eskiler/2007/03/20070307-7.htm
 # I was able to locate the following seemingly official document
 # (on a non-government server though) describing dates between 2002 and 2006:
-# http://www.alomaliye.com/bkk_2002_3769.htm
+# https://www.alomaliye.com/bkk_2002_3769.htm
 
 # From G&ouml;kdeniz Karada&#x011f; (2011-03-10):
 #
@@ -2582,12 +2582,12 @@ Zone	Europe/Zurich	0:34:08 -	LMT	1848 Sep 12
 # time zone (GMT+3) on March 28, 2011 at 3:00 a.m. instead of March 27.
 # This change is due to a nationwide exam on 27th.
 #
-# <a href="http://www.worldbulletin.net/?aType=haber&ArticleID=70872">
-# http://www.worldbulletin.net/?aType=haber&ArticleID=70872
+# <a href="https://www.worldbulletin.net/?aType=haber&ArticleID=70872">
+# https://www.worldbulletin.net/?aType=haber&ArticleID=70872
 # </a>
 # Turkish:
-# <a href="http://www.hurriyet.com.tr/ekonomi/17230464.asp?gid=373">
-# http://www.hurriyet.com.tr/ekonomi/17230464.asp?gid=373
+# <a href="https://www.hurriyet.com.tr/ekonomi/17230464.asp?gid=373">
+# https://www.hurriyet.com.tr/ekonomi/17230464.asp?gid=373
 # </a>
 
 # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
@@ -2678,18 +2678,18 @@ Link	Europe/Istanbul	Asia/Istanbul	# Istanbul is in both continents.
 # approval from 266 deputies.
 #
 # Ukraine abolishes transter back to the winter time (in Russian)
-# <a href="http://news.mail.ru/politics/6861560/">
-# http://news.mail.ru/politics/6861560/
+# <a href="https://news.mail.ru/politics/6861560/">
+# https://news.mail.ru/politics/6861560/
 # </a>
 #
 # The Ukrainians will no longer change the clock (in Russian)
-# <a href="http://www.segodnya.ua/news/14290482.html">
-# http://www.segodnya.ua/news/14290482.html
+# <a href="https://www.segodnya.ua/news/14290482.html">
+# https://www.segodnya.ua/news/14290482.html
 # </a>
 #
 # Deputies cancelled the winter time (in Russian)
-# <a href="http://www.pravda.com.ua/rus/news/2011/09/20/6600616/">
-# http://www.pravda.com.ua/rus/news/2011/09/20/6600616/
+# <a href="https://www.pravda.com.ua/rus/news/2011/09/20/6600616/">
+# https://www.pravda.com.ua/rus/news/2011/09/20/6600616/
 # </a>
 #
 # From Philip Pizzey (2011-10-18):
@@ -2702,15 +2702,15 @@ Link	Europe/Istanbul	Asia/Istanbul	# Istanbul is in both continents.
 # (Europe/Kiev) to introduce permanent daylight saving time (similar
 # to Russia) was reverted today:
 #
-# <a href="http://portal.rada.gov.ua/rada/control/en/publish/article/info_left?art_id=287324&cat_id=105995">
-# http://portal.rada.gov.ua/rada/control/en/publish/article/info_left?art_id=287324&cat_id=105995
+# <a href="https://portal.rada.gov.ua/rada/control/en/publish/article/info_left?art_id=287324&cat_id=105995">
+# https://portal.rada.gov.ua/rada/control/en/publish/article/info_left?art_id=287324&cat_id=105995
 # </a>
 #
 # Also reported by Alexander Bokovoy (2011-10-18) who also noted:
 # The law documents themselves are at
 #
-# <a href="http://w1.c1.rada.gov.ua/pls/zweb_n/webproc4_1?id=&pf3511=41484">
-# http://w1.c1.rada.gov.ua/pls/zweb_n/webproc4_1?id=&pf3511=41484
+# <a href="https://w1.c1.rada.gov.ua/pls/zweb_n/webproc4_1?id=&pf3511=41484">
+# https://w1.c1.rada.gov.ua/pls/zweb_n/webproc4_1?id=&pf3511=41484
 # </a>
 
 

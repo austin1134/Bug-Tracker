@@ -218,12 +218,12 @@ Rule	Egypt	1990	1994	-	May	 1	1:00	1:00	S
 # Egyptians would approve the cancellation."
 #
 # Egypt to cancel daylight saving time
-# <a href="http://www.almasryalyoum.com/en/node/407168">
-# http://www.almasryalyoum.com/en/node/407168
+# <a href="https://www.almasryalyoum.com/en/node/407168">
+# https://www.almasryalyoum.com/en/node/407168
 # </a>
 # or
-# <a href="http://www.worldtimezone.com/dst_news/dst_news_egypt04.html">
-# http://www.worldtimezone.com/dst_news/dst_news_egypt04.html
+# <a href="https://www.worldtimezone.com/dst_news/dst_news_egypt04.html">
+# https://www.worldtimezone.com/dst_news/dst_news_egypt04.html
 # </a>
 Rule	Egypt	1995	2010	-	Apr	lastFri	 0:00s	1:00	S
 Rule	Egypt	1995	2005	-	Sep	lastThu	23:00s	0	-
@@ -231,16 +231,16 @@ Rule	Egypt	1995	2005	-	Sep	lastThu	23:00s	0	-
 # The Egyptian Gazette, issue 41,090 (2006-09-18), page 1, reports:
 # Egypt will turn back clocks by one hour at the midnight of Thursday
 # after observing the daylight saving time since May.
-# http://news.gom.com.eg/gazette/pdf/2006/09/18/01.pdf
+# https://news.gom.com.eg/gazette/pdf/2006/09/18/01.pdf
 Rule	Egypt	2006	only	-	Sep	21	23:00s	0	-
 # From Dirk Losch (2007-08-14):
 # I received a mail from an airline which says that the daylight
 # saving time in Egypt will end in the night of 2007-09-06 to 2007-09-07.
 # From Jesper Norgaard Welen (2007-08-15): [The following agree:]
-# http://www.nentjes.info/Bill/bill5.htm
-# http://www.timeanddate.com/worldclock/city.html?n=53
+# https://www.nentjes.info/Bill/bill5.htm
+# https://www.timeanddate.com/worldclock/city.html?n=53
 # From Steffen Thorsen (2007-09-04): The official information...:
-# http://www.sis.gov.eg/En/EgyptOnline/Miscellaneous/000002/0207000000000000001580.htm
+# https://www.sis.gov.eg/En/EgyptOnline/Miscellaneous/000002/0207000000000000001580.htm
 Rule	Egypt	2007	only	-	Sep	Thu>=1	23:00s	0	-
 # From Abdelrahman Hassan (2007-09-06):
 # Due to the Hijri (lunar Islamic calendar) year being 11 days shorter
@@ -271,18 +271,18 @@ Rule	Egypt	2007	only	-	Sep	Thu>=1	23:00s	0	-
 #
 # > end date should be Thu Sep 24 2009 (Last Thursday in September at 23:59=
 # :59)
-# > http://support.microsoft.com/kb/958729/
+# > https://support.microsoft.com/kb/958729/
 #
 # timeanddate[2] and another site I've found[3] also support that.
 #
 # [1] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=492263">
 # https://bugzilla.redhat.com/show_bug.cgi?id=492263
 # </a>
-# [2] <a href="http://www.timeanddate.com/worldclock/clockchange.html?n=53">
-# http://www.timeanddate.com/worldclock/clockchange.html?n=53
+# [2] <a href="https://www.timeanddate.com/worldclock/clockchange.html?n=53">
+# https://www.timeanddate.com/worldclock/clockchange.html?n=53
 # </a>
-# [3] <a href="http://wwp.greenwichmeantime.com/time-zone/africa/egypt/">
-# http://wwp.greenwichmeantime.com/time-zone/africa/egypt/
+# [3] <a href="https://wwp.greenwichmeantime.com/time-zone/africa/egypt/">
+# https://wwp.greenwichmeantime.com/time-zone/africa/egypt/
 # </a>
 
 # From Arthur David Olson (2009-04-20):
@@ -293,13 +293,13 @@ Rule	Egypt	2007	only	-	Sep	Thu>=1	23:00s	0	-
 # From Steffen Thorsen (2009-08-11):
 # We have been able to confirm the August change with the Egyptian Cabinet
 # Information and Decision Support Center:
-# <a href="http://www.timeanddate.com/news/time/egypt-dst-ends-2009.html">
-# http://www.timeanddate.com/news/time/egypt-dst-ends-2009.html
+# <a href="https://www.timeanddate.com/news/time/egypt-dst-ends-2009.html">
+# https://www.timeanddate.com/news/time/egypt-dst-ends-2009.html
 # </a>
 #
 # The Middle East News Agency
-# <a href="http://www.mena.org.eg/index.aspx">
-# http://www.mena.org.eg/index.aspx
+# <a href="https://www.mena.org.eg/index.aspx">
+# https://www.mena.org.eg/index.aspx
 # </a>
 # also reports "Egypt starts winter time on August 21"
 # today in article numbered "71, 11/08/2009 12:25 GMT."
@@ -314,12 +314,12 @@ Rule	Egypt	2007	only	-	Sep	Thu>=1	23:00s	0	-
 #
 # Arabic translation:
 # "Clocks to go back during Ramadan--and then forward again"
-# <a href="http://www.almasryalyoum.com/en/news/clocks-go-back-during-ramadan-and-then-forward-again">
-# http://www.almasryalyoum.com/en/news/clocks-go-back-during-ramadan-and-then-forward-again
+# <a href="https://www.almasryalyoum.com/en/news/clocks-go-back-during-ramadan-and-then-forward-again">
+# https://www.almasryalyoum.com/en/news/clocks-go-back-during-ramadan-and-then-forward-again
 # </a>
 # or
-# <a href="http://www.worldtimezone.com/dst_news/dst_news_egypt02.html">
-# http://www.worldtimezone.com/dst_news/dst_news_egypt02.html
+# <a href="https://www.worldtimezone.com/dst_news/dst_news_egypt02.html">
+# https://www.worldtimezone.com/dst_news/dst_news_egypt02.html
 # </a>
 
 Rule	Egypt	2008	only	-	Aug	lastThu	23:00s	0	-
@@ -426,11 +426,11 @@ Zone	Africa/Monrovia	-0:43:08 -	LMT	1882
 
 # From Even Scharning (2012-11-10):
 # Libya set their time one hour back at 02:00 on Saturday November 10.
-# http://www.libyaherald.com/2012/11/04/clocks-to-go-back-an-hour-on-saturday/
-# Here is an official source [in Arabic]: http://ls.ly/fb6Yc
+# https://www.libyaherald.com/2012/11/04/clocks-to-go-back-an-hour-on-saturday/
+# Here is an official source [in Arabic]: https://ls.ly/fb6Yc
 #
 # Steffen Thorsen forwarded a translation (2012-11-10) in
-# http://mm.icann.org/pipermail/tz/2012-November/018451.html
+# https://mm.icann.org/pipermail/tz/2012-November/018451.html
 #
 # From Tim Parenti (2012-11-11):
 # Treat the 2012-11-10 change as a zone change from UTC+2 to UTC+1.
@@ -501,10 +501,10 @@ Zone Africa/Nouakchott	-1:03:48 -	LMT	1912
 # basis....
 # It seems that Mauritius observed daylight saving time from 1982-10-10 to
 # 1983-03-20 as well, but that was not successful....
-# http://www.timeanddate.com/news/time/mauritius-daylight-saving-time.html
+# https://www.timeanddate.com/news/time/mauritius-daylight-saving-time.html
 
 # From Alex Krivenyshev (2008-06-25):
-# http://economicdevelopment.gov.mu/portal/site/Mainhomepage/menuitem.a42b24128104d9845dabddd154508a0c/?content_id=0a7cee8b5d69a110VgnVCM1000000a04a8c0RCRD
+# https://economicdevelopment.gov.mu/portal/site/Mainhomepage/menuitem.a42b24128104d9845dabddd154508a0c/?content_id=0a7cee8b5d69a110VgnVCM1000000a04a8c0RCRD
 
 # From Arthur David Olson (2008-06-30):
 # The www.timeanddate.com article cited by Steffen Thorsen notes that "A
@@ -516,8 +516,8 @@ Zone Africa/Nouakchott	-1:03:48 -	LMT	1912
 
 # From Steffen Thorsen (2008-07-10):
 # According to
-# <a href="http://www.lexpress.mu/display_article.php?news_id=111216">
-# http://www.lexpress.mu/display_article.php?news_id=111216
+# <a href="https://www.lexpress.mu/display_article.php?news_id=111216">
+# https://www.lexpress.mu/display_article.php?news_id=111216
 # </a>
 # (in French), Mauritius will start and end their DST a few days earlier
 # than previously announced (2008-11-01 to 2009-03-31).  The new start
@@ -540,14 +540,14 @@ Zone Africa/Nouakchott	-1:03:48 -	LMT	1912
 # de l'heure d'ete" stating that DST in Mauritius starting on October 26
 # and ending on March 27, 2009 is the most recent one.
 # ...
-# <a href="http://www.worldtimezone.com/dst_news/dst_news_mauritius02.html">
-# http://www.worldtimezone.com/dst_news/dst_news_mauritius02.html
+# <a href="https://www.worldtimezone.com/dst_news/dst_news_mauritius02.html">
+# https://www.worldtimezone.com/dst_news/dst_news_mauritius02.html
 # </a>
 
 # From Riad M. Hossen Ally (2008-08-03):
 # The Government of Mauritius weblink
-# <a href="http://www.gov.mu/portal/site/pmosite/menuitem.4ca0efdee47462e7440a600248a521ca/?content_id=4728ca68b2a5b110VgnVCM1000000a04a8c0RCRD">
-# http://www.gov.mu/portal/site/pmosite/menuitem.4ca0efdee47462e7440a600248a521ca/?content_id=4728ca68b2a5b110VgnVCM1000000a04a8c0RCRD
+# <a href="https://www.gov.mu/portal/site/pmosite/menuitem.4ca0efdee47462e7440a600248a521ca/?content_id=4728ca68b2a5b110VgnVCM1000000a04a8c0RCRD">
+# https://www.gov.mu/portal/site/pmosite/menuitem.4ca0efdee47462e7440a600248a521ca/?content_id=4728ca68b2a5b110VgnVCM1000000a04a8c0RCRD
 # </a>
 # Cabinet Decision of July 18th, 2008 states as follows:
 #
@@ -565,8 +565,8 @@ Zone Africa/Nouakchott	-1:03:48 -	LMT	1912
 # THE TIME BILL (No. XXVII of 2008) Explanatory Memorandum states the
 # beginning / ending of summer time is 2 o'clock standard time in the
 # morning of the last Sunday of October / last Sunday of March.
-# <a href="http://www.gov.mu/portal/goc/assemblysite/file/bill2708.pdf">
-# http://www.gov.mu/portal/goc/assemblysite/file/bill2708.pdf
+# <a href="https://www.gov.mu/portal/goc/assemblysite/file/bill2708.pdf">
+# https://www.gov.mu/portal/goc/assemblysite/file/bill2708.pdf
 # </a>
 
 # From Steffen Thorsen (2009-06-05):
@@ -574,16 +574,16 @@ Zone Africa/Nouakchott	-1:03:48 -	LMT	1912
 # DST the coming summer...
 #
 # Some sources, in French:
-# <a href="http://www.defimedia.info/news/946/Rashid-Beebeejaun-:-%C2%AB-L%E2%80%99heure-d%E2%80%99%C3%A9t%C3%A9-ne-sera-pas-appliqu%C3%A9e-cette-ann%C3%A9e-%C2%BB">
-# http://www.defimedia.info/news/946/Rashid-Beebeejaun-:-%C2%AB-L%E2%80%99heure-d%E2%80%99%C3%A9t%C3%A9-ne-sera-pas-appliqu%C3%A9e-cette-ann%C3%A9e-%C2%BB
+# <a href="https://www.defimedia.info/news/946/Rashid-Beebeejaun-:-%C2%AB-L%E2%80%99heure-d%E2%80%99%C3%A9t%C3%A9-ne-sera-pas-appliqu%C3%A9e-cette-ann%C3%A9e-%C2%BB">
+# https://www.defimedia.info/news/946/Rashid-Beebeejaun-:-%C2%AB-L%E2%80%99heure-d%E2%80%99%C3%A9t%C3%A9-ne-sera-pas-appliqu%C3%A9e-cette-ann%C3%A9e-%C2%BB
 # </a>
-# <a href="http://lexpress.mu/Story/3398~Beebeejaun---Les-objectifs-d-%C3%A9conomie-d-%C3%A9nergie-de-l-heure-d-%C3%A9t%C3%A9-ont-%C3%A9t%C3%A9-atteints-">
-# http://lexpress.mu/Story/3398~Beebeejaun---Les-objectifs-d-%C3%A9conomie-d-%C3%A9nergie-de-l-heure-d-%C3%A9t%C3%A9-ont-%C3%A9t%C3%A9-atteints-
+# <a href="https://lexpress.mu/Story/3398~Beebeejaun---Les-objectifs-d-%C3%A9conomie-d-%C3%A9nergie-de-l-heure-d-%C3%A9t%C3%A9-ont-%C3%A9t%C3%A9-atteints-">
+# https://lexpress.mu/Story/3398~Beebeejaun---Les-objectifs-d-%C3%A9conomie-d-%C3%A9nergie-de-l-heure-d-%C3%A9t%C3%A9-ont-%C3%A9t%C3%A9-atteints-
 # </a>
 #
 # Our wrap-up:
-# <a href="http://www.timeanddate.com/news/time/mauritius-dst-will-not-repeat.html">
-# http://www.timeanddate.com/news/time/mauritius-dst-will-not-repeat.html
+# <a href="https://www.timeanddate.com/news/time/mauritius-dst-will-not-repeat.html">
+# https://www.timeanddate.com/news/time/mauritius-dst-will-not-repeat.html
 # </a>
 
 # From Arthur David Olson (2009-07-11):
@@ -618,18 +618,18 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 # be one hour ahead of GMT between 1 June and 27 September, according to
 # Communication Minister and Gov ernment Spokesman, Khalid Naciri...."
 #
-# <a href="http://www.worldtimezone.net/dst_news/dst_news_morocco01.html">
-# http://www.worldtimezone.net/dst_news/dst_news_morocco01.html
+# <a href="https://www.worldtimezone.net/dst_news/dst_news_morocco01.html">
+# https://www.worldtimezone.net/dst_news/dst_news_morocco01.html
 # </a>
 # OR
-# <a href="http://en.afrik.com/news11892.html">
-# http://en.afrik.com/news11892.html
+# <a href="https://en.afrik.com/news11892.html">
+# https://en.afrik.com/news11892.html
 # </a>
 
 # From Alex Krivenyshev (2008-05-09):
 # The Morocco time change can be confirmed on Morocco web site Maghreb Arabe Presse:
-# <a href="http://www.map.ma/eng/sections/box3/morocco_shifts_to_da/view">
-# http://www.map.ma/eng/sections/box3/morocco_shifts_to_da/view
+# <a href="https://www.map.ma/eng/sections/box3/morocco_shifts_to_da/view">
+# https://www.map.ma/eng/sections/box3/morocco_shifts_to_da/view
 # </a>
 #
 # Morocco shifts to daylight time on June 1st through September 27, Govt.
@@ -637,12 +637,12 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 
 # From Patrice Scattolin (2008-05-09):
 # According to this article:
-# <a href="http://www.avmaroc.com/actualite/heure-dete-comment-a127896.html">
-# http://www.avmaroc.com/actualite/heure-dete-comment-a127896.html
+# <a href="https://www.avmaroc.com/actualite/heure-dete-comment-a127896.html">
+# https://www.avmaroc.com/actualite/heure-dete-comment-a127896.html
 # </a>
 # (and republished here:
-# <a href="http://www.actu.ma/heure-dete-comment_i127896_0.html">
-# http://www.actu.ma/heure-dete-comment_i127896_0.html
+# <a href="https://www.actu.ma/heure-dete-comment_i127896_0.html">
+# https://www.actu.ma/heure-dete-comment_i127896_0.html
 # </a>
 # )
 # the changes occurs at midnight:
@@ -660,15 +660,15 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 # published on the web.
 #
 # It's also confirmed here:
-# <a href="http://www.maroc.ma/NR/exeres/FACF141F-D910-44B0-B7FA-6E03733425D1.htm">
-# http://www.maroc.ma/NR/exeres/FACF141F-D910-44B0-B7FA-6E03733425D1.htm
+# <a href="https://www.maroc.ma/NR/exeres/FACF141F-D910-44B0-B7FA-6E03733425D1.htm">
+# https://www.maroc.ma/NR/exeres/FACF141F-D910-44B0-B7FA-6E03733425D1.htm
 # </a>
 # on a government portal as being  between june 1st and sept 27th (not yet
 # posted in english).
 #
 # The following google query will generate many relevant hits:
-# <a href="http://www.google.com/search?hl=en&q=Conseil+de+gouvernement+maroc+heure+avance&btnG=Search">
-# http://www.google.com/search?hl=en&q=Conseil+de+gouvernement+maroc+heure+avance&btnG=Search
+# <a href="https://www.google.com/search?hl=en&q=Conseil+de+gouvernement+maroc+heure+avance&btnG=Search">
+# https://www.google.com/search?hl=en&q=Conseil+de+gouvernement+maroc+heure+avance&btnG=Search
 # </a>
 
 # From Alex Krivenyshev (2008-05-09):
@@ -686,29 +686,29 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 # of September:
 #
 # One article about it (in French):
-# <a href="http://www.menara.ma/fr/Actualites/Maroc/Societe/ci.retour_a_l_heure_gmt_a_partir_du_dimanche_31_aout_a_minuit_officiel_.default">
-# http://www.menara.ma/fr/Actualites/Maroc/Societe/ci.retour_a_l_heure_gmt_a_partir_du_dimanche_31_aout_a_minuit_officiel_.default
+# <a href="https://www.menara.ma/fr/Actualites/Maroc/Societe/ci.retour_a_l_heure_gmt_a_partir_du_dimanche_31_aout_a_minuit_officiel_.default">
+# https://www.menara.ma/fr/Actualites/Maroc/Societe/ci.retour_a_l_heure_gmt_a_partir_du_dimanche_31_aout_a_minuit_officiel_.default
 # </a>
 #
 # We have some further details posted here:
-# <a href="http://www.timeanddate.com/news/time/morocco-ends-dst-early-2008.html">
-# http://www.timeanddate.com/news/time/morocco-ends-dst-early-2008.html
+# <a href="https://www.timeanddate.com/news/time/morocco-ends-dst-early-2008.html">
+# https://www.timeanddate.com/news/time/morocco-ends-dst-early-2008.html
 # </a>
 
 # From Steffen Thorsen (2009-03-17):
 # Morocco will observe DST from 2009-06-01 00:00 to 2009-08-21 00:00 according
 # to many sources, such as
-# <a href="http://news.marweb.com/morocco/entertainment/morocco-daylight-saving.html">
-# http://news.marweb.com/morocco/entertainment/morocco-daylight-saving.html
+# <a href="https://news.marweb.com/morocco/entertainment/morocco-daylight-saving.html">
+# https://news.marweb.com/morocco/entertainment/morocco-daylight-saving.html
 # </a>
-# <a href="http://www.medi1sat.ma/fr/depeche.aspx?idp=2312">
-# http://www.medi1sat.ma/fr/depeche.aspx?idp=2312
+# <a href="https://www.medi1sat.ma/fr/depeche.aspx?idp=2312">
+# https://www.medi1sat.ma/fr/depeche.aspx?idp=2312
 # </a>
 # (French)
 #
 # Our summary:
-# <a href="http://www.timeanddate.com/news/time/morocco-starts-dst-2009.html">
-# http://www.timeanddate.com/news/time/morocco-starts-dst-2009.html
+# <a href="https://www.timeanddate.com/news/time/morocco-starts-dst-2009.html">
+# https://www.timeanddate.com/news/time/morocco-starts-dst-2009.html
 # </a>
 
 # From Alexander Krivenyshev (2009-03-17):
@@ -720,12 +720,12 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 # Public Sectors announced that the official time in the Kingdom will be
 # advanced 60 minutes from Sunday 31 May 2009 at midnight.
 #
-# <a href="http://www.mmsp.gov.ma/francais/Actualites_fr/PDF_Actualites_Fr/HeureEte_FR.pdf">
-# http://www.mmsp.gov.ma/francais/Actualites_fr/PDF_Actualites_Fr/HeureEte_FR.pdf
+# <a href="https://www.mmsp.gov.ma/francais/Actualites_fr/PDF_Actualites_Fr/HeureEte_FR.pdf">
+# https://www.mmsp.gov.ma/francais/Actualites_fr/PDF_Actualites_Fr/HeureEte_FR.pdf
 # </a>
 #
-# <a href="http://www.worldtimezone.com/dst_news/dst_news_morocco03.html">
-# http://www.worldtimezone.com/dst_news/dst_news_morocco03.html
+# <a href="https://www.worldtimezone.com/dst_news/dst_news_morocco03.html">
+# https://www.worldtimezone.com/dst_news/dst_news_morocco03.html
 # </a>
 
 # From Steffen Thorsen (2010-04-13):
@@ -734,13 +734,13 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 # 2010-05-02 to 2010-08-08.
 #
 # Example:
-# <a href="http://www.lavieeco.com/actualites/4099-le-maroc-passera-a-l-heure-d-ete-gmt1-le-2-mai.html">
-# http://www.lavieeco.com/actualites/4099-le-maroc-passera-a-l-heure-d-ete-gmt1-le-2-mai.html
+# <a href="https://www.lavieeco.com/actualites/4099-le-maroc-passera-a-l-heure-d-ete-gmt1-le-2-mai.html">
+# https://www.lavieeco.com/actualites/4099-le-maroc-passera-a-l-heure-d-ete-gmt1-le-2-mai.html
 # </a>
 # (French)
 # Our page:
-# <a href="http://www.timeanddate.com/news/time/morocco-starts-dst-2010.html">
-# http://www.timeanddate.com/news/time/morocco-starts-dst-2010.html
+# <a href="https://www.timeanddate.com/news/time/morocco-starts-dst-2010.html">
+# https://www.timeanddate.com/news/time/morocco-starts-dst-2010.html
 # </a>
 
 # From Dan Abitol (2011-03-30):
@@ -751,33 +751,33 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 # The change was broadcast on the FM Radio
 # I ve called ANRT (telecom regulations in Morocco) at
 # +212.537.71.84.00
-# <a href="http://www.anrt.net.ma/fr/">
-# http://www.anrt.net.ma/fr/
+# <a href="https://www.anrt.net.ma/fr/">
+# https://www.anrt.net.ma/fr/
 # </a>
 # They said that
-# <a href="http://www.map.ma/fr/sections/accueil/l_heure_legale_au_ma/view">
-# http://www.map.ma/fr/sections/accueil/l_heure_legale_au_ma/view
+# <a href="https://www.map.ma/fr/sections/accueil/l_heure_legale_au_ma/view">
+# https://www.map.ma/fr/sections/accueil/l_heure_legale_au_ma/view
 # </a>
 # is the official publication to look at.
 # They said that the decision was already taken.
 #
 # More articles in the press
-# <a href="http://www.yabiladi.com/articles/details/5058/secret-l-heure-d-ete-maroc-lev">
-# http://www.yabiladi.com/articles/details/5058/secret-l-heure-d-ete-maroc-lev
+# <a href="https://www.yabiladi.com/articles/details/5058/secret-l-heure-d-ete-maroc-lev">
+# https://www.yabiladi.com/articles/details/5058/secret-l-heure-d-ete-maroc-lev
 # </a>
 # e.html
-# <a href="http://www.lematin.ma/Actualite/Express/Article.asp?id=148923">
-# http://www.lematin.ma/Actualite/Express/Article.asp?id=148923
+# <a href="https://www.lematin.ma/Actualite/Express/Article.asp?id=148923">
+# https://www.lematin.ma/Actualite/Express/Article.asp?id=148923
 # </a>
-# <a href="http://www.lavieeco.com/actualite/Le-Maroc-passe-sur-GMT%2B1-a-partir-de-dim">
-# http://www.lavieeco.com/actualite/Le-Maroc-passe-sur-GMT%2B1-a-partir-de-dim
+# <a href="https://www.lavieeco.com/actualite/Le-Maroc-passe-sur-GMT%2B1-a-partir-de-dim">
+# https://www.lavieeco.com/actualite/Le-Maroc-passe-sur-GMT%2B1-a-partir-de-dim
 # anche-prochain-5538.html
 # </a>
 
 # From Petr Machata (2011-03-30):
 # They have it written in English here:
-# <a href="http://www.map.ma/eng/sections/home/morocco_to_spring_fo/view">
-# http://www.map.ma/eng/sections/home/morocco_to_spring_fo/view
+# <a href="https://www.map.ma/eng/sections/home/morocco_to_spring_fo/view">
+# https://www.map.ma/eng/sections/home/morocco_to_spring_fo/view
 # </a>
 #
 # It says there that "Morocco will resume its standard time on July 31,
@@ -789,16 +789,16 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 # According to Infom&eacute;diaire web site from Morocco (infomediaire.ma),
 # on March 9, 2012, (in French) Heure l&eacute;gale:
 # Le Maroc adopte officiellement l'heure d'&eacute;t&eacute;
-# <a href="http://www.infomediaire.ma/news/maroc/heure-l%C3%A9gale-le-maroc-adopte-officiellement-lheure-d%C3%A9t%C3%A9">
-# http://www.infomediaire.ma/news/maroc/heure-l%C3%A9gale-le-maroc-adopte-officiellement-lheure-d%C3%A9t%C3%A9
+# <a href="https://www.infomediaire.ma/news/maroc/heure-l%C3%A9gale-le-maroc-adopte-officiellement-lheure-d%C3%A9t%C3%A9">
+# https://www.infomediaire.ma/news/maroc/heure-l%C3%A9gale-le-maroc-adopte-officiellement-lheure-d%C3%A9t%C3%A9
 # </a>
 # Governing Council adopted draft decree, that Morocco DST starts on
 # the last Sunday of March (March 25, 2012) and ends on
 # last Sunday of September (September 30, 2012)
 # except the month of Ramadan.
 # or (brief)
-# <a href="http://www.worldtimezone.com/dst_news/dst_news_morocco06.html">
-# http://www.worldtimezone.com/dst_news/dst_news_morocco06.html
+# <a href="https://www.worldtimezone.com/dst_news/dst_news_morocco06.html">
+# https://www.worldtimezone.com/dst_news/dst_news_morocco06.html
 # </a>
 
 # From Arthur David Olson (2012-03-10):
@@ -810,16 +810,16 @@ Zone	Indian/Mayotte	3:00:56 -	LMT	1911 Jul	# Mamoutzou
 
 # From Christophe Tropamer (2012-03-16):
 # Seen Morocco change again:
-# <a href="http://www.le2uminutes.com/actualite.php">
-# http://www.le2uminutes.com/actualite.php
+# <a href="https://www.le2uminutes.com/actualite.php">
+# https://www.le2uminutes.com/actualite.php
 # </a>
 # "...&agrave; partir du dernier dimance d'avril et non fins mars,
 # comme annonc&eacute; pr&eacute;c&eacute;demment."
 
 # From Milamber Space Network (2012-07-17):
 # The official return to GMT is announced by the Moroccan government:
-# <a href="http://www.mmsp.gov.ma/fr/actualites.aspx?id=288">
-# http://www.mmsp.gov.ma/fr/actualites.aspx?id=288 [in French]
+# <a href="https://www.mmsp.gov.ma/fr/actualites.aspx?id=288">
+# https://www.mmsp.gov.ma/fr/actualites.aspx?id=288 [in French]
 # </a>
 #
 # Google translation, lightly edited:
@@ -883,7 +883,7 @@ Zone	Africa/Maputo	2:10:20 -	LMT	1903 Mar
 # Shanks & Pottenger report no DST after 1998-04; go with IATA.
 
 # From Petronella Sibeene (2007-03-30) in
-# <http://allafrica.com/stories/200703300178.html>:
+# <https://allafrica.com/stories/200703300178.html>:
 # While the entire country changes its time, Katima Mulilo and other
 # settlements in Caprivi unofficially will not because the sun there
 # rises and sets earlier compared to other regions.  Chief of
@@ -1010,7 +1010,7 @@ Zone Africa/Johannesburg 1:52:00 -	LMT	1892 Feb 8
 
 # Sudan
 #
-# From <a href="http://www.sunanews.net/sn13jane.html">
+# From <a href="https://www.sunanews.net/sn13jane.html">
 # Sudan News Agency (2000-01-13)
 # </a>, also reported by Michael De Beukelaer-Dossche via Steffen Thorsen:
 # Clocks will be moved ahead for 60 minutes all over the Sudan as of noon
@@ -1054,7 +1054,7 @@ Zone	Africa/Lome	0:04:52 -	LMT	1893
 # From Gwillim Law (2005-04-30):
 # My correspondent, Risto Nykanen, has alerted me to another adoption of DST,
 # this time in Tunisia.  According to Yahoo France News
-# <http://fr.news.yahoo.com/050426/5/4dumk.html>, in a story attributed to AP
+# <https://fr.news.yahoo.com/050426/5/4dumk.html>, in a story attributed to AP
 # and dated 2005-04-26, "Tunisia has decided to advance its official time by
 # one hour, starting on Sunday, May 1.  Henceforth, Tunisian time will be
 # UTC+2 instead of UTC+1.  The change will take place at 23:00 UTC next
@@ -1062,7 +1062,7 @@ Zone	Africa/Lome	0:04:52 -	LMT	1893
 #
 # From Oscar van Vlijmen (2005-05-02):
 # LaPresse, the first national daily newspaper ...
-# <http://www.lapresse.tn/archives/archives280405/actualites/lheure.html>
+# <https://www.lapresse.tn/archives/archives280405/actualites/lheure.html>
 # ... DST for 2005: on: Sun May 1 0h standard time, off: Fri Sept. 30,
 # 1h standard time.
 #
@@ -1070,22 +1070,22 @@ Zone	Africa/Lome	0:04:52 -	LMT	1893
 # The daylight saving time will be the same each year:
 # Beginning      : the last Sunday of March at 02:00
 # Ending         : the last Sunday of October at 03:00 ...
-# http://www.tap.info.tn/en/index.php?option=com_content&task=view&id=1188&Itemid=50
+# https://www.tap.info.tn/en/index.php?option=com_content&task=view&id=1188&Itemid=50
 
 # From Steffen Thorsen (2009-03-16):
 # According to several news sources, Tunisia will not observe DST this year.
 # (Arabic)
-# <a href="http://www.elbashayer.com/?page=viewn&nid=42546">
-# http://www.elbashayer.com/?page=viewn&nid=42546
+# <a href="https://www.elbashayer.com/?page=viewn&nid=42546">
+# https://www.elbashayer.com/?page=viewn&nid=42546
 # </a>
-# <a href="http://www.babnet.net/kiwidetail-15295.asp">
-# http://www.babnet.net/kiwidetail-15295.asp
+# <a href="https://www.babnet.net/kiwidetail-15295.asp">
+# https://www.babnet.net/kiwidetail-15295.asp
 # </a>
 #
 # We have also confirmed this with the US embassy in Tunisia.
 # We have a wrap-up about this on the following page:
-# <a href="http://www.timeanddate.com/news/time/tunisia-cancels-dst-2009.html">
-# http://www.timeanddate.com/news/time/tunisia-cancels-dst-2009.html
+# <a href="https://www.timeanddate.com/news/time/tunisia-cancels-dst-2009.html">
+# https://www.timeanddate.com/news/time/tunisia-cancels-dst-2009.html
 # </a>
 
 # From Alexander Krivenyshev (2009-03-17):
@@ -1094,13 +1094,13 @@ Zone	Africa/Lome	0:04:52 -	LMT	1893
 # Standard time to be kept the whole year long (tap.info.tn):
 #
 # (in English)
-# <a href="http://www.tap.info.tn/en/index.php?option=com_content&task=view&id=26813&Itemid=157">
-# http://www.tap.info.tn/en/index.php?option=com_content&task=view&id=26813&Itemid=157
+# <a href="https://www.tap.info.tn/en/index.php?option=com_content&task=view&id=26813&Itemid=157">
+# https://www.tap.info.tn/en/index.php?option=com_content&task=view&id=26813&Itemid=157
 # </a>
 #
 # (in Arabic)
-# <a href="http://www.tap.info.tn/ar/index.php?option=com_content&task=view&id=61240&Itemid=1">
-# http://www.tap.info.tn/ar/index.php?option=com_content&task=view&id=61240&Itemid=1
+# <a href="https://www.tap.info.tn/ar/index.php?option=com_content&task=view&id=61240&Itemid=1">
+# https://www.tap.info.tn/ar/index.php?option=com_content&task=view&id=61240&Itemid=1
 # </a>
 
 # From Arthur David Olson (2009--3-18):
@@ -1119,13 +1119,13 @@ Zone	Africa/Lome	0:04:52 -	LMT	1893
 # coincided with the month of Ramadan..."
 #
 # (in Arabic)
-# <a href="http://www.moheet.com/show_news.aspx?nid=358861&pg=1">
-# http://www.moheet.com/show_news.aspx?nid=358861&pg=1
-# <a href="http://www.almadenahnews.com/newss/news.php?c=118&id=38036">
-# http://www.almadenahnews.com/newss/news.php?c=118&id=38036
+# <a href="https://www.moheet.com/show_news.aspx?nid=358861&pg=1">
+# https://www.moheet.com/show_news.aspx?nid=358861&pg=1
+# <a href="https://www.almadenahnews.com/newss/news.php?c=118&id=38036">
+# https://www.almadenahnews.com/newss/news.php?c=118&id=38036
 # or
-# <a href="http://www.worldtimezone.com/dst_news/dst_news_tunis02.html">
-# http://www.worldtimezone.com/dst_news/dst_news_tunis02.html
+# <a href="https://www.worldtimezone.com/dst_news/dst_news_tunis02.html">
+# https://www.worldtimezone.com/dst_news/dst_news_tunis02.html
 
 # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
 Rule	Tunisia	1939	only	-	Apr	15	23:00s	1:00	S

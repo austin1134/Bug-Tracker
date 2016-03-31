@@ -228,7 +228,7 @@ Version 4.1.8 (2015-03-05)
 	Added new html5 sizes attribute to img elements used together with srcset.
 	Added new elementpath option that makes it possible to disable the element path but keep the statusbar.
 	Added new option table_style_by_css for the table plugin to set table styling with css rather than table attributes.
-	Added new link_assume_external_targets option to prompt the user to prepend http:// prefix if the supplied link does not contain a protocol prefix.
+	Added new link_assume_external_targets option to prompt the user to prepend https:// prefix if the supplied link does not contain a protocol prefix.
 	Added new image_prepend_url option to allow a custom base path/url to be added to images.
 	Added new table_appearance_options option to make it possible to disable some options.
 	Added new image_title option to make it possible to alter the title of the image, disabled by default.

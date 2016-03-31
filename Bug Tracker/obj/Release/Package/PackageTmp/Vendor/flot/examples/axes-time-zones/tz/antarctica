@@ -4,11 +4,11 @@
 
 # From Paul Eggert (1999-11-15):
 # To keep things manageable, we list only locations occupied year-round; see
-# <a href="http://www.comnap.aq/comnap/comnap.nsf/P/Stations/">
+# <a href="https://www.comnap.aq/comnap/comnap.nsf/P/Stations/">
 # COMNAP - Stations and Bases
 # </a>
 # and
-# <a href="http://www.spri.cam.ac.uk/bob/periant.htm">
+# <a href="https://www.spri.cam.ac.uk/bob/periant.htm">
 # Summary of the Peri-Antarctic Islands (1998-07-23)
 # </a>
 # for information.
@@ -95,7 +95,7 @@ Rule	ATAQ	2008	max	-	Apr	Sun>=1	2:00s	0	-
 # Australia - territories
 # Heard Island, McDonald Islands (uninhabited)
 #	previously sealers and scientific personnel wintered
-#	<a href="http://web.archive.org/web/20021204222245/http://www.dstc.qut.edu.au/DST/marg/daylight.html">
+#	<a href="https://web.archive.org/web/20021204222245/https://www.dstc.qut.edu.au/DST/marg/daylight.html">
 #	Margaret Turner reports
 #	</a> (1999-09-30) that they're UTC+5, with no DST;
 #	presumably this is when they have visitors.
@@ -114,13 +114,13 @@ Rule	ATAQ	2008	max	-	Apr	Sun>=1	2:00s	0	-
 # The changes occurred on 2009-10-18 at 02:00 (local times).
 #
 # Government source: (Australian Antarctic Division)
-# <a href="http://www.aad.gov.au/default.asp?casid=37079">
-# http://www.aad.gov.au/default.asp?casid=37079
+# <a href="https://www.aad.gov.au/default.asp?casid=37079">
+# https://www.aad.gov.au/default.asp?casid=37079
 # </a>
 #
 # We have more background information here:
-# <a href="http://www.timeanddate.com/news/time/antarctica-new-times.html">
-# http://www.timeanddate.com/news/time/antarctica-new-times.html
+# <a href="https://www.timeanddate.com/news/time/antarctica-new-times.html">
+# https://www.timeanddate.com/news/time/antarctica-new-times.html
 # </a>
 
 # From Steffen Thorsen (2010-03-10):
@@ -142,8 +142,8 @@ Rule	ATAQ	2008	max	-	Apr	Sun>=1	2:00s	0	-
 # will no longer be like Hobart and will have to have its own Zone created.
 #
 # Background:
-# <a href="http://www.timeanddate.com/news/time/antartica-time-changes-2010.html">
-# http://www.timeanddate.com/news/time/antartica-time-changes-2010.html
+# <a href="https://www.timeanddate.com/news/time/antartica-time-changes-2010.html">
+# https://www.timeanddate.com/news/time/antartica-time-changes-2010.html
 # </a>
 
 # Zone	NAME		GMTOFF	RULES	FORMAT	[UNTIL]
@@ -174,13 +174,13 @@ Zone Antarctica/Macquarie 0	-	zzz	1911
 			10:00	ATAQ	EST	2010 Apr 4 3:00
 			11:00	-	MIST	# Macquarie Island Time
 # References:
-# <a href="http://www.antdiv.gov.au/aad/exop/sfo/casey/casey_aws.html">
+# <a href="https://www.antdiv.gov.au/aad/exop/sfo/casey/casey_aws.html">
 # Casey Weather (1998-02-26)
 # </a>
-# <a href="http://www.antdiv.gov.au/aad/exop/sfo/davis/video.html">
+# <a href="https://www.antdiv.gov.au/aad/exop/sfo/davis/video.html">
 # Davis Station, Antarctica (1998-02-26)
 # </a>
-# <a href="http://www.antdiv.gov.au/aad/exop/sfo/mawson/video.html">
+# <a href="https://www.antdiv.gov.au/aad/exop/sfo/mawson/video.html">
 # Mawson Station, Antarctica (1998-02-25)
 # </a>
 
@@ -234,7 +234,7 @@ Zone Antarctica/DumontDUrville 0 -	zzz	1947
 			0	-	zzz	1956 Nov
 			10:00	-	DDUT	# Dumont-d'Urville Time
 # Reference:
-# <a href="http://en.wikipedia.org/wiki/Dumont_d'Urville_Station">
+# <a href="https://en.wikipedia.org/wiki/Dumont_d'Urville_Station">
 # Dumont d'Urville Station (2005-12-05)
 # </a>
 
@@ -258,7 +258,7 @@ Zone Antarctica/DumontDUrville 0 -	zzz	1947
 Zone Antarctica/Syowa	0	-	zzz	1957 Jan 29
 			3:00	-	SYOT	# Syowa Time
 # See:
-# <a href="http://www.nipr.ac.jp/english/ara01.html">
+# <a href="https://www.nipr.ac.jp/english/ara01.html">
 # NIPR Antarctic Research Activities (1999-08-17)
 # </a>
 
@@ -302,7 +302,7 @@ Rule	NZAQ	2008	max	-	Apr	Sun>=1	2:00s	0	S
 #	year-round from 1960/61 to 1992
 
 # Vostok, since 1957-12-16, temporarily closed 1994-02/1994-11
-# <a href="http://quest.arc.nasa.gov/antarctica/QA/computers/Directions,Time,ZIP">
+# <a href="https://quest.arc.nasa.gov/antarctica/QA/computers/Directions,Time,ZIP">
 # From Craig Mundell (1994-12-15)</a>:
 # Vostok, which is one of the Russian stations, is set on the same
 # time as Moscow, Russia.
@@ -352,7 +352,7 @@ Zone Antarctica/Vostok	0	-	zzz	1957 Dec 16
 # Rothera, Adelaide Island, -6734-6808, since 1976-12-01
 #
 # From Paul Eggert (2002-10-22)
-# <http://webexhibits.org/daylightsaving/g.html> says Rothera is -03 all year.
+# <https://webexhibits.org/daylightsaving/g.html> says Rothera is -03 all year.
 #
 # Zone	NAME		GMTOFF	RULES	FORMAT	[UNTIL]
 Zone Antarctica/Rothera	0	-	zzz	1976 Dec  1
@@ -399,7 +399,7 @@ Zone Antarctica/McMurdo	0	-	zzz	1956
 # at that time (1957).  (Source: Siple's book 90 degrees SOUTH.)
 #
 # From Susan Smith
-# http://www.cybertours.com/whs/pole10.html
+# https://www.cybertours.com/whs/pole10.html
 # (1995-11-13 16:24:56 +1300, no longer available):
 # We use the same time as McMurdo does.
 # And they use the same time as Christchurch, NZ does....

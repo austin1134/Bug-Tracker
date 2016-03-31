@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Bug_Tracker.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="normalheader transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <a class="small-header-action" href="">
+                <div class="clip-header">
+                    <i class="fa fa-arrow-up"></i>
+                </div>
+            </a>
+
+            <div id="hbreadcrumb" class="pull-right m-t-lg">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Dashboard</a></li>
+                    <li>
+                        <span>Projects</span>
+                    </li>
+                    <li class="active">
+                        <span>Projects</span>
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                <i class="pe-7s-display1"></i>  Projects
+            </h2>
+            <button>@Html.ActionLink("Create A New Project", "Create")</button>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div class="panel-tools">
+                        <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        <a class="closebox"><i class="fa fa-times"></i></a>
+                    </div>
+                    Standard table
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="Search in table">
+                    <text>Click On The Project Row To View More Details</text>
+                    <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Project Manager</th>
+                            <th>Created</th>
+                            <th data-hide="all"># Tickets For This Project </th>
+                            <th data-hide="all">Developers </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var project in Model)
+                        {
+                            <tr>
+                                <td>@project.Name</td>
+                                @*<td>@project.ProjectManager.FirstName @project.ProjectManager.LastName</td>*@
+                                <td>@project.CreationDate</td>
+                                <td>@project.Tickets.Count()</td>
+                                <td>@project.Developers.Count()</td>
+                                <td>
+                                    @*<a href="@Url.Action("Edit", new {id = project.Id})" alt="Edit Project">
+                                        <i class="fa fa-edit accentcolor-heading"></i>
+                                    </a>
+                                    <a href="@Url.Action("Details", new {id = project.Id})" alt="View Project Details">
+                                        <i class="fa fa-eye accentcolor-heading"></i>
+                                    </a>*@
+                                    @Html.ActionLink("Edit", "Edit", new {id = project.Id}) |
+                                    @Html.ActionLink("Details", "Details", new {id = project.Id})
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    @section Styles {
+    @Styles.Render("~/bundles/fooTable/css")
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/fooTable/js")
+
+        <script type="text/javascript">
+
+        $(function () {
+
+        // Initialize Example 1
+        $('#example1').footable();
+
+        });
+
+        </script>
+    }

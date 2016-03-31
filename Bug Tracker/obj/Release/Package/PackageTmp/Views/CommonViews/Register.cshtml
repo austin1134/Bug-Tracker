@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Blank.cshtml";
+    ViewBag.Title = "Register";
+}
+
+<div class="register-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>Registration</h3>
+                <small>Full suported AngularJS WebApp/Admin template with very clean and aesthetic style prepared for your next app. </small>
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                    <div action="#" id="loginForm">
+                        <div class="row">
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                            <div class="row">
+                                <div class="form-group col-lg-5">
+                                    <label>First Name</label>
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                                    <span class="help-block small">Your hard to guess password</span>
+                                </div>
+                                <div class="form-group col-lg-5">
+                                    <label>Last Name</label>
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                    <span class="help-block small">Please repeat your pasword</span>
+                                </div>
+                                <div class="form-group col-lg-5">
+                                    <label>Username</label>
+                                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                                    <span class="help-block small">Your unique username to app</span>
+                                </div>
+                                <div class="form-group col-lg-5">
+                                    <label>Password</label>
+                                    @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+                                    <span class="help-block small">Your hard to guess password</span>
+                                </div>
+                                <div class="form-group col-lg-5">
+                                    <label>Repeat Password</label>
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+                                    <span class="help-block small">Please repeat your pasword</span>
+                                </div>
+                                <div class="form-group col-lg-5">
+                                    <label>Email Address</label>
+                                    @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+                                    <span class="help-block small">Your address email to contact</span>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="text-center">
+                            <button type ="submit" class="btn btn-success" value="Register">Register</button>
+                            <button class="btn btn-default">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <strong>HOMER</strong> - AngularJS Responsive WebApp <br /> 2015 Copyright Company Name
+        </div>
+    </div>
+</div>
